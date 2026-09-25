@@ -37,17 +37,11 @@
     :root {
 
       --bg: #FFF7F5;
-
       --paper: #FFFCF7;
-
       --pink: #D99AA5;
-
       --rose: #8F5F68;
-
       --text: #594348;
-
       --blush: #F2D6D9;
-
       --gold: #D8B98A;
 
     }
@@ -65,7 +59,6 @@
       padding: 0;
 
       width: 100%;
-
       min-height: 100%;
 
     }
@@ -182,7 +175,7 @@
 
 
     /* =========================
-       ENVELOPE
+       ENVELOPE AREA
     ========================= */
 
     .envelope-area {
@@ -204,6 +197,10 @@
 
     }
 
+
+    /* =========================
+       ENVELOPE
+    ========================= */
 
     .envelope {
 
@@ -227,9 +224,7 @@
     }
 
 
-    /* =========================
-       ENVELOPE FRONT
-    ========================= */
+    /* ด้านหน้าซอง */
 
     .envelope-front {
 
@@ -251,6 +246,8 @@
 
     }
 
+
+    /* สามเหลี่ยมหน้าซอง */
 
     .envelope-front::before {
 
@@ -275,9 +272,7 @@
     }
 
 
-    /* =========================
-       FLAP
-    ========================= */
+    /* ฝากระดาษซอง */
 
     .flap {
 
@@ -307,9 +302,7 @@
     }
 
 
-    /* =========================
-       HEART SEAL
-    ========================= */
+    /* หัวใจ */
 
     .seal {
 
@@ -319,7 +312,8 @@
 
       top: 48%;
 
-      transform: translate(-50%, -50%);
+      transform:
+        translate(-50%, -50%);
 
       z-index: 6;
 
@@ -327,7 +321,8 @@
 
       color: #FFF7F5;
 
-      transition: opacity 0.4s ease;
+      transition:
+        opacity 0.4s ease;
 
     }
 
@@ -438,83 +433,16 @@
 
 
     /* =========================
-       OPEN STATE
-    ========================= */
-
-    .envelope-area.open .flap {
-
-      transform: rotateX(180deg);
-
-      z-index: 1;
-
-    }
-
-
-    .envelope-area.open .letter-paper {
-
-      opacity: 1;
-
-      transform:
-        translateX(-50%)
-        translateY(-160px);
-
-      z-index: 7;
-
-    }
-
-
-    .envelope-area.open .seal {
-
-      opacity: 0;
-
-    }
-
-
-    .envelope-area.open .envelope {
-
-      animation: littleBounce 0.7s ease;
-
-    }
-
-
-    .envelope-area.open {
-
-      margin-bottom: 160px;
-
-    }
-
-
-    /* =========================
        NEXT BUTTON
     ========================= */
 
     .next-box {
 
-      margin-top: 25px;
+      margin-top: 28px;
+
+      padding-top: 15px;
 
       text-align: center;
-
-      opacity: 0;
-
-      visibility: hidden;
-
-      transform: translateY(10px);
-
-      transition:
-        opacity 0.8s ease,
-        transform 0.8s ease,
-        visibility 0.8s ease;
-
-    }
-
-
-    .next-box.show {
-
-      opacity: 1;
-
-      visibility: visible;
-
-      transform: translateY(0);
 
     }
 
@@ -575,6 +503,54 @@
 
 
     /* =========================
+       OPEN STATE
+    ========================= */
+
+    .envelope-area.open .flap {
+
+      transform: rotateX(180deg);
+
+      z-index: 1;
+
+    }
+
+
+    .envelope-area.open .letter-paper {
+
+      opacity: 1;
+
+      transform:
+        translateX(-50%)
+        translateY(-160px);
+
+      z-index: 7;
+
+    }
+
+
+    .envelope-area.open .seal {
+
+      opacity: 0;
+
+    }
+
+
+    .envelope-area.open .envelope {
+
+      animation:
+        littleBounce 0.7s ease;
+
+    }
+
+
+    .envelope-area.open {
+
+      margin-bottom: 160px;
+
+    }
+
+
+    /* =========================
        ANIMATION
     ========================= */
 
@@ -584,7 +560,8 @@
 
         opacity: 0;
 
-        transform: translateY(12px);
+        transform:
+          translateY(12px);
 
       }
 
@@ -592,7 +569,8 @@
 
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+          translateY(0);
 
       }
 
@@ -631,6 +609,7 @@
 
   <main class="page">
 
+
     <section class="content">
 
 
@@ -666,6 +645,7 @@
       </div>
 
 
+
       <!-- =========================
            ENVELOPE
       ========================= -->
@@ -677,18 +657,19 @@
       >
 
 
-        <!-- LETTER -->
+        <!-- =========================
+             LETTER PAPER
+        ========================= -->
 
-        <article
-          class="letter-paper"
-          id="letterPaper"
-        >
+        <article class="letter-paper">
+
 
           <h2>
 
             ถึงเด็ก 21 ของเค้า ♡
 
           </h2>
+
 
 
           <p>
@@ -705,6 +686,7 @@
           </p>
 
 
+
           <p>
 
             มีความสุขดีมั้ยคะ<br>
@@ -717,6 +699,7 @@
             ไปเลยหรือเปล่าน้า
 
           </p>
+
 
 
           <p>
@@ -733,15 +716,19 @@
           </p>
 
 
+
           <p>
 
             แต่ไม่ว่าจะเป็นวันไหน
 
             เธอก็เก่งมาก ๆ แล้ว
+
             เราบอกเธอมาตลอดว่าเธอเก่ง
+
             ที่เดินทางมาถึงวันนี้ได้ ♡
 
           </p>
+
 
 
           <p>
@@ -752,14 +739,19 @@
             เรื่องให้ร้องไห้นะ
 
             เหนื่อยก็พักได้
+
             ไม่ต้องเก่งตลอดเวลาก็ได้
 
             อยากกอดก็มากอดกัน
+
             อยากงอแงก็งอแงได้เลย
+
             อยากทำไรก็ทำได้เลย
+
             อยากบ่น อยากกิน อยากเที่ยว
 
           </p>
+
 
 
           <p>
@@ -778,6 +770,7 @@
           </p>
 
 
+
           <p>
 
             สุขสันต์วันเกิดนะคะ ♡
@@ -788,6 +781,7 @@
             ที่น่ารักไปนาน ๆ เลยน้า
 
           </p>
+
 
 
           <p class="signature">
@@ -801,10 +795,41 @@
           </p>
 
 
+
+          <!-- =========================
+               BUTTON AT THE END
+          ========================= -->
+
+          <div class="next-box">
+
+
+            <button
+              class="next-button"
+              onclick="goToMusic()"
+            >
+
+              อ่านจบแล้ว ♡
+
+            </button>
+
+
+            <div class="next-note">
+
+              มีเพลงหนึ่งเพลงอยากให้เธอฟังนะ
+
+            </div>
+
+
+          </div>
+
+
         </article>
 
 
-        <!-- ENVELOPE -->
+
+        <!-- =========================
+             ENVELOPE
+        ========================= -->
 
         <div class="envelope">
 
@@ -828,37 +853,10 @@
       </div>
 
 
-      <!-- =========================
-           NEXT BUTTON
-      ========================= -->
-
-      <div
-        class="next-box"
-        id="nextBox"
-      >
-
-        <button
-          class="next-button"
-          onclick="goToMusic()"
-        >
-
-          อ่านจบแล้ว ♡
-
-        </button>
-
-
-        <div class="next-note">
-
-          มีเพลงหนึ่งเพลงอยากให้เธอฟังนะ
-
-        </div>
-
-      </div>
-
-
     </section>
 
   </main>
+
 
 
   <!-- =========================
@@ -868,102 +866,45 @@
   <script>
 
 
-    const envelope =
-      document.getElementById("envelopeArea");
-
-
-    const instruction =
-      document.getElementById("instruction");
-
-
-    const letterPaper =
-      document.getElementById("letterPaper");
-
-
-    const nextBox =
-      document.getElementById("nextBox");
-
-
-    let letterOpened = false;
-
-
     function openLetter() {
 
 
-      if (letterOpened) {
-
-        return;
-
-      }
-
-
-      letterOpened = true;
+      const envelope =
+        document.getElementById(
+          "envelopeArea"
+        );
 
 
-      envelope.classList.add("open");
+      const instruction =
+        document.getElementById(
+          "instruction"
+        );
 
-
-      instruction.classList.add("hide");
-
-
-      /*
-        รอให้กระดาษเปิดออกก่อน
-        แล้วค่อยให้สามารถอ่านได้
-      */
-
-      setTimeout(function() {
-
-        letterPaper.scrollTop = 0;
-
-      }, 1000);
-
-
-      /*
-        ตรวจว่าผู้อ่านเลื่อนถึง
-        ท้ายจดหมายหรือยัง
-      */
-
-      letterPaper.addEventListener(
-        "scroll",
-        checkLetterEnd
-      );
-
-    }
-
-
-    function checkLetterEnd() {
-
-
-      const scrollPosition =
-        letterPaper.scrollTop +
-        letterPaper.clientHeight;
-
-
-      const scrollHeight =
-        letterPaper.scrollHeight;
-
-
-      /*
-        เหลือไม่เกิน 15px
-        ถือว่าอ่านจบแล้ว
-      */
 
       if (
-        scrollPosition >=
-        scrollHeight - 15
+        !envelope.classList.contains("open")
       ) {
 
-        nextBox.classList.add("show");
+
+        envelope.classList.add("open");
+
+
+        instruction.classList.add("hide");
+
 
       }
 
+
     }
+
 
 
     function goToMusic() {
 
+
       window.location.href =
         "music.html";
+
 
     }
 
