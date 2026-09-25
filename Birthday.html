@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday ♡</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #FFF7F5;
+      --card: #FFFCFA;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --blush: #F2D6D9;
+      --gold: #D8B98A;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+
+    body {
+      min-height: 100vh;
+
+      background: var(--bg);
+      color: var(--text);
+
+      font-family: 'Mali', cursive;
+
+      overflow-x: hidden;
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+
+      position: relative;
+
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 45px 25px;
+
+    }
+
+
+    .content {
+
+      width: 100%;
+      max-width: 520px;
+
+      text-align: center;
+
+      animation: birthdayIn 1.5s ease;
+
+    }
+
+
+    /* =========================
+       TOP TEXT
+    ========================= */
+
+    .small-text {
+
+      margin-bottom: 20px;
+
+      font-family: 'Quicksand', sans-serif;
+
+      font-size: 13px;
+
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+
+      font-family: 'Gowun Batang', serif;
+
+      font-size: clamp(27px, 8vw, 42px);
+
+      line-height: 1.5;
+
+      color: var(--rose);
+
+      margin: 0;
+
+    }
+
+
+    /* =========================
+       HAPPY BIRTHDAY
+    ========================= */
+
+    .birthday {
+
+      margin-top: 20px;
+
+      font-family: 'Quicksand', sans-serif;
+
+      font-size: clamp(38px, 12vw, 65px);
+
+      font-weight: 600;
+
+      line-height: 1.05;
+
+      letter-spacing: 1px;
+
+      color: var(--rose);
+
+    }
+
+
+    .birthday span {
+
+      display: block;
+
+    }
+
+
+    /* =========================
+       AGE
+    ========================= */
+
+    .age {
+
+      margin-top: 28px;
+
+      font-size: 17px;
+
+      line-height: 2;
+
+      color: var(--text);
+
+    }
+
+
+    .age-number {
+
+      display: inline-block;
+
+      font-family: 'Gowun Batang', serif;
+
+      font-size: 30px;
+
+      color: var(--pink);
+
+      margin: 0 5px;
+
+    }
+
+
+    /* =========================
+       GIF
+    ========================= */
+
+    .gif-box {
+
+      margin: 30px auto 0;
+
+      width: min(78vw, 300px);
+
+      padding: 8px;
+
+      background: var(--card);
+
+      border: 1px solid var(--blush);
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 10px 35px rgba(143, 95, 104, 0.08);
+
+      animation: gifIn 1.8s ease;
+
+    }
+
+
+    .gif-box img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+      border-radius: 18px;
+
+    }
+
+
+    /* =========================
+       DECORATIONS
+    ========================= */
+
+    .deco {
+
+      position: absolute;
+
+      color: var(--pink);
+
+      opacity: 0.5;
+
+      pointer-events: none;
+
+      animation: float 4s ease-in-out infinite;
+
+    }
+
+
+    .one {
+
+      top: 12%;
+
+      left: 13%;
+
+      font-size: 20px;
+
+    }
+
+
+    .two {
+
+      top: 19%;
+
+      right: 13%;
+
+      font-size: 14px;
+
+      animation-delay: 1s;
+
+    }
+
+
+    .three {
+
+      bottom: 15%;
+
+      left: 15%;
+
+      font-size: 15px;
+
+      animation-delay: 2s;
+
+    }
+
+
+    .four {
+
+      bottom: 20%;
+
+      right: 15%;
+
+      font-size: 20px;
+
+      animation-delay: 0.5s;
+
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes birthdayIn {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes gifIn {
+
+      from {
+
+        opacity: 0;
+
+        transform: scale(0.92);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+      }
+
+    }
+
+
+    @keyframes float {
+
+      0%,
+      100% {
+
+        transform: translateY(0);
+
+      }
+
+      50% {
+
+        transform: translateY(-9px);
+
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <main class="page">
+
+
+    <!-- Decorations -->
+
+    <div class="deco one">♡</div>
+
+    <div class="deco two">✦</div>
+
+    <div class="deco three">˚₊‧</div>
+
+    <div class="deco four">♡</div>
+
+
+    <!-- Birthday Content -->
+
+    <section class="content">
+
+
+      <div class="small-text">
+        TODAY IS YOUR SPECIAL DAY ♡
+      </div>
+
+
+      <h1 class="intro">
+        เฮ้ย วันเกิดนิ่!
+      </h1>
+
+
+      <div class="birthday">
+
+        <span>Happy</span>
+
+        <span>Birthday</span>
+
+        <span>To you ♡</span>
+
+      </div>
+
+
+      <div class="age">
+
+        Already
+
+        <span class="age-number">
+          21
+        </span>
+
+        ขวบแล้วนะ ♡
+
+      </div>
+
+
+      <!-- GIF จาก Tenor -->
+
+      <div class="gif-box">
+
+        <img
+          src="https://media1.tenor.com/m/8Yxax1WAq8oAAAAd/happy-birthday.gif"
+          alt="Happy Birthday GIF"
+        >
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+</body>
+</html>
