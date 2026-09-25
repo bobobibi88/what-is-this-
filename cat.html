@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>แมวผู้พิทักษ์ ♡</title>
+
+
+  <!-- =========================
+       FONTS
+  ========================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --bg: #FFF7F5;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --blush: #F2D6D9;
+      --card: #FFFCFA;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      width: 100%;
+      min-height: 100%;
+
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 50% 18%,
+          #FFFDFB 0%,
+          var(--bg) 58%,
+          #F9EDEF 100%
+        );
+
+      color: var(--text);
+
+      font-family: "Mali", cursive;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 35px 20px;
+
+    }
+
+
+    .content {
+
+      width: 100%;
+
+      max-width: 450px;
+
+      text-align: center;
+
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .small-title {
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+      opacity: 0;
+
+      animation:
+        fadeUp 0.8s ease forwards;
+
+      animation-delay: 0.2s;
+
+    }
+
+
+    h1 {
+
+      margin: 10px 0 0;
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 30px;
+
+      font-weight: 400;
+
+      color: var(--rose);
+
+      opacity: 0;
+
+      animation:
+        fadeUp 0.8s ease forwards;
+
+      animation-delay: 0.5s;
+
+    }
+
+
+    .intro {
+
+      margin-top: 10px;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      opacity: 0;
+
+      animation:
+        fadeUp 0.8s ease forwards;
+
+      animation-delay: 0.8s;
+
+    }
+
+
+    /* =========================
+       WALKING CAT
+    ========================= */
+
+    .walking-area {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 230px;
+
+      margin-top: 5px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-end;
+
+      overflow: hidden;
+
+    }
+
+
+    .walking-cat {
+
+      width: 185px;
+
+      height: 185px;
+
+      object-fit: contain;
+
+      opacity: 0;
+
+      transform:
+        translateX(-260px);
+
+      animation:
+        walkIn 2.2s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+
+      animation-delay: 1s;
+
+      filter:
+        drop-shadow(
+          0 14px 18px
+          rgba(89,67,72,0.13)
+        );
+
+    }
+
+
+    /* =========================
+       HELLO
+    ========================= */
+
+    .hello {
+
+      position: absolute;
+
+      top: 10px;
+
+      right: 17%;
+
+      padding: 8px 14px;
+
+      border-radius: 999px;
+
+      background: var(--card);
+
+      border:
+        1px solid var(--blush);
+
+      color: var(--rose);
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 12px;
+
+      box-shadow:
+        0 7px 20px
+        rgba(89,67,72,0.08);
+
+      opacity: 0;
+
+      animation:
+        helloIn 0.6s ease forwards;
+
+      animation-delay: 3.1s;
+
+    }
+
+
+    .hello::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 18px;
+
+      bottom: -6px;
+
+      width: 11px;
+
+      height: 11px;
+
+      background: var(--card);
+
+      border-right:
+        1px solid var(--blush);
+
+      border-bottom:
+        1px solid var(--blush);
+
+      transform: rotate(45deg);
+
+    }
+
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .messages {
+
+      min-height: 155px;
+
+      padding: 0 10px;
+
+    }
+
+
+    .message {
+
+      display: none;
+
+      margin-top: 8px;
+
+      color: var(--rose);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      animation:
+        popIn 0.5s ease;
+
+    }
+
+
+    .message.show {
+
+      display: block;
+
+    }
+
+
+    /* =========================
+       GIF SECTION
+    ========================= */
+
+    .pet-section {
+
+      display: none;
+
+      margin-top: 5px;
+
+      animation:
+        petSectionIn 0.7s ease;
+
+    }
+
+
+    .pet-section.show {
+
+      display: block;
+
+    }
+
+
+    .point-text {
+
+      font-size: 13px;
+
+      color: var(--text);
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .arrow {
+
+      font-size: 25px;
+
+      color: var(--pink);
+
+      line-height: 1;
+
+      animation:
+        point 0.8s ease-in-out infinite;
+
+    }
+
+
+    /* =========================
+       GIF BOX
+    ========================= */
+
+    .gif-wrapper {
+
+      position: relative;
+
+      width: 210px;
+
+      height: 210px;
+
+      margin: 8px auto 0;
+
+      border-radius: 28px;
+
+      padding: 8px;
+
+      background: var(--card);
+
+      border:
+        1px solid var(--blush);
+
+      box-shadow:
+        0 15px 35px
+        rgba(143,95,104,0.13);
+
+      cursor: pointer;
+
+      user-select: none;
+
+      -webkit-tap-highlight-color:
+        transparent;
+
+      transition:
+        transform 0.15s ease;
+
+    }
+
+
+    .gif-wrapper:active {
+
+      transform: scale(0.94);
+
+    }
+
+
+    .gif-wrapper iframe {
+
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+
+      border: 0;
+
+      border-radius: 21px;
+
+      pointer-events: none;
+
+    }
+
+
+    .tap-hint {
+
+      margin-top: 9px;
+
+      font-size: 12px;
+
+      color: var(--pink);
+
+    }
+
+
+    /* =========================
+       COUNTER
+    ========================= */
+
+    .counter {
+
+      margin-top: 7px;
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 12px;
+
+      color: var(--rose);
+
+    }
+
+
+    .counter-number {
+
+      font-size: 17px;
+
+      font-weight: 600;
+
+    }
+
+
+    /* =========================
+       DONE
+    ========================= */
+
+    .done {
+
+      display: none;
+
+      margin-top: 15px;
+
+      color: var(--rose);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      animation:
+        popIn 0.5s ease;
+
+    }
+
+
+    .done.show {
+
+      display: block;
+
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .continue-button {
+
+      margin-top: 12px;
+
+      padding: 12px 28px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      background: var(--rose);
+
+      color: white;
+
+      font-family: "Mali", cursive;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translateY(8px);
+
+      transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+    }
+
+
+    .continue-button.show {
+
+      opacity: 1;
+
+      pointer-events: auto;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+    .continue-button:hover {
+
+      background: var(--pink);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    /* =========================
+       FLOATING HEART
+    ========================= */
+
+    .heart {
+
+      position: fixed;
+
+      pointer-events: none;
+
+      color: var(--pink);
+
+      font-size: 20px;
+
+      z-index: 100;
+
+      animation:
+        heartFloat 0.9s ease forwards;
+
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(12px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes walkIn {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translateX(-260px);
+
+      }
+
+      70% {
+
+        opacity: 1;
+
+        transform:
+          translateX(15px);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          translateX(0);
+
+      }
+
+    }
+
+
+    @keyframes helloIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          scale(0.7)
+          translateY(8px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          scale(1)
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes popIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          scale(0.92)
+          translateY(8px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          scale(1)
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes petSectionIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(15px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes point {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0);
+
+      }
+
+      50% {
+
+        transform:
+          translateY(5px);
+
+      }
+
+    }
+
+
+    @keyframes heartFloat {
+
+      from {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(0.8);
+
+      }
+
+      to {
+
+        opacity: 0;
+
+        transform:
+          translateY(-60px)
+          scale(1.2);
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="page">
+
+
+    <section class="content">
+
+
+      <div class="small-title">
+
+        A LITTLE GUARDIAN ♡
+
+      </div>
+
+
+      <h1>
+
+        เดี๋ยวก่อนนะ...
+
+      </h1>
+
+
+      <div class="intro">
+
+        ก่อนจะไปต่อ<br>
+
+        มีใครบางคนอยากตรวจสอบก่อนค่ะ
+
+      </div>
+
+
+      <!-- =========================
+           WALKING CAT
+      ========================= -->
+
+      <div class="walking-area">
+
+
+        <!--
+          เปลี่ยนชื่อ cat-waving.gif
+          เป็นชื่อไฟล์แมวอ้วนสามสีของเรา
+        -->
+
+        <img
+          class="walking-cat"
+          src="cat-waving.gif"
+          alt="แมวอ้วนสามสี"
+        >
+
+
+        <div class="hello">
+
+          HELLO ♡
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =========================
+           MESSAGES
+      ========================= -->
+
+      <div class="messages">
+
+
+        <div
+          class="message"
+          id="message1"
+        >
+
+          🐱 แมวตรวจสอบแล้ว... ผ่านค่ะ ♡
+
+        </div>
+
+
+        <div
+          class="message"
+          id="message2"
+        >
+
+          ความอ้วมอยู่ในระดับน่ารัก
+
+        </div>
+
+
+        <div
+          class="message"
+          id="message3"
+        >
+
+          วันนี้อนุญาตให้เป็นเด็กอ้วนได้ 1 วัน
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =========================
+           PET GIF
+      ========================= -->
+
+      <div
+        class="pet-section"
+        id="petSection"
+      >
+
+
+        <div class="point-text">
+
+          กรุณาเกาพุงแมวตรงนี้ 5 ครั้งเพื่อไปต่อ ♡
+
+        </div>
+
+
+        <div class="arrow">
+
+          ↓
+
+        </div>
+
+
+        <div
+          class="gif-wrapper"
+          id="gifWrapper"
+        >
+
+          <iframe
+            src="https://tenor.com/i7V4nHFbXoH.gif"
+            title="แมวให้เกาพุง"
+            loading="lazy"
+          ></iframe>
+
+        </div>
+
+
+        <div class="tap-hint">
+
+          แตะที่แมวได้เลย ♡
+
+        </div>
+
+
+        <div class="counter">
+
+          เกาพุงแล้ว
+
+          <span
+            class="counter-number"
+            id="count"
+          >
+            0
+          </span>
+
+          / 5
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =========================
+           DONE
+      ========================= -->
+
+      <div
+        class="done"
+        id="done"
+      >
+
+        🐱 พุงได้รับการเกาครบแล้วค่ะ ♡<br>
+
+        แมวสามสีอนุมัติให้ไปต่อได้แล้ว~
+
+      </div>
+
+
+      <button
+        class="continue-button"
+        id="continueButton"
+        onclick="goNext()"
+      >
+
+        แมวอนุมัติแล้ว ไปต่อ ♡
+
+      </button>
+
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const message1 =
+      document.getElementById(
+        "message1"
+      );
+
+    const message2 =
+      document.getElementById(
+        "message2"
+      );
+
+    const message3 =
+      document.getElementById(
+        "message3"
+      );
+
+    const petSection =
+      document.getElementById(
+        "petSection"
+      );
+
+    const gifWrapper =
+      document.getElementById(
+        "gifWrapper"
+      );
+
+    const count =
+      document.getElementById(
+        "count"
+      );
+
+    const done =
+      document.getElementById(
+        "done"
+      );
+
+    const continueButton =
+      document.getElementById(
+        "continueButton"
+      );
+
+
+    let petCount = 0;
+
+
+    /* =========================
+       STORY TIMING
+    ========================= */
+
+
+    /*
+      แมวเดินเข้ามา
+      ↓
+      HELLO
+      ↓
+      ข้อความ
+    */
+
+
+    setTimeout(function() {
+
+      message1.classList.add("show");
+
+    }, 3500);
+
+
+    setTimeout(function() {
+
+      message2.classList.add("show");
+
+    }, 4200);
+
+
+    setTimeout(function() {
+
+      message3.classList.add("show");
+
+    }, 4900);
+
+
+    /*
+      หลังพูดจบ
+      ให้ชี้ไปที่ GIF
+    */
+
+    setTimeout(function() {
+
+      petSection.classList.add("show");
+
+    }, 5700);
+
+
+
+    /* =========================
+       TAP GIF
+    ========================= */
+
+    gifWrapper.addEventListener(
+      "click",
+      function(event) {
+
+
+        if (petCount >= 5) {
+
+          return;
+
+        }
+
+
+        petCount++;
+
+
+        count.innerText =
+          petCount;
+
+
+        /*
+          เด้งกรอบเบา ๆ
+        */
+
+        gifWrapper.style.transform =
+          "scale(0.94)";
+
+
+        setTimeout(function() {
+
+          gifWrapper.style.transform =
+            "scale(1)";
+
+        }, 120);
+
+
+        /*
+          หัวใจ
+        */
+
+        createHeart(
+          event.clientX,
+          event.clientY
+        );
+
+
+        /*
+          ครบ 5 ครั้ง
+        */
+
+        if (petCount === 5) {
+
+
+          done.classList.add(
+            "show"
+          );
+
+
+          continueButton.classList.add(
+            "show"
+          );
+
+
+          count.innerText =
+            "5 ✓";
+
+
+        }
+
+      }
+    );
+
+
+
+    /* =========================
+       HEART
+    ========================= */
+
+    function createHeart(x, y) {
+
+
+      const heart =
+        document.createElement(
+          "div"
+        );
+
+
+      heart.className =
+        "heart";
+
+
+      heart.innerText =
+        "♡";
+
+
+      heart.style.left =
+        x + "px";
+
+
+      heart.style.top =
+        y + "px";
+
+
+      document.body.appendChild(
+        heart
+      );
+
+
+      setTimeout(function() {
+
+        heart.remove();
+
+      }, 900);
+
+    }
+
+
+
+    /* =========================
+       NEXT
+    ========================= */
+
+    function goNext() {
+
+
+      window.location.href =
+        "./birthday.html";
+
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
