@@ -34,14 +34,12 @@
   <style>
 
     :root {
-
       --bg: #FFF7F5;
       --pink: #D99AA5;
       --rose: #8F5F68;
       --text: #594348;
       --blush: #F2D6D9;
       --card: #FFFCFA;
-
     }
 
 
@@ -177,7 +175,12 @@
       border-radius: 38px;
 
       box-shadow:
-        0 25px 50px rgba(89, 67, 72, 0.25);
+        0 25px 50px rgba(
+          89,
+          67,
+          72,
+          0.25
+        );
 
       transform: rotate(-2deg);
 
@@ -351,9 +354,17 @@
 
       height: 190px;
 
-      border: 2px solid rgba(217, 154, 165, 0.65);
+      border:
+        2px solid
+        rgba(
+          217,
+          154,
+          165,
+          0.65
+        );
 
-      border-radius: 48% 48% 45% 45%;
+      border-radius:
+        48% 48% 45% 45%;
 
       display: flex;
 
@@ -514,7 +525,8 @@
       cursor: pointer;
 
       box-shadow:
-        0 8px 20px rgba(
+        0 8px 20px
+        rgba(
           143,
           95,
           104,
@@ -562,7 +574,7 @@
 
       inset: 0;
 
-      z-index: 999;
+      z-index: 9999;
 
       display: none;
 
@@ -573,7 +585,12 @@
       padding: 20px;
 
       background:
-        rgba(89, 67, 72, 0.35);
+        rgba(
+          89,
+          67,
+          72,
+          0.35
+        );
 
       backdrop-filter: blur(6px);
 
@@ -588,12 +605,15 @@
 
 
     /* =========================
-       POPUP CARD
+       POPUP
     ========================= */
 
     .popup {
 
-      width: min(90vw, 360px);
+      width: min(
+        90vw,
+        360px
+      );
 
       padding: 18px;
 
@@ -602,7 +622,8 @@
       background: var(--card);
 
       border:
-        1px solid var(--blush);
+        1px solid
+        var(--blush);
 
       box-shadow:
         0 25px 70px
@@ -621,10 +642,6 @@
     }
 
 
-    /* =========================
-       POPUP IMAGE
-    ========================= */
-
     .popup-image {
 
       width: 100%;
@@ -638,7 +655,8 @@
       border-radius: 21px;
 
       border:
-        1px solid var(--blush);
+        1px solid
+        var(--blush);
 
     }
 
@@ -658,7 +676,9 @@
 
       margin-top: 5px;
 
-      font-family: "Gowun Batang", serif;
+      font-family:
+        "Gowun Batang",
+        serif;
 
       font-size: 22px;
 
@@ -677,10 +697,6 @@
 
     }
 
-
-    /* =========================
-       POPUP BUTTON
-    ========================= */
 
     .popup-button {
 
@@ -784,7 +800,7 @@
 
 
   <!-- =========================
-       MAIN PAGE
+       MAIN
   ========================= -->
 
   <main class="page">
@@ -884,6 +900,7 @@
       <!-- SCAN BUTTON -->
 
       <button
+        type="button"
         class="scan-button"
         id="scanButton"
         onclick="scanFace()"
@@ -907,7 +924,6 @@
     class="popup-overlay"
     id="popupOverlay"
   >
-
 
     <div class="popup">
 
@@ -947,6 +963,7 @@
 
 
       <button
+        type="button"
         class="popup-button"
         onclick="nextPage()"
       >
@@ -988,6 +1005,8 @@
         "SCANNING FACE...";
 
 
+      /* หลังจาก 1.2 วินาที */
+
       setTimeout(function() {
 
         status.innerText =
@@ -996,6 +1015,8 @@
       }, 1200);
 
 
+      /* หลังจาก 2.5 วินาที เปิด Popup */
+
       setTimeout(function() {
 
         status.innerText =
@@ -1003,7 +1024,6 @@
 
         button.style.display =
           "none";
-
 
         document
           .getElementById(
@@ -1019,13 +1039,13 @@
 
 
     /* =========================
-       NEXT PAGE
+       ไปหน้าแมวเท่านั้น
     ========================= */
 
     function nextPage() {
 
       window.location.href =
-        "./cat.html";
+        "cat.html";
 
     }
 
