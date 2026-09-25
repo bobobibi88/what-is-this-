@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 
   <meta charset="UTF-8">
@@ -101,7 +102,7 @@
 
       align-items: center;
 
-      padding: 35px 20px;
+      padding: 35px 20px 60px;
 
     }
 
@@ -168,6 +169,15 @@
 
       color: var(--text);
 
+      transition: opacity 0.4s ease;
+
+    }
+
+
+    .instruction.hide {
+
+      opacity: 0;
+
     }
 
 
@@ -188,6 +198,9 @@
       cursor: pointer;
 
       perspective: 1000px;
+
+      transition:
+        margin-bottom 1s ease;
 
     }
 
@@ -214,7 +227,9 @@
     }
 
 
-    /* ด้านหน้าซอง */
+    /* =========================
+       ENVELOPE FRONT
+    ========================= */
 
     .envelope-front {
 
@@ -236,8 +251,6 @@
 
     }
 
-
-    /* สามเหลี่ยมหน้าซอง */
 
     .envelope-front::before {
 
@@ -262,7 +275,9 @@
     }
 
 
-    /* ฝากระดาษซอง */
+    /* =========================
+       FLAP
+    ========================= */
 
     .flap {
 
@@ -292,7 +307,9 @@
     }
 
 
-    /* หัวใจ */
+    /* =========================
+       HEART SEAL
+    ========================= */
 
     .seal {
 
@@ -316,7 +333,7 @@
 
 
     /* =========================
-       LETTER
+       LETTER PAPER
     ========================= */
 
     .letter-paper {
@@ -362,7 +379,9 @@
 
 
     .letter-paper::-webkit-scrollbar {
+
       width: 4px;
+
     }
 
 
@@ -466,12 +485,91 @@
 
 
     /* =========================
-       HIDDEN INSTRUCTION
+       NEXT BUTTON
     ========================= */
 
-    .instruction.hide {
+    .next-box {
+
+      margin-top: 25px;
+
+      text-align: center;
 
       opacity: 0;
+
+      visibility: hidden;
+
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s ease;
+
+    }
+
+
+    .next-box.show {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      transform: translateY(0);
+
+    }
+
+
+    .next-button {
+
+      border: 1px solid #E3BFC5;
+
+      background: var(--paper);
+
+      color: var(--rose);
+
+      padding: 13px 30px;
+
+      border-radius: 999px;
+
+      font-family: 'Mali', cursive;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 20px rgba(143, 95, 104, 0.08);
+
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+
+    }
+
+
+    .next-button:hover {
+
+      background: var(--blush);
+
+      transform: translateY(-3px);
+
+    }
+
+
+    .next-button:active {
+
+      transform: scale(0.96);
+
+    }
+
+
+    .next-note {
+
+      margin-top: 10px;
+
+      font-size: 11px;
+
+      color: #B58A91;
 
     }
 
@@ -504,19 +602,24 @@
     @keyframes littleBounce {
 
       0% {
+
         transform: scale(1);
+
       }
 
       50% {
+
         transform: scale(1.02);
+
       }
 
       100% {
+
         transform: scale(1);
+
       }
 
     }
-
 
   </style>
 
@@ -528,33 +631,44 @@
 
   <main class="page">
 
-
     <section class="content">
 
 
-      <!-- หัวข้อ -->
+      <!-- =========================
+           INTRO
+      ========================= -->
 
       <div class="intro">
 
         <div class="small">
+
           A LITTLE LETTER FOR YOU ♡
+
         </div>
 
+
         <h1>
+
           มีจดหมายถึงเธอค่ะ
+
         </h1>
+
 
         <div
           class="instruction"
           id="instruction"
         >
+
           กดที่ซองดูสิ ♡
+
         </div>
 
       </div>
 
 
-      <!-- Envelope -->
+      <!-- =========================
+           ENVELOPE
+      ========================= -->
 
       <div
         class="envelope-area"
@@ -563,12 +677,17 @@
       >
 
 
-        <!-- กระดาษ -->
+        <!-- LETTER -->
 
-        <article class="letter-paper">
+        <article
+          class="letter-paper"
+          id="letterPaper"
+        >
 
           <h2>
+
             ถึงเด็ก 21 ของเค้า ♡
+
           </h2>
 
 
@@ -618,7 +737,8 @@
 
             แต่ไม่ว่าจะเป็นวันไหน
 
-            เธอก็เก่งมาก ๆ แล้วนะคะ
+            เธอก็เก่งมาก ๆ แล้ว
+            เราบอกเธอมาตลอดว่าเธอเก่ง
             ที่เดินทางมาถึงวันนี้ได้ ♡
 
           </p>
@@ -636,7 +756,8 @@
 
             อยากกอดก็มากอดกัน
             อยากงอแงก็งอแงได้เลย
-            เค้าอนุญาตค่ะ 555
+            อยากทำไรก็ทำได้เลย
+            อยากบ่น อยากกิน อยากเที่ยว
 
           </p>
 
@@ -683,7 +804,7 @@
         </article>
 
 
-        <!-- ซอง -->
+        <!-- ENVELOPE -->
 
         <div class="envelope">
 
@@ -695,7 +816,9 @@
 
 
           <div class="seal">
+
             ♡
+
           </div>
 
 
@@ -705,37 +828,149 @@
       </div>
 
 
-    </section>
+      <!-- =========================
+           NEXT BUTTON
+      ========================= -->
 
+      <div
+        class="next-box"
+        id="nextBox"
+      >
+
+        <button
+          class="next-button"
+          onclick="goToMusic()"
+        >
+
+          อ่านจบแล้ว ♡
+
+        </button>
+
+
+        <div class="next-note">
+
+          มีเพลงหนึ่งเพลงอยากให้เธอฟังนะ
+
+        </div>
+
+      </div>
+
+
+    </section>
 
   </main>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
+
+
+    const envelope =
+      document.getElementById("envelopeArea");
+
+
+    const instruction =
+      document.getElementById("instruction");
+
+
+    const letterPaper =
+      document.getElementById("letterPaper");
+
+
+    const nextBox =
+      document.getElementById("nextBox");
+
+
+    let letterOpened = false;
+
 
     function openLetter() {
 
-      const envelope =
-        document.getElementById("envelopeArea");
 
-      const instruction =
-        document.getElementById("instruction");
+      if (letterOpened) {
 
+        return;
+
+      }
+
+
+      letterOpened = true;
+
+
+      envelope.classList.add("open");
+
+
+      instruction.classList.add("hide");
+
+
+      /*
+        รอให้กระดาษเปิดออกก่อน
+        แล้วค่อยให้สามารถอ่านได้
+      */
+
+      setTimeout(function() {
+
+        letterPaper.scrollTop = 0;
+
+      }, 1000);
+
+
+      /*
+        ตรวจว่าผู้อ่านเลื่อนถึง
+        ท้ายจดหมายหรือยัง
+      */
+
+      letterPaper.addEventListener(
+        "scroll",
+        checkLetterEnd
+      );
+
+    }
+
+
+    function checkLetterEnd() {
+
+
+      const scrollPosition =
+        letterPaper.scrollTop +
+        letterPaper.clientHeight;
+
+
+      const scrollHeight =
+        letterPaper.scrollHeight;
+
+
+      /*
+        เหลือไม่เกิน 15px
+        ถือว่าอ่านจบแล้ว
+      */
 
       if (
-        !envelope.classList.contains("open")
+        scrollPosition >=
+        scrollHeight - 15
       ) {
 
-        envelope.classList.add("open");
-
-        instruction.classList.add("hide");
+        nextBox.classList.add("show");
 
       }
 
     }
 
+
+    function goToMusic() {
+
+      window.location.href =
+        "music.html";
+
+    }
+
+
   </script>
 
 
 </body>
+
 </html>
