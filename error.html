@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>404 ♡</title>
+
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --bg: #FFF7F5;
+      --dark: #252124;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --light: #FFFCFA;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      width: 100%;
+      min-height: 100%;
+
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      overflow: hidden;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+      font-family: "Mali", cursive;
+
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .page {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 100vh;
+
+      overflow: hidden;
+
+    }
+
+
+    /* =========================
+       ERROR SCREEN
+    ========================= */
+
+    .error-screen {
+
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      text-align: center;
+
+      padding: 25px;
+
+      background: var(--bg);
+
+      transition:
+        opacity 1s ease;
+
+      z-index: 10;
+
+    }
+
+
+    .error-content {
+
+      animation:
+        fadeIn 1s ease;
+
+    }
+
+
+    .error-code {
+
+      font-family:
+        "Quicksand",
+        sans-serif;
+
+      font-size: 18px;
+
+      letter-spacing: 2px;
+
+      color: #D66A76;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .error-title {
+
+      font-family:
+        "Gowun Batang",
+        serif;
+
+      font-size: 28px;
+
+      color: var(--rose);
+
+    }
+
+
+    .error-text {
+
+      margin-top: 18px;
+
+      font-size: 15px;
+
+      line-height: 2;
+
+    }
+
+
+    .loading {
+
+      margin-top: 22px;
+
+      font-size: 14px;
+
+      color: var(--pink);
+
+      animation:
+        blink 1.3s infinite;
+
+    }
+
+
+    /* =========================
+       FLASHLIGHT
+    ========================= */
+
+    .flashlight-text {
+
+      display: none;
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 100%;
+
+      text-align: center;
+
+      font-size: 16px;
+
+      line-height: 2;
+
+      z-index: 20;
+
+    }
+
+
+    .flashlight {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 50%;
+
+      width: 40px;
+
+      height: 40px;
+
+      transform:
+        translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          #FFFBEF 0%,
+          #FFF2C8 25%,
+          rgba(255,242,200,0.25) 55%,
+          transparent 72%
+        );
+
+      box-shadow:
+        0 0 60px
+        35px rgba(
+          255,
+          242,
+          200,
+          0.3
+        );
+
+      opacity: 0;
+
+      z-index: 15;
+
+      transition:
+        width 1.5s ease,
+        height 1.5s ease,
+        opacity 1s ease;
+
+    }
+
+
+    .flashlight.show {
+
+      opacity: 1;
+
+      width: 280px;
+
+      height: 280px;
+
+    }
+
+
+    /* =========================
+       CAT SCENE
+    ========================= */
+
+    .cat-scene {
+
+      position: absolute;
+
+      inset: 0;
+
+      display: none;
+
+      background:
+        #242022;
+
+      z-index: 5;
+
+    }
+
+
+    .cat-scene.show {
+
+      display: block;
+
+      animation:
+        sceneIn 1.2s ease;
+
+    }
+
+
+    /* flashlight glow */
+
+    .glow {
+
+      position: absolute;
+
+      width: 280px;
+
+      height: 280px;
+
+      left: 50%;
+
+      top: 45%;
+
+      transform:
+        translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(
+            255,
+            248,
+            215,
+            0.9
+          ) 0%,
+          rgba(
+            255,
+            248,
+            215,
+            0.35
+          ) 35%,
+          transparent 70%
+        );
+
+      opacity: 0;
+
+      animation:
+        lightOn 1.8s ease forwards;
+
+    }
+
+
+    /* =========================
+       CAT
+    ========================= */
+
+    .cat {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 44%;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0.7);
+
+      width: 170px;
+
+      opacity: 0;
+
+      animation:
+        catAppear 1.5s
+        1.4s
+        ease forwards;
+
+      z-index: 4;
+
+    }
+
+
+    .cat img {
+
+      width: 100%;
+
+      display: block;
+
+      filter:
+        drop-shadow(
+          0 15px 18px
+          rgba(0,0,0,0.18)
+        );
+
+    }
+
+
+    /* =========================
+       CAT TEXT
+    ========================= */
+
+    .cat-text {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 17%;
+
+      transform:
+        translateX(-50%);
+
+      width: 90%;
+
+      text-align: center;
+
+      color: #FFF8F5;
+
+      font-size: 16px;
+
+      line-height: 2;
+
+      opacity: 0;
+
+      animation:
+        textAppear 1s
+        3s
+        ease forwards;
+
+      z-index: 10;
+
+    }
+
+
+    .cat-text strong {
+
+      font-family:
+        "Gowun Batang",
+        serif;
+
+      font-size: 22px;
+
+      font-weight: 400;
+
+    }
+
+
+    /* =========================
+       DOOR
+    ========================= */
+
+    .door {
+
+      position: absolute;
+
+      right: 8%;
+
+      bottom: 9%;
+
+      width: 82px;
+
+      height: 110px;
+
+      border-radius:
+        8px 8px 3px 3px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #FFF0F4,
+          #D99AA5
+        );
+
+      border:
+        3px solid
+        rgba(
+          255,
+          235,
+          240,
+          0.9
+        );
+
+      box-shadow:
+        0 0 30px
+        rgba(
+          255,
+          192,
+          210,
+          0.5
+        );
+
+      opacity: 0;
+
+      transform:
+        translateX(50px);
+
+      animation:
+        doorAppear 1s
+        4.8s
+        ease forwards;
+
+      z-index: 3;
+
+    }
+
+
+    .door::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 0;
+
+      width: 3px;
+
+      height: 100%;
+
+      background:
+        rgba(
+          143,
+          95,
+          104,
+          0.15
+        );
+
+    }
+
+
+    .door-knob {
+
+      position: absolute;
+
+      right: 12px;
+
+      top: 55%;
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--rose);
+
+    }
+
+
+    /* =========================
+       FINAL TEXT
+    ========================= */
+
+    .door-text {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 4%;
+
+      transform:
+        translateX(-50%);
+
+      width: 90%;
+
+      text-align: center;
+
+      color: #FFF8F5;
+
+      font-size: 15px;
+
+      line-height: 2;
+
+      opacity: 0;
+
+      animation:
+        finalText 1s
+        6s
+        ease forwards;
+
+      z-index: 10;
+
+    }
+
+
+    .next-button {
+
+      margin-top: 12px;
+
+      padding: 11px 25px;
+
+      border: 1px solid
+        var(--pink);
+
+      border-radius: 999px;
+
+      background:
+        rgba(
+          255,
+          252,
+          250,
+          0.95
+        );
+
+      color: var(--rose);
+
+      font-family:
+        "Mali",
+        cursive;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      opacity: 0;
+
+      animation:
+        buttonAppear 1s
+        6.5s
+        ease forwards;
+
+    }
+
+
+    .next-button:active {
+
+      transform:
+        scale(0.96);
+
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(12px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes sceneIn {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes lightOn {
+
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes catAppear {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(0.65);
+
+      }
+
+      70% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1.05);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1);
+
+      }
+
+    }
+
+
+    @keyframes textAppear {
+
+      from {
+        opacity: 0;
+        transform:
+          translate(-50%, 10px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translate(-50%, 0);
+      }
+
+    }
+
+
+    @keyframes doorAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateX(50px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateX(0);
+
+      }
+
+    }
+
+
+    @keyframes finalText {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes buttonAppear {
+
+      from {
+        opacity: 0;
+        transform:
+          translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="page">
+
+
+    <!-- =========================
+         ERROR
+    ========================= -->
+
+    <section
+      class="error-screen"
+      id="errorScreen"
+    >
+
+      <div class="error-content">
+
+        <div class="error-code">
+
+          🔴 ERROR 404
+
+        </div>
+
+
+        <div class="error-title">
+
+          ไม่พบสติของเจ้าของเว็บ
+
+        </div>
+
+
+        <div class="error-text">
+
+          กรุณารอสักครู่…<br>
+
+          กำลังหาไฟฉาย 🔦
+
+        </div>
+
+
+        <div class="loading">
+
+          ……<br>
+          ……
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FLASHLIGHT
+    ========================= -->
+
+    <div
+      class="flashlight-text"
+      id="flashlightText"
+    >
+
+      🔦 เจอไฟแล้วค่ะ
+
+    </div>
+
+
+    <div
+      class="flashlight"
+      id="flashlight"
+    ></div>
+
+
+
+    <!-- =========================
+         CAT SCENE
+    ========================= -->
+
+    <section
+      class="cat-scene"
+      id="catScene"
+    >
+
+
+      <div class="glow"></div>
+
+
+      <!--
+        เปลี่ยนชื่อรูปตรงนี้ได้เลย
+        รูปแมว = IMG_0410.jpeg
+      -->
+
+      <div class="cat">
+
+        <img
+          src="IMG_0410.jpeg"
+          alt="แมวอ้วน"
+        >
+
+      </div>
+
+
+      <div class="cat-text">
+
+        🐱 เหมียว
+
+        <br><br>
+
+        <span>
+
+          ...
+
+        </span>
+
+        <br><br>
+
+        อ้าว
+
+        <br>
+
+        แมวก็ไม่รู้เหมือนกันค่ะ
+
+      </div>
+
+
+      <!-- =========================
+           DOOR
+      ========================= -->
+
+      <div class="door">
+
+        <div class="door-knob"></div>
+
+      </div>
+
+
+      <div class="door-text">
+
+        🐱 แต่ถ้าเป็นทางนี้...<br>
+
+        น่าจะใช่นะ
+
+        <br>
+
+        <span>
+
+          ก๊อก ก๊อก
+
+        </span>
+
+        <br>
+
+        <span>
+
+          พบทางไปต่อแล้ว ♡
+
+        </span>
+
+
+        <br>
+
+
+        <button
+          class="next-button"
+          onclick="nextPage()"
+        >
+
+          ตามแมวไป → ♡
+
+        </button>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <script>
+
+
+    /*
+      ลำดับเรื่อง
+
+      1. ERROR
+      2. ไฟฉาย
+      3. เจอแมว
+      4. แมวพูด
+      5. เจอประตู
+      6. ไปต่อ
+    */
+
+
+    setTimeout(function() {
+
+      document
+        .getElementById(
+          "errorScreen"
+        )
+        .style.opacity = "0";
+
+
+    }, 3500);
+
+
+
+    setTimeout(function() {
+
+      document
+        .getElementById(
+          "errorScreen"
+        )
+        .style.display = "none";
+
+
+      document
+        .getElementById(
+          "flashlight"
+        )
+        .classList.add(
+          "show"
+        );
+
+
+      document
+        .getElementById(
+          "flashlightText"
+        )
+        .style.display = "block";
+
+
+    }, 4500);
+
+
+
+    setTimeout(function() {
+
+      document
+        .getElementById(
+          "flashlightText"
+        )
+        .style.display = "none";
+
+
+      document
+        .getElementById(
+          "catScene"
+        )
+        .classList.add(
+          "show"
+        );
+
+
+    }, 6000);
+
+
+
+    function nextPage() {
+
+      /*
+        เปลี่ยนตรงนี้ถ้าหน้าถัดไป
+        ใช้ชื่อไฟล์อื่น
+      */
+
+      window.location.href =
+        "./birthday.html";
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
