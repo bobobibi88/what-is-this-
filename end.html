@@ -1,212 +1,1089 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>♡ The End ♡</title>
+  <meta charset="UTF-8">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Mali:wght@400;500;600&family=Quicksand:wght@400;500;600&display=swap');
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-:root {
-    --background: #FFF7F5;
-    --pink: #D99AA5;
-    --rose: #8F5F68;
-    --text: #594348;
-    --card: #FFFCFA;
-    --blush: #F2D6D9;
-    --gold: #D8B98A;
-}
+  <title>one last thing ♡</title>
 
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 20%, #ffffff 0, transparent 25%),
-        radial-gradient(circle at 80% 80%, #F2D6D9 0, transparent 28%),
-        var(--background);
+  <!-- =========================
+       FONTS
+  ========================= -->
 
-    color: var(--text);
-    font-family: 'Mali', sans-serif;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-    overflow: hidden;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
-.container {
-    width: 90%;
-    max-width: 430px;
-    text-align: center;
 
-    animation: fadeIn 2s ease;
-}
+  <style>
 
-.small {
-    font-family: 'Gowun Batang', serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: var(--rose);
-    margin-bottom: 18px;
-}
+    :root {
 
-.heart {
-    font-size: 30px;
-    color: var(--pink);
-    animation: heartbeat 2s infinite;
-    margin-bottom: 8px;
-}
+      --bg: #FFF7F5;
+      --paper: #FFFDFC;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --blush: #F2D6D9;
 
-.title {
-    font-family: 'Gowun Batang', serif;
-    font-size: 42px;
-    letter-spacing: 5px;
-    color: var(--rose);
-    margin: 0;
-}
+    }
 
-.line {
-    width: 80px;
-    height: 1px;
-    background: var(--gold);
-    margin: 22px auto;
-}
 
-.message {
-    font-size: 15px;
-    line-height: 2;
-    color: var(--text);
-    margin: 0 auto;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.message strong {
-    color: var(--rose);
-    font-weight: 600;
-}
 
-.final {
-    margin-top: 28px;
-    font-family: 'Gowun Batang', serif;
-    font-size: 15px;
-    color: var(--rose);
-}
+    html,
+    body {
 
-.end {
-    margin-top: 35px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: #B58A91;
-}
+      margin: 0;
+      padding: 0;
 
-.star {
-    position: absolute;
-    color: #D8B98A;
-    opacity: 0.45;
-    animation: float 5s ease-in-out infinite;
-}
+      width: 100%;
 
-.s1 {
-    top: 15%;
-    left: 12%;
-}
+      min-height: 100%;
 
-.s2 {
-    top: 25%;
-    right: 13%;
-    animation-delay: 1s;
-}
+    }
 
-.s3 {
-    bottom: 18%;
-    left: 18%;
-    animation-delay: 2s;
-}
 
-.s4 {
-    bottom: 12%;
-    right: 15%;
-    animation-delay: 3s;
-}
+    body {
 
-@keyframes fadeIn {
-    from {
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          #FFFDFB 0%,
+          var(--bg) 60%,
+          #F9EDEF 100%
+        );
+
+      color: var(--text);
+
+      font-family: "Mali", cursive;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+
+      width: 100%;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      padding: 55px 18px 100px;
+
+    }
+
+
+    .content {
+
+      width: 100%;
+
+      max-width: 440px;
+
+      text-align: center;
+
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+
+      animation: fadeIn 1.2s ease;
+
+      margin-bottom: 35px;
+
+    }
+
+
+    .tiny {
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .intro h1 {
+
+      margin: 0;
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 28px;
+
+      font-weight: 400;
+
+      color: var(--rose);
+
+    }
+
+
+    .intro p {
+
+      margin-top: 12px;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+    }
+
+
+    /* =========================
+       PRINTER
+    ========================= */
+
+    .printer {
+
+      width: 230px;
+
+      height: 115px;
+
+      margin: 0 auto;
+
+      position: relative;
+
+      background: #E8DCDD;
+
+      border-radius: 22px 22px 13px 13px;
+
+      box-shadow:
+        0 15px 35px
+        rgba(89,67,72,0.18);
+
+      animation: printerIn 1s ease;
+
+    }
+
+
+    .printer-top {
+
+      position: absolute;
+
+      top: -13px;
+
+      left: 18px;
+
+      right: 18px;
+
+      height: 38px;
+
+      border-radius: 14px 14px 8px 8px;
+
+      background: #D8CACC;
+
+    }
+
+
+    .printer-screen {
+
+      position: absolute;
+
+      left: 22px;
+
+      top: 25px;
+
+      width: 42px;
+
+      height: 25px;
+
+      border-radius: 7px;
+
+      background: #8F5F68;
+
+      box-shadow:
+        inset 0 0 0 5px #C7B5B8;
+
+    }
+
+
+    .printer-light {
+
+      position: absolute;
+
+      right: 22px;
+
+      top: 34px;
+
+      width: 9px;
+
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #D99AA5;
+
+      box-shadow:
+        0 0 12px rgba(217,154,165,0.7);
+
+      animation: blink 1.5s infinite;
+
+    }
+
+
+    .printer-slot {
+
+      position: absolute;
+
+      left: 28px;
+
+      right: 28px;
+
+      bottom: 18px;
+
+      height: 12px;
+
+      border-radius: 8px;
+
+      background: #756467;
+
+    }
+
+
+    .printer-paper {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 8px;
+
+      width: 165px;
+
+      height: 20px;
+
+      transform:
+        translateX(-50%);
+
+      background: white;
+
+      border-radius: 2px;
+
+      z-index: -1;
+
+      animation: paperReady 1.5s ease forwards;
+
+    }
+
+
+    /* =========================
+       STATUS
+    ========================= */
+
+    .printing-text {
+
+      margin-top: 22px;
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      color: var(--rose);
+
+    }
+
+
+    .dots::after {
+
+      content: "";
+
+      animation:
+        dots 1.5s infinite;
+
+    }
+
+
+    /* =========================
+       PHOTO STRIP
+    ========================= */
+
+    .photo-strip {
+
+      width: 100%;
+
+      margin-top: 35px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 22px;
+
+    }
+
+
+    .photo {
+
+      width: 285px;
+
+      padding: 12px 12px 27px;
+
+      background: var(--paper);
+
+      box-shadow:
+        0 10px 30px
+        rgba(89,67,72,0.13);
+
+      opacity: 0;
+
+      transform:
+        translateY(-35px)
+        rotate(var(--rotation));
+
+      animation:
+        photoDrop 0.9s ease forwards;
+
+    }
+
+
+    .photo:nth-child(1) {
+      --rotation: -2deg;
+      animation-delay: 1.2s;
+    }
+
+
+    .photo:nth-child(2) {
+      --rotation: 2deg;
+      animation-delay: 2.2s;
+    }
+
+
+    .photo:nth-child(3) {
+      --rotation: -1deg;
+      animation-delay: 3.2s;
+    }
+
+
+    .photo:nth-child(4) {
+      --rotation: 2.5deg;
+      animation-delay: 4.2s;
+    }
+
+
+    .photo:nth-child(5) {
+      --rotation: -2.5deg;
+      animation-delay: 5.2s;
+    }
+
+
+    .photo:nth-child(6) {
+      --rotation: 1deg;
+      animation-delay: 6.2s;
+    }
+
+
+    .photo img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =========================
+       SMALL PHOTO CAPTION
+    ========================= */
+
+    .photo-caption {
+
+      margin-top: 9px;
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: 1.5px;
+
+      color: #A98B91;
+
+    }
+
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .message {
+
+      margin-top: 65px;
+
+      padding: 0 18px;
+
+      opacity: 0;
+
+      animation:
+        messageIn 1.5s ease forwards;
+
+      animation-delay: 7.4s;
+
+    }
+
+
+    .message-line {
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 17px;
+
+      line-height: 2.15;
+
+      color: var(--text);
+
+    }
+
+
+    .message-line strong {
+
+      color: var(--rose);
+
+      font-weight: 700;
+
+    }
+
+
+    .message-space {
+
+      height: 22px;
+
+    }
+
+
+    .message-small {
+
+      font-size: 15px;
+
+      line-height: 2.1;
+
+    }
+
+
+    /* =========================
+       FINAL
+    ========================= */
+
+    .final {
+
+      margin-top: 75px;
+
+      padding-bottom: 30px;
+
+      opacity: 0;
+
+      animation:
+        finalIn 2s ease forwards;
+
+      animation-delay: 10s;
+
+    }
+
+
+    .final-heart {
+
+      font-size: 22px;
+
+      color: var(--pink);
+
+      animation:
+        heartbeat 1.8s infinite;
+
+    }
+
+
+    .final-text {
+
+      margin-top: 15px;
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 26px;
+
+      color: var(--rose);
+
+      letter-spacing: 0.5px;
+
+    }
+
+
+    .final-sub {
+
+      margin-top: 8px;
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 3px;
+
+      color: #B28F96;
+
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+
         opacity: 0;
-        transform: translateY(15px);
-    }
 
-    to {
+        transform:
+          translateY(15px);
+
+      }
+
+      to {
+
         opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes heartbeat {
-    0%, 100% {
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes printerIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(20px)
+          scale(0.95);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    @keyframes paperReady {
+
+      from {
+
+        height: 0;
+
+      }
+
+      to {
+
+        height: 20px;
+
+      }
+
+    }
+
+
+    @keyframes photoDrop {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translateY(-35px)
+          rotate(0deg);
+
+      }
+
+      70% {
+
+        opacity: 1;
+
+        transform:
+          translateY(5px)
+          rotate(var(--rotation));
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          rotate(var(--rotation));
+
+      }
+
+    }
+
+
+    @keyframes messageIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(20px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes finalIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(15px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+
         transform: scale(1);
+
+      }
+
+      50% {
+
+        transform: scale(1.18);
+
+      }
+
     }
 
-    50% {
-        transform: scale(1.15);
-    }
-}
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
+    @keyframes blink {
+
+      0%,
+      100% {
+
+        opacity: 1;
+
+      }
+
+      50% {
+
+        opacity: 0.35;
+
+      }
+
     }
 
-    50% {
-        transform: translateY(-10px);
+
+    @keyframes dots {
+
+      0% {
+        content: "";
+      }
+
+      33% {
+        content: ".";
+      }
+
+      66% {
+        content: "..";
+      }
+
+      100% {
+        content: "...";
+      }
+
     }
-}
-</style>
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 400px) {
+
+      .photo {
+
+        width: 270px;
+
+      }
+
+      .message-line {
+
+        font-size: 16px;
+
+      }
+
+      .final-text {
+
+        font-size: 23px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-<div class="star s1">✦</div>
-<div class="star s2">⋆</div>
-<div class="star s3">✧</div>
-<div class="star s4">⋆</div>
 
-<div class="container">
+  <main class="page">
 
-    <div class="small">a little message before you go</div>
 
-    <div class="heart">♡</div>
+    <section class="content">
 
-    <h1 class="title">THE END</h1>
 
-    <div class="line"></div>
+      <!-- =========================
+           INTRO
+      ========================= -->
 
-    <p class="message">
-        ขอบคุณนะคะ<br>
-        ที่เข้ามาเป็นส่วนหนึ่งในชีวิตของกันและกัน<br><br>
+      <div class="intro">
 
-        ขอให้ปีที่ <strong>21</strong> ของเธอ<br>
-        เป็นปีที่มีแต่เรื่องดี ๆ เข้ามา<br>
-        ขอให้ยิ้มได้เยอะ ๆ<br>
-        และถ้าวันไหนเหนื่อยมาก ๆ<br>
-        ก็อย่าลืมพักบ้างนะ :)
-    </p>
+        <div class="tiny">
 
-    <div class="final">
-        สุขสันต์วันเกิดนะอ้วน ♡
-    </div>
+          ONE LAST THING
 
-    <div class="end">
-        — END OF THIS LITTLE GIFT —
-    </div>
+        </div>
 
-</div>
+
+        <h1>
+
+          ขอเก็บช่วงเวลานี้ไว้หน่อยนะ ♡
+
+        </h1>
+
+
+        <p>
+
+          กำลังรวบรวมความทรงจำ<br>
+
+          แป๊บนึงนะคับ...
+
+        </p>
+
+      </div>
+
+
+
+      <!-- =========================
+           PRINTER
+      ========================= -->
+
+      <div class="printer">
+
+        <div class="printer-top"></div>
+
+        <div class="printer-screen"></div>
+
+        <div class="printer-light"></div>
+
+        <div class="printer-slot"></div>
+
+        <div class="printer-paper"></div>
+
+      </div>
+
+
+      <div class="printing-text">
+
+        PRINTING MEMORIES<span class="dots"></span>
+
+      </div>
+
+
+
+      <!-- =========================
+           PHOTOS
+      ========================= -->
+
+      <div class="photo-strip">
+
+
+        <div class="photo">
+
+          <img
+            src="IMG_1814.jpeg"
+            alt="memory 1"
+          >
+
+          <div class="photo-caption">
+
+            MEMORY 01 ♡
+
+          </div>
+
+        </div>
+
+
+        <div class="photo">
+
+          <img
+            src="DSCN0741.jpeg"
+            alt="memory 2"
+          >
+
+          <div class="photo-caption">
+
+            MEMORY 02 ♡
+
+          </div>
+
+        </div>
+
+
+        <div class="photo">
+
+          <img
+            src="IMG_1872.jpeg"
+            alt="memory 3"
+          >
+
+          <div class="photo-caption">
+
+            MEMORY 03 ♡
+
+          </div>
+
+        </div>
+
+
+        <div class="photo">
+
+          <img
+            src="3583E803-D322-4841-8D31-EB8D8954915E.jpeg"
+            alt="memory 4"
+          >
+
+          <div class="photo-caption">
+
+            MEMORY 04 ♡
+
+          </div>
+
+        </div>
+
+
+        <div class="photo">
+
+          <img
+            src="IMG_1554.jpeg"
+            alt="memory 5"
+          >
+
+          <div class="photo-caption">
+
+            MEMORY 05 ♡
+
+          </div>
+
+        </div>
+
+
+        <div class="photo">
+
+          <img
+            src="IMG_4063.png"
+            alt="final memory"
+          >
+
+          <div class="photo-caption">
+
+            ALWAYS ♡
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           MESSAGE
+      ========================= -->
+
+      <div class="message">
+
+
+        <div class="message-line">
+
+          ตั้งแต่ <strong>I เจอ U</strong>,<br>
+
+          <strong>U คือ standard ใหม่ของเราเลยนะ</strong>
+
+        </div>
+
+
+        <div class="message-space"></div>
+
+
+        <div class="message-line">
+
+          อนาคตก็หวังว่าจะได้อวยพรวันเกิดเธอไปเรื่อย ๆ<br>
+
+          และพากันไปเที่ยว ไปถ่ายรูป<br>
+
+          ไปทำอะไรที่อยากทำด้วยกันอีกเยอะแยะ
+
+        </div>
+
+
+        <div class="message-space"></div>
+
+
+        <div class="message-line">
+
+          ขอบคุณที่คอยซัพพอร์ตกันมาตลอด ๆ
+
+        </div>
+
+
+        <div class="message-space"></div>
+
+
+        <div class="message-line message-small">
+
+          ขอให้เป็น <strong>21 ที่ดี ♡</strong><br>
+
+          ยิ้มเยอะ ๆ มีความสุขมาก ๆ<br>
+
+          ฝันดี หัวเราะบ่อย ๆ<br>
+
+          ชีวิตก้าวหน้าและเจอแต่เรื่องดี ๆ
+
+        </div>
+
+
+        <div class="message-space"></div>
+
+
+        <div class="message-line">
+
+          เราภูมิใจในตัวแกมาตลอดนะคับ
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           FINAL
+      ========================= -->
+
+      <div class="final">
+
+
+        <div class="final-heart">
+
+          ♡
+
+        </div>
+
+
+        <div class="final-text">
+
+          love you darling ♡
+
+        </div>
+
+
+        <div class="final-sub">
+
+          ALWAYS & FOREVER
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+  </main>
+
 
 </body>
+
 </html>
