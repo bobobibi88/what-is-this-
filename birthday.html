@@ -26,7 +26,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -163,7 +163,6 @@
       position: absolute;
 
       left: 50%;
-
       top: 43%;
 
       transform:
@@ -340,13 +339,7 @@
 
         opacity: 0;
 
-        transform:
-          translate(
-            calc(
-              (var(--x, 1) * 20px)
-            ),
-            -35px
-          );
+        transform: translateY(-35px);
 
       }
 
@@ -408,7 +401,7 @@
 
 
     /* =========================
-       MAIN BIRTHDAY SCENE
+       BIRTHDAY SCENE
     ========================= */
 
     .birthday-scene {
@@ -449,22 +442,22 @@
 
 
     /* =========================
-       LITTLE LIGHT
+       LIGHT
     ========================= */
 
     .light-glow {
 
       position: absolute;
 
-      width: 360px;
-      height: 360px;
+      width: 390px;
+      height: 390px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          rgba(255,245,206,0.85),
+          rgba(255,245,206,0.9),
           rgba(255,245,206,0) 70%
         );
 
@@ -486,7 +479,7 @@
 
 
     /* =========================
-       BUBBLE MESSAGE
+       BUBBLES
     ========================= */
 
     .bubble {
@@ -497,12 +490,8 @@
 
       border-radius: 999px;
 
-      background: rgba(
-        255,
-        252,
-        250,
-        0.92
-      );
+      background:
+        rgba(255,252,250,0.94);
 
       border:
         1px solid var(--blush);
@@ -511,12 +500,7 @@
 
       box-shadow:
         0 10px 30px
-        rgba(
-          143,
-          95,
-          104,
-          0.12
-        );
+        rgba(143,95,104,0.12);
 
       font-family:
         "Quicksand",
@@ -528,23 +512,18 @@
 
       opacity: 0;
 
-      transform:
-        translateY(12px)
-        scale(0.9);
-
     }
 
 
     .bubble.one {
 
       top: 15%;
-
       left: 50%;
 
       transform:
         translateX(-50%)
         translateY(12px)
-        scale(0.9);
+        scale(.9);
 
     }
 
@@ -552,13 +531,12 @@
     .bubble.two {
 
       top: 23%;
-
       left: 50%;
 
       transform:
         translateX(-50%)
         translateY(12px)
-        scale(0.9);
+        scale(.9);
 
     }
 
@@ -566,7 +544,7 @@
     .bubble.show {
 
       animation:
-        bubbleIn 0.8s ease forwards;
+        bubbleIn .8s ease forwards;
 
     }
 
@@ -588,15 +566,15 @@
 
 
     /* =========================
-       CAKE
+       CAKE AREA
     ========================= */
 
     .cake-area {
 
       position: relative;
 
-      width: 270px;
-      height: 290px;
+      width: 290px;
+      height: 310px;
 
       display: flex;
 
@@ -604,13 +582,15 @@
 
       justify-content: center;
 
-      margin-top: 30px;
+      margin-top: 20px;
 
       opacity: 0;
 
       transform:
         translateY(25px)
-        scale(0.9);
+        scale(.9);
+
+      z-index: 3;
 
     }
 
@@ -638,116 +618,284 @@
     }
 
 
-    /* plate */
+    /* =========================
+       PLATE
+    ========================= */
 
     .plate {
 
       position: absolute;
 
-      bottom: 20px;
+      bottom: 18px;
 
-      width: 230px;
-      height: 28px;
+      width: 245px;
+      height: 30px;
 
       border-radius: 50%;
 
-      background: #f1dfe0;
-
-      box-shadow:
-        0 10px 20px
-        rgba(89,67,72,0.12);
-
-    }
-
-
-    /* cake */
-
-    .cake {
-
-      position: absolute;
-
-      bottom: 37px;
-
-      width: 165px;
-      height: 115px;
-
-      border-radius:
-        18px
-        18px
-        25px
-        25px;
-
       background:
         linear-gradient(
-          to bottom,
-          #fffdfb,
-          #f8dfe2
+          #fffaf9,
+          #efdfe1
         );
 
-      box-shadow:
-        inset 0 -10px 0
-        rgba(217,154,165,0.18),
+      border:
+        1px solid #ead2d5;
 
-        0 15px 25px
-        rgba(143,95,104,0.15);
+      box-shadow:
+        0 12px 22px
+        rgba(89,67,72,.14);
 
     }
 
 
-    .cake::before {
+    .plate::after {
 
       content: "";
 
       position: absolute;
 
-      top: -19px;
+      left: 18px;
+      right: 18px;
 
-      left: -4px;
+      top: 7px;
 
-      width: 173px;
-      height: 38px;
+      height: 10px;
 
       border-radius: 50%;
-
-      background: #fffaf8;
 
       border:
-        1px solid #f0d6d8;
-
-    }
-
-
-    .cream {
-
-      position: absolute;
-
-      top: 5px;
-
-      left: 20px;
-
-      width: 125px;
-      height: 45px;
-
-      border-radius: 50%;
-
-      background: #fffdfb;
+        1px solid
+        rgba(217,154,165,.25);
 
     }
 
 
     /* =========================
-       CANDLES
+       CAKE
     ========================= */
+
+    .cake {
+
+      position: absolute;
+
+      bottom: 40px;
+
+      width: 175px;
+      height: 120px;
+
+      border-radius:
+        16px
+        16px
+        24px
+        24px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #fffdfb,
+          #f7dce0
+        );
+
+      border:
+        1px solid #efd1d5;
+
+      box-shadow:
+
+        inset 0 -12px 0
+        rgba(217,154,165,.15),
+
+        0 17px 28px
+        rgba(143,95,104,.16);
+
+      z-index: 3;
+
+    }
+
+
+    /* cake layers */
+
+    .cake::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 10px;
+      right: 10px;
+
+      bottom: 25px;
+
+      height: 2px;
+
+      background:
+        rgba(217,154,165,.25);
+
+      box-shadow:
+        0 -30px
+        rgba(217,154,165,.16);
+
+    }
+
+
+    /* cake top */
+
+    .cake-top {
+
+      position: absolute;
+
+      left: -5px;
+      top: -20px;
+
+      width: 185px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          #fffdfb,
+          #fff6f5
+        );
+
+      border:
+        1px solid #efd9db;
+
+      z-index: 4;
+
+    }
+
+
+    /* cream */
+
+    .cream {
+
+      position: absolute;
+
+      left: 17px;
+      top: -2px;
+
+      width: 140px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      background: #fffdfb;
+
+      z-index: 5;
+
+    }
+
+
+    /* cream drips */
+
+    .cream::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 10px;
+      top: 25px;
+
+      width: 12px;
+      height: 18px;
+
+      border-radius:
+        0 0 10px 10px;
+
+      background: #fffdfb;
+
+      box-shadow:
+        35px 4px 0 #fffdfb,
+        75px -2px 0 #fffdfb,
+        108px 5px 0 #fffdfb;
+
+    }
+
+
+    /* =========================
+       DECORATIONS
+    ========================= */
+
+    .berry {
+
+      position: absolute;
+
+      width: 13px;
+      height: 13px;
+
+      border-radius: 50%;
+
+      background: #d98b96;
+
+      box-shadow:
+        inset -2px -2px 0
+        rgba(143,95,104,.15);
+
+      z-index: 7;
+
+    }
+
+
+    .berry::before {
+
+      content: "♡";
+
+      position: absolute;
+
+      top: -9px;
+      left: 1px;
+
+      font-size: 8px;
+
+      color: #7f9c72;
+
+    }
+
+
+    .b1 {
+      left: 32px;
+      top: -10px;
+    }
+
+    .b2 {
+      left: 75px;
+      top: -16px;
+      transform: scale(.8);
+    }
+
+    .b3 {
+      right: 28px;
+      top: -9px;
+      transform: scale(.9);
+    }
+
+
+    /* =========================
+       CANDLES
+       ========================= */
 
     .candles {
 
       position: absolute;
 
-      top: 57px;
+      left: 50%;
+
+      top: -66px;
+
+      transform:
+        translateX(-50%);
 
       display: flex;
 
-      gap: 18px;
+      align-items: flex-end;
+
+      justify-content: center;
+
+      gap: 16px;
+
+      z-index: 10;
 
     }
 
@@ -756,8 +904,8 @@
 
       position: relative;
 
-      width: 9px;
-      height: 45px;
+      width: 10px;
+      height: 48px;
 
       border-radius: 5px;
 
@@ -770,19 +918,62 @@
           #fff4f3 10px
         );
 
+      box-shadow:
+        0 2px 4px
+        rgba(143,95,104,.12);
+
     }
 
+
+    .candle:nth-child(2) {
+
+      height: 55px;
+
+    }
+
+
+    .candle:nth-child(3) {
+
+      height: 45px;
+
+    }
+
+
+    /* wick */
+
+    .candle::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      top: -6px;
+
+      width: 2px;
+      height: 7px;
+
+      transform:
+        translateX(-50%);
+
+      background: #594348;
+
+      border-radius: 2px;
+
+    }
+
+
+    /* flame */
 
     .flame {
 
       position: absolute;
 
       left: 50%;
+      top: -25px;
 
-      top: -22px;
-
-      width: 12px;
-      height: 18px;
+      width: 13px;
+      height: 19px;
 
       transform:
         translateX(-50%);
@@ -799,11 +990,14 @@
         );
 
       box-shadow:
-        0 0 15px
-        rgba(245,187,99,0.65);
+        0 0 17px
+        rgba(245,187,99,.7);
 
       animation:
-        flame 0.8s ease-in-out infinite alternate;
+        flame .8s
+        ease-in-out
+        infinite
+        alternate;
 
     }
 
@@ -814,7 +1008,8 @@
 
         transform:
           translateX(-50%)
-          scale(0.9);
+          scale(.9)
+          rotate(-2deg);
 
       }
 
@@ -822,124 +1017,9 @@
 
         transform:
           translateX(-50%)
-          scale(1.08)
-          translateY(-2px);
-
-      }
-
-    }
-
-
-    /* =========================
-       BIG TITLE
-    ========================= */
-
-    .main-title {
-
-      position: absolute;
-
-      bottom: 18%;
-
-      text-align: center;
-
-      opacity: 0;
-
-      transform:
-        translateY(20px)
-        scale(0.94);
-
-    }
-
-
-    .main-title.show {
-
-      animation:
-        titleIn 1.2s ease forwards;
-
-    }
-
-
-    .tiny {
-
-      font-family:
-        "Quicksand",
-        sans-serif;
-
-      font-size: 12px;
-
-      letter-spacing: 4px;
-
-      color: var(--pink);
-
-      text-transform: uppercase;
-
-    }
-
-
-    .its {
-
-      margin-top: 8px;
-
-      font-family:
-        "Gowun Batang",
-        serif;
-
-      font-size:
-        clamp(
-          35px,
-          10vw,
-          58px
-        );
-
-      line-height: 1.1;
-
-      color: var(--rose);
-
-      white-space: nowrap;
-
-    }
-
-
-    .happy {
-
-      margin-top: 8px;
-
-      font-family:
-        "Mali",
-        cursive;
-
-      font-size:
-        clamp(
-          20px,
-          6vw,
-          29px
-        );
-
-      color: var(--dark);
-
-    }
-
-
-    .age {
-
-      margin-top: 10px;
-
-      font-size: 15px;
-
-      color: var(--rose);
-
-    }
-
-
-    @keyframes titleIn {
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0)
-          scale(1);
+          scale(1.1)
+          translateY(-2px)
+          rotate(2deg);
 
       }
 
@@ -960,6 +1040,8 @@
 
       opacity: 0;
 
+      z-index: 1;
+
     }
 
 
@@ -977,7 +1059,9 @@
       color: var(--gold);
 
       animation:
-        sparkle 2s ease-in-out infinite;
+        sparkle 2s
+        ease-in-out
+        infinite;
 
     }
 
@@ -1022,10 +1106,10 @@
       0%,
       100% {
 
-        opacity: 0.3;
+        opacity: .3;
 
         transform:
-          scale(0.7)
+          scale(.7)
           rotate(0deg);
 
       }
@@ -1044,6 +1128,173 @@
 
 
     /* =========================
+       BIG BIRTHDAY POPUP
+    ========================= */
+
+    .birthday-popup {
+
+      position: absolute;
+
+      z-index: 30;
+
+      left: 50%;
+      top: 50%;
+
+      width:
+        min(
+          88vw,
+          390px
+        );
+
+      padding: 27px 23px 24px;
+
+      transform:
+        translate(-50%, -50%)
+        scale(.7);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      text-align: center;
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,253,251,.96);
+
+      border:
+        1px solid var(--blush);
+
+      box-shadow:
+        0 25px 80px
+        rgba(89,67,72,.22);
+
+    }
+
+
+    .birthday-popup.show {
+
+      animation:
+        birthdayPopupIn
+        1s
+        cubic-bezier(.2,1.4,.4,1)
+        forwards;
+
+    }
+
+
+    .popup-small {
+
+      font-family:
+        "Quicksand",
+        sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+    }
+
+
+    .popup-main {
+
+      margin-top: 10px;
+
+      font-family:
+        "Gowun Batang",
+        serif;
+
+      font-size:
+        clamp(
+          32px,
+          9vw,
+          48px
+        );
+
+      line-height: 1.1;
+
+      color: var(--rose);
+
+    }
+
+
+    .popup-happy {
+
+      margin-top: 9px;
+
+      font-size: 20px;
+
+      color: var(--dark);
+
+    }
+
+
+    .popup-age {
+
+      margin-top: 8px;
+
+      font-size: 14px;
+
+      color: var(--rose);
+
+    }
+
+
+    .popup-deco {
+
+      margin-top: 13px;
+
+      font-size: 19px;
+
+      letter-spacing: 5px;
+
+      color: var(--gold);
+
+    }
+
+
+    @keyframes birthdayPopupIn {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(.65)
+          rotate(-3deg);
+
+      }
+
+      65% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1.04)
+          rotate(1deg);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1)
+          rotate(0);
+
+      }
+
+    }
+
+
+    /* =========================
        NEXT BUTTON
     ========================= */
 
@@ -1052,6 +1303,8 @@
       position: absolute;
 
       bottom: 6%;
+
+      z-index: 40;
 
       padding:
         11px 25px;
@@ -1062,12 +1315,7 @@
       border-radius: 999px;
 
       background:
-        rgba(
-          255,
-          252,
-          250,
-          0.9
-        );
+        rgba(255,252,250,.94);
 
       color: var(--rose);
 
@@ -1082,8 +1330,8 @@
       opacity: 0;
 
       transition:
-        opacity 0.8s ease,
-        transform 0.3s ease;
+        opacity .8s ease,
+        transform .3s ease;
 
     }
 
@@ -1125,7 +1373,7 @@
       pointer-events: none;
 
       transition:
-        opacity 0.35s ease;
+        opacity .5s ease;
 
     }
 
@@ -1146,14 +1394,18 @@
       .cake-area {
 
         transform:
-          scale(0.8);
+          translateY(0)
+          scale(.78);
 
       }
 
       .cake-area.show {
 
         animation:
-          cakeSmall 1.3s ease forwards;
+          cakeSmall
+          1.3s
+          ease
+          forwards;
 
       }
 
@@ -1165,7 +1417,7 @@
 
           transform:
             translateY(0)
-            scale(0.8);
+            scale(.78);
 
         }
 
@@ -1205,9 +1457,7 @@
           class="paw"
           id="paw"
         >
-
           🐾
-
         </div>
 
 
@@ -1276,7 +1526,9 @@
         </div>
 
 
-        <!-- CAKE -->
+        <!-- =========================
+             CAKE
+        ========================= -->
 
         <div
           class="cake-area"
@@ -1289,76 +1541,132 @@
 
           <div class="cake">
 
+
+            <div class="cake-top"></div>
+
             <div class="cream"></div>
 
+
+            <!-- berries -->
+
+            <div class="berry b1"></div>
+            <div class="berry b2"></div>
+            <div class="berry b3"></div>
+
+
+            <!-- CANDLES -->
 
             <div class="candles">
 
               <div class="candle">
+
                 <div class="flame"></div>
+
               </div>
 
-              <div class="candle">
-                <div class="flame"></div>
-              </div>
 
               <div class="candle">
+
                 <div class="flame"></div>
+
+              </div>
+
+
+              <div class="candle">
+
+                <div class="flame"></div>
+
               </div>
 
             </div>
+
 
           </div>
 
         </div>
 
 
-        <!-- SPARKLES -->
+        <!-- =========================
+             SPARKLES
+        ========================= -->
 
         <div
           class="sparkles"
           id="sparkles"
         >
 
-          <div class="sparkle s1">✦</div>
-          <div class="sparkle s2">♡</div>
-          <div class="sparkle s3">✧</div>
-          <div class="sparkle s4">✦</div>
-          <div class="sparkle s5">˚₊‧</div>
+          <div class="sparkle s1">
+            ✦
+          </div>
+
+          <div class="sparkle s2">
+            ♡
+          </div>
+
+          <div class="sparkle s3">
+            ✧
+          </div>
+
+          <div class="sparkle s4">
+            ✦
+          </div>
+
+          <div class="sparkle s5">
+            ˚₊‧
+          </div>
 
         </div>
 
 
-        <!-- TITLE -->
+        <!-- =========================
+             BIRTHDAY POPUP
+        ========================= -->
 
         <div
-          class="main-title"
-          id="mainTitle"
+          class="birthday-popup"
+          id="birthdayPopup"
         >
 
-          <div class="tiny">
+          <div class="popup-small">
+
             A LITTLE MOMENT FOR YOU
+
           </div>
 
 
-          <div class="its">
+          <div class="popup-main">
+
             it’s your birthday!
+
           </div>
 
 
-          <div class="happy">
+          <div class="popup-happy">
+
             Happy birthday อ้วมคุง ♡
+
           </div>
 
 
-          <div class="age">
+          <div class="popup-age">
+
             21 ขวบแล้วน้า
+
+          </div>
+
+
+          <div class="popup-deco">
+
+            ✦ ♡ ✦
+
           </div>
 
         </div>
 
 
-        <!-- NEXT -->
+        <!-- =========================
+             NEXT
+        ========================= -->
 
         <button
           class="next-button"
@@ -1366,7 +1674,7 @@
           onclick="nextPage()"
         >
 
-          มีอะไรจะให้ด้วยนะ → 
+          มีอะไรจะให้ด้วยนะ →
 
         </button>
 
@@ -1438,14 +1746,14 @@
         "cakeArea"
       );
 
-    const mainTitle =
-      document.getElementById(
-        "mainTitle"
-      );
-
     const sparkles =
       document.getElementById(
         "sparkles"
+      );
+
+    const birthdayPopup =
+      document.getElementById(
+        "birthdayPopup"
       );
 
     const blackout =
@@ -1467,14 +1775,23 @@
       "load",
       function() {
 
+
+        /* แมว/อุ้งเท้า */
+
         setTimeout(function() {
 
-          paw.classList.add("show");
+          paw.classList.add(
+            "show"
+          );
 
-          dust.classList.add("show");
+          dust.classList.add(
+            "show"
+          );
 
         }, 700);
 
+
+        /* ข้อความพร้อม */
 
         setTimeout(function() {
 
@@ -1484,6 +1801,8 @@
 
         }, 1800);
 
+
+        /* เปิดไฟ */
 
         setTimeout(function() {
 
@@ -1498,6 +1817,8 @@
         }, 3500);
 
 
+        /* เค้กโผล่ */
+
         setTimeout(function() {
 
           lightGlow.classList.add(
@@ -1511,9 +1832,7 @@
         }, 4100);
 
 
-        /* -------------------------
-           FIRST BUBBLE
-        ------------------------- */
+        /* วันที่ */
 
         setTimeout(function() {
 
@@ -1524,9 +1843,7 @@
         }, 4700);
 
 
-        /* -------------------------
-           SECOND BUBBLE
-        ------------------------- */
+        /* your special day */
 
         setTimeout(function() {
 
@@ -1537,10 +1854,9 @@
         }, 5400);
 
 
-        /* -------------------------
-           LITTLE PAUSE
-           THEN BLACKOUT
-        ------------------------- */
+        /*
+          ไฟดับ
+        */
 
         setTimeout(function() {
 
@@ -1548,16 +1864,25 @@
             "on"
           );
 
+          lightGlow.classList.remove(
+            "on"
+          );
+
         }, 7000);
 
 
-        /* -------------------------
-           LIGHT RETURNS
-        ------------------------- */
+        /*
+          รอความมืด
+          แล้วเปิดไฟกลับมา
+        */
 
         setTimeout(function() {
 
           blackout.classList.remove(
+            "on"
+          );
+
+          lightGlow.classList.add(
             "on"
           );
 
@@ -1569,33 +1894,30 @@
             "show"
           );
 
-          lightGlow.classList.add(
-            "on"
+          sparkles.classList.add(
+            "show"
           );
 
         }, 8500);
 
 
-        /* -------------------------
-           BIG REVEAL
-        ------------------------- */
+        /*
+          ✨ หลังไฟกลับมา
+          POPUP วันเกิดค่อยเด้ง
+        */
 
         setTimeout(function() {
 
-          mainTitle.classList.add(
+          birthdayPopup.classList.add(
             "show"
           );
 
-          sparkles.classList.add(
-            "show"
-          );
-
-        }, 9000);
+        }, 9200);
 
 
-        /* -------------------------
-           NEXT BUTTON
-        ------------------------- */
+        /*
+          ปุ่มไปต่อ
+        */
 
         setTimeout(function() {
 
@@ -1603,7 +1925,8 @@
             "show"
           );
 
-        }, 10300);
+        }, 10800);
+
 
       }
     );
@@ -1614,11 +1937,6 @@
     ========================= */
 
     function nextPage() {
-
-      /*
-        เปลี่ยนตรงนี้เป็นชื่อ
-        หน้าถัดไปของเว็บได้เลย
-      */
 
       window.location.href =
         "./letter.html";
