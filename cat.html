@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>แมวผู้พิทักษ์ ♡</title>
+  <title>Meow Security ♡</title>
 
 
   <!-- =========================
@@ -68,9 +68,9 @@
 
       background:
         radial-gradient(
-          circle at 50% 18%,
+          circle at 50% 15%,
           #FFFDFB 0%,
-          var(--bg) 58%,
+          var(--bg) 60%,
           #F9EDEF 100%
         );
 
@@ -84,7 +84,7 @@
 
 
     /* =========================
-       PAGE
+       MAIN PAGE
     ========================= */
 
     .page {
@@ -106,15 +106,17 @@
 
       width: 100%;
 
-      max-width: 450px;
+      max-width: 430px;
 
       text-align: center;
+
+      animation: pageIn 1s ease;
 
     }
 
 
     /* =========================
-       HEADER
+       SMALL TITLE
     ========================= */
 
     .small-title {
@@ -127,174 +129,83 @@
 
       color: var(--pink);
 
-      opacity: 0;
-
-      animation:
-        fadeUp 0.8s ease forwards;
-
-      animation-delay: 0.2s;
+      margin-bottom: 12px;
 
     }
 
 
+    /* =========================
+       TITLE
+    ========================= */
+
     h1 {
 
-      margin: 10px 0 0;
+      margin: 0;
 
       font-family: "Gowun Batang", serif;
 
-      font-size: 30px;
+      font-size: clamp(27px, 8vw, 38px);
 
       font-weight: 400;
 
       color: var(--rose);
 
-      opacity: 0;
-
-      animation:
-        fadeUp 0.8s ease forwards;
-
-      animation-delay: 0.5s;
+      line-height: 1.5;
 
     }
 
 
-    .intro {
+    .description {
 
-      margin-top: 10px;
+      margin-top: 12px;
 
-      font-size: 14px;
+      font-size: 15px;
 
       line-height: 1.9;
-
-      opacity: 0;
-
-      animation:
-        fadeUp 0.8s ease forwards;
-
-      animation-delay: 0.8s;
 
     }
 
 
     /* =========================
-       WALKING CAT
+       OPENING CAT
     ========================= */
 
-    .walking-area {
+    .opening-cat {
 
-      position: relative;
+      width: 190px;
 
-      width: 100%;
+      height: 190px;
 
-      height: 230px;
-
-      margin-top: 5px;
+      margin: 25px auto 0;
 
       display: flex;
 
       justify-content: center;
 
-      align-items: flex-end;
+      align-items: center;
 
-      overflow: hidden;
+      animation:
+        catArrive 1.2s ease forwards,
+        catFloat 3s ease-in-out 1.2s infinite;
 
     }
 
 
-    .walking-cat {
+    .opening-cat img {
 
-      width: 185px;
+      width: 100%;
 
-      height: 185px;
+      height: 100%;
 
       object-fit: contain;
 
-      opacity: 0;
-
-      transform:
-        translateX(-260px);
-
-      animation:
-        walkIn 2.2s
-        cubic-bezier(.2,.8,.2,1)
-        forwards;
-
-      animation-delay: 1s;
+      display: block;
 
       filter:
         drop-shadow(
-          0 14px 18px
-          rgba(89,67,72,0.13)
+          0 12px 15px
+          rgba(143, 95, 104, 0.14)
         );
-
-    }
-
-
-    /* =========================
-       HELLO
-    ========================= */
-
-    .hello {
-
-      position: absolute;
-
-      top: 10px;
-
-      right: 17%;
-
-      padding: 8px 14px;
-
-      border-radius: 999px;
-
-      background: var(--card);
-
-      border:
-        1px solid var(--blush);
-
-      color: var(--rose);
-
-      font-family: "Quicksand", sans-serif;
-
-      font-size: 12px;
-
-      box-shadow:
-        0 7px 20px
-        rgba(89,67,72,0.08);
-
-      opacity: 0;
-
-      animation:
-        helloIn 0.6s ease forwards;
-
-      animation-delay: 3.1s;
-
-    }
-
-
-    .hello::after {
-
-      content: "";
-
-      position: absolute;
-
-      left: 18px;
-
-      bottom: -6px;
-
-      width: 11px;
-
-      height: 11px;
-
-      background: var(--card);
-
-      border-right:
-        1px solid var(--blush);
-
-      border-bottom:
-        1px solid var(--blush);
-
-      transform: rotate(45deg);
 
     }
 
@@ -303,159 +214,157 @@
        MESSAGE
     ========================= */
 
-    .messages {
-
-      min-height: 155px;
-
-      padding: 0 10px;
-
-    }
-
-
     .message {
 
-      display: none;
-
-      margin-top: 8px;
-
-      color: var(--rose);
+      margin-top: 12px;
 
       font-size: 15px;
 
-      line-height: 1.9;
+      line-height: 2;
 
-      animation:
-        popIn 0.5s ease;
+      animation: textIn 1s ease 0.6s both;
 
     }
 
 
-    .message.show {
+    .message b {
 
-      display: block;
+      color: var(--rose);
+
+      font-weight: 600;
 
     }
 
 
     /* =========================
-       GIF SECTION
+       PAW / ARROW
     ========================= */
 
-    .pet-section {
+    .instruction {
 
-      display: none;
+      margin-top: 15px;
 
-      margin-top: 5px;
+      color: var(--pink);
+
+      font-size: 14px;
+
+      line-height: 1.8;
 
       animation:
-        petSectionIn 0.7s ease;
-
-    }
-
-
-    .pet-section.show {
-
-      display: block;
-
-    }
-
-
-    .point-text {
-
-      font-size: 13px;
-
-      color: var(--text);
-
-      margin-bottom: 8px;
+        bounce 1.8s ease-in-out infinite;
 
     }
 
 
     .arrow {
 
-      font-size: 25px;
+      display: block;
 
-      color: var(--pink);
+      margin-top: 3px;
 
-      line-height: 1;
-
-      animation:
-        point 0.8s ease-in-out infinite;
+      font-size: 23px;
 
     }
 
 
     /* =========================
-       GIF BOX
+       CAT TAP AREA
     ========================= */
 
-    .gif-wrapper {
+    .cat-stage {
+
+      margin: 15px auto 0;
+
+      width: min(88vw, 330px);
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+    }
+
+
+    .tap-cat {
 
       position: relative;
 
-      width: 210px;
+      width: 155px;
 
-      height: 210px;
+      height: 155px;
 
-      margin: 8px auto 0;
+      padding: 0;
 
-      border-radius: 28px;
+      border: 0;
 
-      padding: 8px;
-
-      background: var(--card);
-
-      border:
-        1px solid var(--blush);
-
-      box-shadow:
-        0 15px 35px
-        rgba(143,95,104,0.13);
+      background: transparent;
 
       cursor: pointer;
 
-      user-select: none;
-
-      -webkit-tap-highlight-color:
-        transparent;
+      -webkit-tap-highlight-color: transparent;
 
       transition:
-        transform 0.15s ease;
+        transform 0.2s ease;
 
     }
 
 
-    .gif-wrapper:active {
-
-      transform: scale(0.94);
-
-    }
-
-
-    .gif-wrapper iframe {
-
-      display: block;
+    .tap-cat img {
 
       width: 100%;
 
       height: 100%;
 
-      border: 0;
+      object-fit: contain;
 
-      border-radius: 21px;
+      display: block;
+
+      filter:
+        drop-shadow(
+          0 10px 15px
+          rgba(143, 95, 104, 0.13)
+        );
 
       pointer-events: none;
 
     }
 
 
-    .tap-hint {
+    .tap-cat:active {
 
-      margin-top: 9px;
+      transform: scale(0.90);
 
-      font-size: 12px;
+    }
 
-      color: var(--pink);
+
+    .tap-label {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: -5px;
+
+      transform:
+        translateX(-50%);
+
+      white-space: nowrap;
+
+      padding: 5px 12px;
+
+      border-radius: 999px;
+
+      background: rgba(255,252,250,0.92);
+
+      border:
+        1px solid var(--blush);
+
+      color: var(--rose);
+
+      font-size: 11px;
+
+      pointer-events: none;
 
     }
 
@@ -466,66 +375,107 @@
 
     .counter {
 
-      margin-top: 7px;
+      margin-top: 13px;
 
       font-family: "Quicksand", sans-serif;
 
       font-size: 12px;
 
-      color: var(--rose);
+      letter-spacing: 1px;
+
+      color: var(--pink);
 
     }
 
 
-    .counter-number {
+    .paws {
 
-      font-size: 17px;
+      margin-top: 7px;
 
-      font-weight: 600;
+      display: flex;
+
+      justify-content: center;
+
+      gap: 7px;
+
+    }
+
+
+    .paw {
+
+      width: 25px;
+
+      height: 25px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      border-radius: 50%;
+
+      background: #FFF;
+
+      border:
+        1px solid var(--blush);
+
+      font-size: 13px;
+
+      opacity: 0.45;
+
+      transition:
+        all 0.3s ease;
+
+    }
+
+
+    .paw.done {
+
+      opacity: 1;
+
+      background: var(--blush);
+
+      transform:
+        translateY(-3px);
 
     }
 
 
     /* =========================
-       DONE
+       RANDOM MESSAGE
     ========================= */
 
-    .done {
+    .cat-message {
+
+      min-height: 30px;
+
+      margin-top: 14px;
+
+      font-size: 14px;
+
+      color: var(--rose);
+
+      line-height: 1.8;
+
+      animation: pop 0.35s ease;
+
+    }
+
+
+    /* =========================
+       NEXT BUTTON
+    ========================= */
+
+    .next-button {
 
       display: none;
 
-      margin-top: 15px;
-
-      color: var(--rose);
-
-      font-size: 15px;
-
-      line-height: 1.9;
-
-      animation:
-        popIn 0.5s ease;
-
-    }
-
-
-    .done.show {
-
-      display: block;
-
-    }
-
-
-    /* =========================
-       BUTTON
-    ========================= */
-
-    .continue-button {
-
-      margin-top: 12px;
+      margin: 22px auto 0;
 
       padding: 12px 28px;
 
-      border: 0;
+      border: 1px solid var(--pink);
 
       border-radius: 999px;
 
@@ -539,60 +489,101 @@
 
       cursor: pointer;
 
-      opacity: 0;
+      box-shadow:
+        0 8px 20px
+        rgba(143,95,104,0.12);
 
-      pointer-events: none;
-
-      transform:
-        translateY(8px);
-
-      transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
+      animation:
+        pop 0.6s ease;
 
     }
 
 
-    .continue-button.show {
+    .next-button.show {
 
-      opacity: 1;
-
-      pointer-events: auto;
-
-      transform:
-        translateY(0);
+      display: block;
 
     }
 
 
-    .continue-button:hover {
+    .next-button:active {
 
-      background: var(--pink);
-
-      transform:
-        translateY(-2px);
+      transform: scale(0.96);
 
     }
 
 
     /* =========================
-       FLOATING HEART
+       DECORATION
     ========================= */
 
-    .heart {
+    .deco {
 
       position: fixed;
 
+      color: var(--pink);
+
+      opacity: 0.45;
+
       pointer-events: none;
 
-      color: var(--pink);
+      z-index: -1;
+
+    }
+
+
+    .deco.one {
+
+      top: 15%;
+
+      left: 12%;
 
       font-size: 20px;
 
-      z-index: 100;
+      animation:
+        float 4s ease-in-out infinite;
+
+    }
+
+
+    .deco.two {
+
+      top: 25%;
+
+      right: 13%;
+
+      font-size: 14px;
 
       animation:
-        heartFloat 0.9s ease forwards;
+        float 5s ease-in-out 1s infinite;
+
+    }
+
+
+    .deco.three {
+
+      bottom: 18%;
+
+      left: 15%;
+
+      font-size: 17px;
+
+      animation:
+        float 4.5s ease-in-out 0.5s infinite;
+
+    }
+
+
+    .deco.four {
+
+      bottom: 25%;
+
+      right: 15%;
+
+      font-size: 20px;
+
+      animation:
+        float 5s ease-in-out 1.5s infinite;
 
     }
 
@@ -601,112 +592,7 @@
        ANIMATIONS
     ========================= */
 
-    @keyframes fadeUp {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(12px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
-
-    }
-
-
-    @keyframes walkIn {
-
-      0% {
-
-        opacity: 0;
-
-        transform:
-          translateX(-260px);
-
-      }
-
-      70% {
-
-        opacity: 1;
-
-        transform:
-          translateX(15px);
-
-      }
-
-      100% {
-
-        opacity: 1;
-
-        transform:
-          translateX(0);
-
-      }
-
-    }
-
-
-    @keyframes helloIn {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          scale(0.7)
-          translateY(8px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          scale(1)
-          translateY(0);
-
-      }
-
-    }
-
-
-    @keyframes popIn {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          scale(0.92)
-          translateY(8px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          scale(1)
-          translateY(0);
-
-      }
-
-    }
-
-
-    @keyframes petSectionIn {
+    @keyframes pageIn {
 
       from {
 
@@ -729,7 +615,42 @@
     }
 
 
-    @keyframes point {
+    @keyframes catArrive {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translateY(80px)
+          scale(0.75);
+
+      }
+
+      60% {
+
+        opacity: 1;
+
+        transform:
+          translateY(-10px)
+          scale(1.04);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    @keyframes catFloat {
 
       0%,
       100% {
@@ -742,32 +663,93 @@
       50% {
 
         transform:
-          translateY(5px);
+          translateY(-7px);
 
       }
 
     }
 
 
-    @keyframes heartFloat {
+    @keyframes textIn {
 
       from {
 
-        opacity: 1;
+        opacity: 0;
 
         transform:
-          translateY(0)
-          scale(0.8);
+          translateY(10px);
 
       }
 
       to {
 
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0);
+
+      }
+
+      50% {
+
+        transform:
+          translateY(-5px);
+
+      }
+
+    }
+
+
+    @keyframes float {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0);
+
+      }
+
+      50% {
+
+        transform:
+          translateY(-8px);
+
+      }
+
+    }
+
+
+    @keyframes pop {
+
+      from {
+
         opacity: 0;
 
         transform:
-          translateY(-60px)
-          scale(1.2);
+          scale(0.92);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          scale(1);
 
       }
 
@@ -781,191 +763,208 @@
 <body>
 
 
-  <main class="page">
+  <!-- DECORATIONS -->
 
+  <div class="deco one">
+    ♡
+  </div>
+
+  <div class="deco two">
+    ✦
+  </div>
+
+  <div class="deco three">
+    ˚₊‧
+  </div>
+
+  <div class="deco four">
+    ♡
+  </div>
+
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
+  <main class="page">
 
     <section class="content">
 
 
       <div class="small-title">
 
-        A LITTLE GUARDIAN ♡
+        MEOW SECURITY • 03
 
       </div>
 
 
       <h1>
 
-        เดี๋ยวก่อนนะ...
+        มีแขกมาขอพบค่ะ ♡
 
       </h1>
 
 
-      <div class="intro">
+      <div class="description">
 
-        ก่อนจะไปต่อ<br>
+        กรุณารอสักครู่นะคะ...<br>
 
-        มีใครบางคนอยากตรวจสอบก่อนค่ะ
+        น้องกำลังเดินทางมาถึงแล้ว
 
       </div>
 
 
       <!-- =========================
-           WALKING CAT
+           OPENING CAT
       ========================= -->
 
-      <div class="walking-area">
-
-
-        <!--
-          เปลี่ยนชื่อ cat-waving.gif
-          เป็นชื่อไฟล์แมวอ้วนสามสีของเรา
-        -->
+      <div class="opening-cat">
 
         <img
-          class="walking-cat"
-          src="cat-waving.gif"
+          src="./IMG_0410.jpeg"
           alt="แมวอ้วนสามสี"
         >
 
+      </div>
 
-        <div class="hello">
 
-          HELLO ♡
+      <div class="message">
 
-        </div>
+        <b>เหมียว~ Hello ♡</b><br>
 
+        แมวผู้พิทักษ์มาถึงแล้วค่ะ
 
       </div>
 
 
       <!-- =========================
-           MESSAGES
+           INSTRUCTION
       ========================= -->
 
-      <div class="messages">
+      <div class="instruction">
 
+        ตรวจสอบเรียบร้อยแล้ว...<br>
 
-        <div
-          class="message"
-          id="message1"
-        >
+        <b>ความอ้วมอยู่ในระดับน่ารักมาก</b><br>
 
-          🐱 แมวตรวจสอบแล้ว... ผ่านค่ะ ♡
+        วันนี้อนุญาตให้เป็นเด็กอ้วนได้ 1 วัน
 
-        </div>
-
-
-        <div
-          class="message"
-          id="message2"
-        >
-
-          ความอ้วมอยู่ในระดับน่ารัก
-
-        </div>
-
-
-        <div
-          class="message"
-          id="message3"
-        >
-
-          วันนี้อนุญาตให้เป็นเด็กอ้วนได้ 1 วัน
-
-        </div>
-
-
-      </div>
-
-
-      <!-- =========================
-           PET GIF
-      ========================= -->
-
-      <div
-        class="pet-section"
-        id="petSection"
-      >
-
-
-        <div class="point-text">
-
-          กรุณาเกาพุงแมวตรงนี้ 5 ครั้งเพื่อไปต่อ ♡
-
-        </div>
-
-
-        <div class="arrow">
+        <span class="arrow">
 
           ↓
 
-        </div>
+        </span>
+
+      </div>
 
 
-        <div
-          class="gif-wrapper"
-          id="gifWrapper"
+      <!-- =========================
+           TAP CAT
+      ========================= -->
+
+      <div class="cat-stage">
+
+
+        <button
+          class="tap-cat"
+          id="tapCat"
+          onclick="tapCat()"
         >
 
-          <iframe
-            src="https://tenor.com/i7V4nHFbXoH.gif"
-            title="แมวให้เกาพุง"
-            loading="lazy"
-          ></iframe>
-
-        </div>
-
-
-        <div class="tap-hint">
-
-          แตะที่แมวได้เลย ♡
-
-        </div>
-
-
-        <div class="counter">
-
-          เกาพุงแล้ว
-
-          <span
-            class="counter-number"
-            id="count"
+          <img
+            id="catImage"
+            src="./IMG_0405.jpeg"
+            alt="แมว"
           >
-            0
+
+          <span class="tap-label">
+
+            TAP ME ♡
+
           </span>
 
-          / 5
-
-        </div>
+        </button>
 
 
       </div>
 
 
       <!-- =========================
-           DONE
+           COUNTER
       ========================= -->
 
-      <div
-        class="done"
-        id="done"
-      >
+      <div class="counter">
 
-        🐱 พุงได้รับการเกาครบแล้วค่ะ ♡<br>
-
-        แมวสามสีอนุมัติให้ไปต่อได้แล้ว~
+        เกาพุงน้องให้ครบ 5 ครั้งนะคะ ♡
 
       </div>
 
 
+      <div class="paws">
+
+        <span
+          class="paw"
+          id="paw1"
+        >
+          ♡
+        </span>
+
+        <span
+          class="paw"
+          id="paw2"
+        >
+          ♡
+        </span>
+
+        <span
+          class="paw"
+          id="paw3"
+        >
+          ♡
+        </span>
+
+        <span
+          class="paw"
+          id="paw4"
+        >
+          ♡
+        </span>
+
+        <span
+          class="paw"
+          id="paw5"
+        >
+          ♡
+        </span>
+
+      </div>
+
+
+      <!-- =========================
+           CAT MESSAGE
+      ========================= -->
+
+      <div
+        class="cat-message"
+        id="catMessage"
+      >
+
+        แตะพุงน้องเบา ๆ ได้เลย ♡
+
+      </div>
+
+
+      <!-- =========================
+           NEXT
+      ========================= -->
+
       <button
-        class="continue-button"
-        id="continueButton"
+        class="next-button"
+        id="nextButton"
         onclick="goNext()"
       >
 
-        แมวอนุมัติแล้ว ไปต่อ ♡
+        เหมียวอนุมัติแล้ว ♡
 
       </button>
 
@@ -975,238 +974,135 @@
   </main>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
 
 
-    /* =========================
-       ELEMENTS
-    ========================= */
+    let tapCount = 0;
 
-    const message1 =
-      document.getElementById(
-        "message1"
-      );
 
-    const message2 =
-      document.getElementById(
-        "message2"
-      );
+    const cats = [
 
-    const message3 =
-      document.getElementById(
-        "message3"
-      );
+      "./IMG_0405.jpeg",
 
-    const petSection =
-      document.getElementById(
-        "petSection"
-      );
+      "./IMG_0406.jpeg",
 
-    const gifWrapper =
-      document.getElementById(
-        "gifWrapper"
-      );
+      "./IMG_0407.jpeg",
 
-    const count =
-      document.getElementById(
-        "count"
-      );
+      "./IMG_0408.jpeg",
 
-    const done =
-      document.getElementById(
-        "done"
-      );
+      "./IMG_0409.jpeg"
 
-    const continueButton =
-      document.getElementById(
-        "continueButton"
-      );
+    ];
 
 
-    let petCount = 0;
+    const messages = [
 
+      "แมวตรวจสอบแล้ว... ผ่านค่ะ ♡",
 
-    /* =========================
-       STORY TIMING
-    ========================= */
+      "ความอ้วมอยู่ในระดับน่ารัก",
 
+      "วันนี้อนุญาตให้เป็นเด็กอ้วนได้ 1 วัน",
 
-    /*
-      แมวเดินเข้ามา
-      ↓
-      HELLO
-      ↓
-      ข้อความ
-    */
+      "พุงนุ่มมาก... ตรวจซ้ำอีกทีค่ะ ♡",
 
+      "เหมียวอนุมัติให้เปิดต่อค่ะ!"
 
-    setTimeout(function() {
+    ];
 
-      message1.classList.add("show");
 
-    }, 3500);
+    function tapCat() {
 
 
-    setTimeout(function() {
+      if (tapCount >= 5) {
 
-      message2.classList.add("show");
-
-    }, 4200);
-
-
-    setTimeout(function() {
-
-      message3.classList.add("show");
-
-    }, 4900);
-
-
-    /*
-      หลังพูดจบ
-      ให้ชี้ไปที่ GIF
-    */
-
-    setTimeout(function() {
-
-      petSection.classList.add("show");
-
-    }, 5700);
-
-
-
-    /* =========================
-       TAP GIF
-    ========================= */
-
-    gifWrapper.addEventListener(
-      "click",
-      function(event) {
-
-
-        if (petCount >= 5) {
-
-          return;
-
-        }
-
-
-        petCount++;
-
-
-        count.innerText =
-          petCount;
-
-
-        /*
-          เด้งกรอบเบา ๆ
-        */
-
-        gifWrapper.style.transform =
-          "scale(0.94)";
-
-
-        setTimeout(function() {
-
-          gifWrapper.style.transform =
-            "scale(1)";
-
-        }, 120);
-
-
-        /*
-          หัวใจ
-        */
-
-        createHeart(
-          event.clientX,
-          event.clientY
-        );
-
-
-        /*
-          ครบ 5 ครั้ง
-        */
-
-        if (petCount === 5) {
-
-
-          done.classList.add(
-            "show"
-          );
-
-
-          continueButton.classList.add(
-            "show"
-          );
-
-
-          count.innerText =
-            "5 ✓";
-
-
-        }
+        return;
 
       }
-    );
 
 
-
-    /* =========================
-       HEART
-    ========================= */
-
-    function createHeart(x, y) {
+      tapCount++;
 
 
-      const heart =
-        document.createElement(
-          "div"
+      /* เปลี่ยนรูปตามจำนวนครั้ง */
+
+      document
+        .getElementById("catImage")
+        .src = cats[tapCount - 1];
+
+
+      /* เติมหัวใจ */
+
+      document
+        .getElementById(
+          "paw" + tapCount
+        )
+        .classList.add("done");
+
+
+      /* เปลี่ยนข้อความ */
+
+      const message =
+        document.getElementById(
+          "catMessage"
         );
 
 
-      heart.className =
-        "heart";
+      message.style.animation = "none";
 
 
-      heart.innerText =
-        "♡";
+      void message.offsetWidth;
 
 
-      heart.style.left =
-        x + "px";
+      message.style.animation =
+        "pop 0.35s ease";
 
 
-      heart.style.top =
-        y + "px";
+      message.innerText =
+        messages[tapCount - 1];
 
 
-      document.body.appendChild(
-        heart
-      );
+      /* ครบ 5 ครั้ง */
+
+      if (tapCount === 5) {
 
 
-      setTimeout(function() {
+        message.innerText =
+          "เหมียวอนุมัติแล้วค่ะ ♡";
 
-        heart.remove();
 
-      }, 900);
+        document
+          .getElementById(
+            "nextButton"
+          )
+          .classList.add("show");
+
+
+        document
+          .querySelector(".counter")
+          .innerText =
+          "ตรวจสอบครบ 5 ครั้งแล้ว ♡";
+
+
+      }
 
     }
 
 
-
     /* =========================
-       NEXT
+       NEXT PAGE
     ========================= */
 
     function goNext() {
 
-
       window.location.href =
         "./birthday.html";
 
-
     }
+
 
   </script>
 
