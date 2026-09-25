@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Face ID ♡</title>
+
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --bg: #FFF7F5;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --blush: #F2D6D9;
+      --phone: #2E292B;
+      --screen: #FFF9F7;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      width: 100%;
+      min-height: 100%;
+
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          #FFFDFB 0%,
+          var(--bg) 55%,
+          #F9EDEF 100%
+        );
+
+      color: var(--text);
+
+      font-family: "Mali", cursive;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 35px 20px;
+
+    }
+
+
+    .content {
+
+      width: 100%;
+
+      max-width: 430px;
+
+      text-align: center;
+
+      animation: fadeIn 1s ease;
+
+    }
+
+
+    .small-title {
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+      margin-bottom: 12px;
+
+    }
+
+
+    h1 {
+
+      margin: 0;
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 29px;
+
+      font-weight: 400;
+
+      color: var(--rose);
+
+    }
+
+
+    .description {
+
+      margin-top: 13px;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+    }
+
+
+    /* =========================
+       PHONE
+    ========================= */
+
+    .phone {
+
+      position: relative;
+
+      width: 220px;
+
+      height: 430px;
+
+      margin: 28px auto 0;
+
+      padding: 9px;
+
+      background: #242022;
+
+      border-radius: 38px;
+
+      box-shadow:
+        0 25px 50px rgba(89, 67, 72, 0.25);
+
+      transform:
+        rotate(-2deg);
+
+      transition:
+        transform 0.5s ease;
+
+    }
+
+
+    .phone:hover {
+
+      transform:
+        rotate(0deg)
+        translateY(-5px);
+
+    }
+
+
+    /* phone frame */
+
+    .phone::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: -3px;
+
+      top: 105px;
+
+      width: 3px;
+
+      height: 55px;
+
+      background: #4A4144;
+
+      border-radius: 3px;
+
+    }
+
+
+    .phone::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: -3px;
+
+      top: 125px;
+
+      width: 3px;
+
+      height: 75px;
+
+      background: #4A4144;
+
+      border-radius: 3px;
+
+    }
+
+
+    /* screen */
+
+    .screen {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 100%;
+
+      overflow: hidden;
+
+      border-radius: 31px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #FFFDFB,
+          #F9E7EA
+        );
+
+    }
+
+
+    /* camera / dynamic island */
+
+    .island {
+
+      position: absolute;
+
+      top: 10px;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      width: 70px;
+
+      height: 22px;
+
+      border-radius: 20px;
+
+      background: #171517;
+
+      z-index: 20;
+
+    }
+
+
+    .camera-dot {
+
+      position: absolute;
+
+      right: 12px;
+
+      top: 7px;
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #373238;
+
+    }
+
+
+    /* phone content */
+
+    .screen-content {
+
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 35px 18px;
+
+    }
+
+
+    .face-title {
+
+      font-family: "Quicksand", sans-serif;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      color: var(--pink);
+
+      margin-bottom: 18px;
+
+    }
+
+
+    /* =========================
+       FACE SCANNER
+    ========================= */
+
+    .face-frame {
+
+      position: relative;
+
+      width: 145px;
+
+      height: 190px;
+
+      border: 2px solid rgba(217, 154, 165, 0.65);
+
+      border-radius: 48% 48% 45% 45%;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
+    }
+
+
+    .face {
+
+      font-size: 75px;
+
+      opacity: 0.45;
+
+      filter:
+        grayscale(1);
+
+    }
+
+
+    /* scanning line */
+
+    .scan-line {
+
+      position: absolute;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 2px;
+
+      background: var(--pink);
+
+      box-shadow:
+        0 0 12px var(--pink);
+
+      animation:
+        scan 2.2s ease-in-out infinite;
+
+    }
+
+
+    @keyframes scan {
+
+      0% {
+
+        top: 0;
+
+      }
+
+      50% {
+
+        top: calc(100% - 2px);
+
+      }
+
+      100% {
+
+        top: 0;
+
+      }
+
+    }
+
+
+    /* corner marks */
+
+    .corner {
+
+      position: absolute;
+
+      width: 20px;
+
+      height: 20px;
+
+      border-color: var(--rose);
+
+      border-style: solid;
+
+    }
+
+
+    .corner.tl {
+
+      top: -1px;
+      left: -1px;
+
+      border-width: 2px 0 0 2px;
+
+    }
+
+
+    .corner.tr {
+
+      top: -1px;
+      right: -1px;
+
+      border-width: 2px 2px 0 0;
+
+    }
+
+
+    .corner.bl {
+
+      bottom: -1px;
+      left: -1px;
+
+      border-width: 0 0 2px 2px;
+
+    }
+
+
+    .corner.br {
+
+      bottom: -1px;
+      right: -1px;
+
+      border-width: 0 2px 2px 0;
+
+    }
+
+
+    .phone-status {
+
+      margin-top: 18px;
+
+      font-size: 10px;
+
+      color: var(--rose);
+
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .scan-button {
+
+      margin-top: 25px;
+
+      padding: 13px 27px;
+
+      border: 1px solid var(--pink);
+
+      border-radius: 999px;
+
+      background: #FFFCFA;
+
+      color: var(--rose);
+
+      font-family: "Mali", cursive;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 20px rgba(143, 95, 104, 0.10);
+
+      transition: 0.3s ease;
+
+    }
+
+
+    .scan-button:hover {
+
+      background: var(--blush);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .scan-button:active {
+
+      transform: scale(0.96);
+
+    }
+
+
+    /* =========================
+       RESULT
+    ========================= */
+
+    .result {
+
+      display: none;
+
+      margin-top: 25px;
+
+      padding: 20px;
+
+      border: 1px solid var(--blush);
+
+      border-radius: 22px;
+
+      background: rgba(255,252,250,0.8);
+
+      animation:
+        resultIn 0.8s ease;
+
+    }
+
+
+    .result.show {
+
+      display: block;
+
+    }
+
+
+    .check {
+
+      font-size: 30px;
+
+      color: var(--pink);
+
+    }
+
+
+    .result-title {
+
+      margin-top: 8px;
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 21px;
+
+      color: var(--rose);
+
+    }
+
+
+    .result-text {
+
+      margin-top: 8px;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .continue-button {
+
+      margin-top: 15px;
+
+      padding: 11px 24px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      background: var(--rose);
+
+      color: white;
+
+      font-family: "Mali", cursive;
+
+      font-size: 13px;
+
+      cursor: pointer;
+
+    }
+
+
+    .continue-button:hover {
+
+      opacity: 0.85;
+
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(15px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes resultIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(15px)
+          scale(0.97);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="page">
+
+    <section class="content">
+
+
+      <div class="small-title">
+
+        SECURITY CHECK • 02
+
+      </div>
+
+
+      <h1>
+
+        รบกวนสแกน Face ID ♡
+
+      </h1>
+
+
+      <div class="description">
+
+        เปิดหน้าให้เรียบร้อยก่อนนะคะ<br>
+
+        แล้วนำหน้ามาใกล้จอเพื่อสแกนความอ้วม
+
+      </div>
+
+
+
+      <!-- =========================
+           PHONE
+      ========================= -->
+
+      <div class="phone">
+
+
+        <div class="screen">
+
+
+          <div class="island">
+
+            <div class="camera-dot"></div>
+
+          </div>
+
+
+          <div class="screen-content">
+
+
+            <div class="face-title">
+
+              FACE ID
+
+            </div>
+
+
+            <div class="face-frame">
+
+
+              <div class="corner tl"></div>
+
+              <div class="corner tr"></div>
+
+              <div class="corner bl"></div>
+
+              <div class="corner br"></div>
+
+
+              <div class="face">
+
+                ♡
+
+              </div>
+
+
+              <div class="scan-line"></div>
+
+
+            </div>
+
+
+            <div
+              class="phone-status"
+              id="phoneStatus"
+            >
+
+              READY TO SCAN
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =========================
+           SCAN BUTTON
+      ========================= -->
+
+      <button
+        class="scan-button"
+        id="scanButton"
+        onclick="scanFace()"
+      >
+
+        ตรวจสอบ Face ID ♡
+
+      </button>
+
+
+
+      <!-- =========================
+           RESULT
+      ========================= -->
+
+      <div
+        class="result"
+        id="result"
+      >
+
+
+        <div class="check">
+
+          ♡
+
+        </div>
+
+
+        <div class="result-title">
+
+          Face ID ความอ้วมถูกต้อง!
+
+        </div>
+
+
+        <div class="result-text">
+
+          ตรวจพบเจ้าของเครื่องแล้วค่ะ<br>
+
+          <b>เด็กอ้วนปากจุ๋!</b> ♡<br><br>
+
+          คุณผ่านการยืนยันตัวตนแล้ว<br>
+
+          สามารถเข้าสู่หน้า Secert ได้เลยจ้า
+
+        </div>
+
+
+        <button
+          class="continue-button"
+          onclick="goTo haven ~ ()"
+        >
+
+          เข้าสู่ Birthday ♡
+
+        </button>
+
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+
+  <script>
+
+
+    function scanFace() {
+
+
+      const button =
+        document.getElementById(
+          "scanButton"
+        );
+
+
+      const status =
+        document.getElementById(
+          "phoneStatus"
+        );
+
+
+      const result =
+        document.getElementById(
+          "result"
+        );
+
+
+      button.disabled = true;
+
+
+      button.innerText =
+        "กำลังสแกน...";
+
+
+      status.innerText =
+        "SCANNING FACE...";
+
+
+      setTimeout(function() {
+
+
+        status.innerText =
+          "FACE DETECTED ♡";
+
+
+      }, 1200);
+
+
+      setTimeout(function() {
+
+
+        status.innerText =
+          "IDENTITY VERIFIED";
+
+
+        button.style.display =
+          "none";
+
+
+        result.classList.add(
+          "show"
+        );
+
+
+      }, 2500);
+
+
+    }
+
+
+
+    function goToBirthday() {
+
+
+      window.location.href =
+        "birthday.html";
+
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
