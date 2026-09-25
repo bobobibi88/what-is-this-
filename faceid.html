@@ -13,7 +13,9 @@
   <title>Face ID ♡</title>
 
 
-  <!-- Fonts -->
+  <!-- =========================
+       FONTS
+  ========================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -44,7 +46,9 @@
 
 
     * {
+
       box-sizing: border-box;
+
     }
 
 
@@ -236,7 +240,7 @@
 
 
     /* =========================
-       SCREEN
+       PHONE SCREEN
     ========================= */
 
     .screen {
@@ -437,7 +441,8 @@
       top: -1px;
       left: -1px;
 
-      border-width: 2px 0 0 2px;
+      border-width:
+        2px 0 0 2px;
 
     }
 
@@ -447,7 +452,8 @@
       top: -1px;
       right: -1px;
 
-      border-width: 2px 2px 0 0;
+      border-width:
+        2px 2px 0 0;
 
     }
 
@@ -457,7 +463,8 @@
       bottom: -1px;
       left: -1px;
 
-      border-width: 0 0 2px 2px;
+      border-width:
+        0 0 2px 2px;
 
     }
 
@@ -467,7 +474,8 @@
       bottom: -1px;
       right: -1px;
 
-      border-width: 0 2px 2px 0;
+      border-width:
+        0 2px 2px 0;
 
     }
 
@@ -508,7 +516,12 @@
       cursor: pointer;
 
       box-shadow:
-        0 8px 20px rgba(143, 95, 104, 0.10);
+        0 8px 20px rgba(
+          143,
+          95,
+          104,
+          0.10
+        );
 
       transition: 0.3s ease;
 
@@ -519,7 +532,8 @@
 
       background: var(--blush);
 
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
 
     }
 
@@ -531,15 +545,26 @@
     }
 
 
+    .scan-button:disabled {
+
+      opacity: 0.7;
+
+      cursor: default;
+
+    }
+
+
     /* =========================
-       POPUP BACKGROUND
+       POPUP OVERLAY
     ========================= */
 
-    .popup {
+    .popup-overlay {
 
       position: fixed;
 
       inset: 0;
+
+      z-index: 999;
 
       display: none;
 
@@ -550,18 +575,16 @@
       padding: 20px;
 
       background:
-        rgba(89, 67, 72, 0.28);
+        rgba(89, 67, 72, 0.35);
 
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(6px);
 
-      z-index: 100;
-
-      animation: popupFade 0.35s ease;
+      animation: overlayIn 0.4s ease;
 
     }
 
 
-    .popup.show {
+    .popup-overlay.show {
 
       display: flex;
 
@@ -572,46 +595,74 @@
        POPUP CARD
     ========================= */
 
-    .popup-card {
+    .popup {
 
-      width: min(90vw, 360px);
+      width: min(
+        90vw,
+        360px
+      );
 
-      padding: 16px;
+      padding: 18px;
+
+      border-radius: 28px;
 
       background: var(--card);
 
-      border: 1px solid var(--blush);
-
-      border-radius: 26px;
+      border:
+        1px solid var(--blush);
 
       box-shadow:
-        0 25px 70px rgba(89, 67, 72, 0.22);
+        0 25px 70px
+        rgba(
+          89,
+          67,
+          72,
+          0.25
+        );
 
       text-align: center;
 
-      animation: popupIn 0.45s ease;
+      animation: popupIn 0.55s ease;
 
     }
 
+
+    /* =========================
+       POPUP IMAGE
+    ========================= */
 
     .popup-image {
 
       width: 100%;
 
-      max-height: 390px;
+      aspect-ratio: 1 / 1;
 
       object-fit: cover;
 
-      border-radius: 20px;
-
       display: block;
+
+      border-radius: 21px;
+
+      border:
+        1px solid var(--blush);
+
+    }
+
+
+    .popup-heart {
+
+      margin-top: 14px;
+
+      font-size: 22px;
+
+      color: var(--pink);
 
     }
 
 
     .popup-title {
 
-      margin-top: 17px;
+      margin-top: 5px;
 
       font-family: "Gowun Batang", serif;
 
@@ -624,22 +675,22 @@
 
     .popup-text {
 
-      margin-top: 7px;
+      margin-top: 8px;
 
       font-size: 13px;
 
-      line-height: 1.8;
+      line-height: 1.9;
 
     }
 
 
-    .continue-button {
+    .popup-button {
 
       margin-top: 16px;
 
-      padding: 11px 25px;
+      padding: 12px 28px;
 
-      border: none;
+      border: 0;
 
       border-radius: 999px;
 
@@ -649,7 +700,7 @@
 
       font-family: "Mali", cursive;
 
-      font-size: 13px;
+      font-size: 14px;
 
       cursor: pointer;
 
@@ -658,11 +709,19 @@
     }
 
 
-    .continue-button:hover {
+    .popup-button:hover {
 
-      opacity: 0.85;
+      transform:
+        translateY(-2px);
 
-      transform: translateY(-2px);
+      opacity: 0.88;
+
+    }
+
+
+    .popup-button:active {
+
+      transform: scale(0.96);
 
     }
 
@@ -677,7 +736,8 @@
 
         opacity: 0;
 
-        transform: translateY(15px);
+        transform:
+          translateY(15px);
 
       }
 
@@ -685,21 +745,26 @@
 
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+          translateY(0);
 
       }
 
     }
 
 
-    @keyframes popupFade {
+    @keyframes overlayIn {
 
       from {
+
         opacity: 0;
+
       }
 
       to {
+
         opacity: 1;
+
       }
 
     }
@@ -712,8 +777,8 @@
         opacity: 0;
 
         transform:
-          translateY(20px)
-          scale(0.92);
+          scale(0.85)
+          translateY(15px);
 
       }
 
@@ -722,8 +787,8 @@
         opacity: 1;
 
         transform:
-          translateY(0)
-          scale(1);
+          scale(1)
+          translateY(0);
 
       }
 
@@ -737,8 +802,11 @@
 <body>
 
 
-  <main class="page">
+  <!-- =========================
+       MAIN PAGE
+  ========================= -->
 
+  <main class="page">
 
     <section class="content">
 
@@ -766,7 +834,9 @@
       </div>
 
 
-      <!-- PHONE -->
+      <!-- =========================
+           PHONE
+      ========================= -->
 
       <div class="phone">
 
@@ -828,13 +898,14 @@
 
           </div>
 
-
         </div>
 
       </div>
 
 
-      <!-- SCAN BUTTON -->
+      <!-- =========================
+           SCAN BUTTON
+      ========================= -->
 
       <button
         class="scan-button"
@@ -858,24 +929,31 @@
   ========================= -->
 
   <div
-    class="popup"
-    id="popup"
+    class="popup-overlay"
+    id="popupOverlay"
   >
 
 
-    <div class="popup-card">
+    <div class="popup">
 
 
       <img
+        class="popup-image"
         src="IMG_8351.jpeg"
         alt="เด็กอ้วนปากจุ๋"
-        class="popup-image"
       >
+
+
+      <div class="popup-heart">
+
+        ♡
+
+      </div>
 
 
       <div class="popup-title">
 
-        Face ID ความอ้วมถูกต้อง! ♡
+        Face ID ความอ้วมถูกต้อง!
 
       </div>
 
@@ -888,17 +966,19 @@
 
         คุณผ่านการยืนยันตัวตนแล้ว<br>
 
-        พร้อมไปดูสิ่งที่รออยู่หรือยัง?
+        ประตูถัดไปกำลังรออ้วมอยู่...
 
       </div>
 
 
+      <!-- ปุ่มนี้จะไป birthday.html -->
+
       <button
-        class="continue-button"
-        onclick="goToNext()"
+        class="popup-button"
+        onclick="กดตรงเน้อีกครั้ง!()"
       >
 
-        ไปต่อกัน ♡
+        ไปต่อ ♡
 
       </button>
 
@@ -909,12 +989,12 @@
 
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
 
-
-    /* =========================
-       FACE SCAN
-    ========================= */
 
     function scanFace() {
 
@@ -942,7 +1022,9 @@
         "SCANNING FACE...";
 
 
-      /* ขั้นแรก */
+      /* -------------------------
+         STEP 1
+      ------------------------- */
 
       setTimeout(function() {
 
@@ -952,13 +1034,14 @@
       }, 1200);
 
 
-      /* สแกนเสร็จ */
+      /* -------------------------
+         STEP 2
+      ------------------------- */
 
       setTimeout(function() {
 
         status.innerText =
           "IDENTITY VERIFIED";
-
 
         button.style.display =
           "none";
@@ -969,33 +1052,29 @@
         */
 
         document
-          .getElementById("popup")
-          .classList.add("show");
+          .getElementById(
+            "popupOverlay"
+          )
+          .classList.add(
+            "show"
+          );
 
 
       }, 2500);
+
 
     }
 
 
 
     /* =========================
-       NEXT PAGE
+       GO TO NEXT PAGE
     ========================= */
 
-    function goToNext() {
-
-
-      /*
-        เปลี่ยนตรงนี้ได้ว่า
-        อยากให้ปุ่มไปหน้าไหน
-
-        ตอนนี้ให้ไป birthday.html
-      */
+    function goToBirthday() {
 
       window.location.href =
         "./birthday.html";
-
 
     }
 
