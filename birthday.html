@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>วันนี้เป็นวันพิเศษ ♡</title>
+  <title>♡</title>
 
 
   <!-- =========================
@@ -89,91 +89,121 @@
 
 
     /* =========================
-       BACKGROUND
+       FIREWORKS
     ========================= */
 
-    .decoration {
+    .fireworks {
 
       position: fixed;
 
+      inset: 0;
+
       pointer-events: none;
 
-      color: var(--pink);
-
-      opacity: 0.45;
+      overflow: hidden;
 
       z-index: 0;
 
     }
 
 
-    .deco-1 {
+    .firework {
 
-      top: 12%;
+      position: absolute;
 
-      left: 9%;
+      left: 50%;
 
-      font-size: 20px;
+      bottom: -40px;
 
-      animation: float 4s ease-in-out infinite;
+      width: 6px;
+
+      height: 6px;
+
+      font-size: 18px;
+
+      opacity: 0;
+
+      animation:
+        fireworkLaunch 1.2s ease-out forwards;
 
     }
 
 
-    .deco-2 {
+    .firework span {
 
-      top: 22%;
+      position: absolute;
 
-      right: 10%;
+      display: block;
 
-      font-size: 13px;
+      white-space: nowrap;
 
-      animation:
-        float 5s ease-in-out infinite
-        1s;
+      transform: translate(-50%, -50%);
 
     }
 
 
-    .deco-3 {
+    @keyframes fireworkLaunch {
 
-      bottom: 15%;
+      0% {
 
-      left: 12%;
+        opacity: 0;
 
-      font-size: 16px;
+        transform:
+          translate(
+            var(--x),
+            0
+          )
+          scale(0.4);
 
-      animation:
-        float 4.5s ease-in-out infinite
-        0.5s;
-
-    }
+      }
 
 
-    .deco-4 {
+      15% {
 
-      bottom: 20%;
+        opacity: 1;
 
-      right: 12%;
+      }
 
-      font-size: 20px;
 
-      animation:
-        float 5s ease-in-out infinite
-        1.5s;
+      65% {
+
+        opacity: 1;
+
+        transform:
+          translate(
+            var(--x),
+            var(--y)
+          )
+          scale(1);
+
+      }
+
+
+      100% {
+
+        opacity: 0;
+
+        transform:
+          translate(
+            var(--x),
+            var(--y)
+          )
+          scale(1.35);
+
+      }
 
     }
 
 
     /* =========================
-       MAIN PAGE
+       MAIN
     ========================= */
 
     .page {
 
       position: relative;
 
-      z-index: 1;
+      z-index: 2;
 
       width: 100%;
 
@@ -212,7 +242,9 @@
 
       margin-bottom: 15px;
 
-      font-family: "Quicksand", sans-serif;
+      font-family:
+        "Quicksand",
+        sans-serif;
 
       font-size: 12px;
 
@@ -224,17 +256,23 @@
 
 
     /* =========================
-       INTRO
+       MAIN TITLE
     ========================= */
 
     .intro {
 
       margin: 0;
 
-      font-family: "Gowun Batang", serif;
+      font-family:
+        "Gowun Batang",
+        serif;
 
       font-size:
-        clamp(28px, 8vw, 42px);
+        clamp(
+          28px,
+          8vw,
+          42px
+        );
 
       font-weight: 400;
 
@@ -246,7 +284,7 @@
 
 
     /* =========================
-       SPECIAL TITLE
+       HAPPY BIRTHDAY
     ========================= */
 
     .birthday {
@@ -255,7 +293,9 @@
 
       color: var(--rose);
 
-      font-family: "Quicksand", sans-serif;
+      font-family:
+        "Quicksand",
+        sans-serif;
 
       font-weight: 600;
 
@@ -269,7 +309,11 @@
       display: block;
 
       font-size:
-        clamp(43px, 13vw, 65px);
+        clamp(
+          43px,
+          13vw,
+          65px
+        );
 
       letter-spacing: -1px;
 
@@ -288,7 +332,11 @@
       margin-top: 8px;
 
       font-size:
-        clamp(32px, 10vw, 48px);
+        clamp(
+          32px,
+          10vw,
+          48px
+        );
 
     }
 
@@ -316,7 +364,9 @@
 
       margin: 0 5px;
 
-      font-family: "Gowun Batang", serif;
+      font-family:
+        "Gowun Batang",
+        serif;
 
       font-size: 32px;
 
@@ -326,13 +376,16 @@
 
 
     /* =========================
-       GIF
+       GIF CARD
     ========================= */
 
     .gif-card {
 
       width:
-        min(78vw, 300px);
+        min(
+          78vw,
+          300px
+        );
 
       margin: 30px auto 0;
 
@@ -341,7 +394,8 @@
       background: var(--card);
 
       border:
-        1px solid var(--blush);
+        1px solid
+        var(--blush);
 
       border-radius: 25px;
 
@@ -386,7 +440,8 @@
       padding: 13px 27px;
 
       border:
-        1px solid var(--pink);
+        1px solid
+        var(--pink);
 
       border-radius: 999px;
 
@@ -394,7 +449,9 @@
 
       color: var(--rose);
 
-      font-family: "Mali", cursive;
+      font-family:
+        "Mali",
+        cursive;
 
       font-size: 15px;
 
@@ -453,73 +510,76 @@
 
 
     /* =========================
-       CAT FIREWORK
+       DECORATION
     ========================= */
 
-    .cat-firework {
+    .decoration {
 
       position: fixed;
 
-      left: 50%;
-
-      top: 50%;
-
-      z-index: 100;
-
       pointer-events: none;
 
-      font-size: 22px;
+      color: var(--pink);
 
-      opacity: 0;
+      opacity: 0.45;
 
-      transform:
-        translate(-50%, -50%)
-        scale(0);
-
-      animation:
-        catFirework 1.8s
-        ease-out forwards;
+      z-index: 1;
 
     }
 
 
-    @keyframes catFirework {
+    .deco-1 {
 
-      0% {
+      top: 12%;
 
-        opacity: 0;
+      left: 9%;
 
-        transform:
-          translate(-50%, -50%)
-          scale(0);
+      font-size: 20px;
 
-      }
+      animation:
+        float 4s ease-in-out infinite;
 
-      15% {
+    }
 
-        opacity: 1;
 
-        transform:
-          translate(-50%, -50%)
-          scale(1.2);
+    .deco-2 {
 
-      }
+      top: 22%;
 
-      100% {
+      right: 10%;
 
-        opacity: 0;
+      font-size: 13px;
 
-        transform:
-          translate(
-            var(--x),
-            var(--y)
-          )
-          rotate(
-            var(--rotate)
-          )
-          scale(1);
+      animation:
+        float 5s ease-in-out infinite 1s;
 
-      }
+    }
+
+
+    .deco-3 {
+
+      bottom: 15%;
+
+      left: 12%;
+
+      font-size: 16px;
+
+      animation:
+        float 4.5s ease-in-out infinite 0.5s;
+
+    }
+
+
+    .deco-4 {
+
+      bottom: 20%;
+
+      right: 12%;
+
+      font-size: 20px;
+
+      animation:
+        float 5s ease-in-out infinite 1.5s;
 
     }
 
@@ -602,47 +662,46 @@
 
 
   <!-- =========================
+       FIREWORKS
+  ========================= -->
+
+  <div
+    class="fireworks"
+    id="fireworks"
+  ></div>
+
+
+  <!-- =========================
        DECORATIONS
   ========================= -->
 
   <div class="decoration deco-1">
-
     ♡
-
   </div>
-
 
   <div class="decoration deco-2">
-
     ✦
-
   </div>
-
 
   <div class="decoration deco-3">
-
     ˚₊‧
-
   </div>
-
 
   <div class="decoration deco-4">
-
     ♡
-
   </div>
-
 
 
   <!-- =========================
-       MAIN
+       MAIN PAGE
   ========================= -->
 
   <main class="page">
 
-
     <section class="content">
 
+
+      <!-- TOP -->
 
       <div class="top-text">
 
@@ -651,6 +710,8 @@
       </div>
 
 
+      <!-- TITLE -->
+
       <h1 class="intro">
 
         เฮ้ย วันเกิดนิ่!
@@ -658,9 +719,7 @@
       </h1>
 
 
-      <!-- =========================
-           BIRTHDAY TEXT
-      ========================= -->
+      <!-- HAPPY BIRTHDAY -->
 
       <div class="birthday">
 
@@ -689,9 +748,7 @@
       </div>
 
 
-      <!-- =========================
-           AGE
-      ========================= -->
+      <!-- AGE -->
 
       <div class="age">
 
@@ -708,29 +765,23 @@
       </div>
 
 
-      <!-- =========================
-           GIF
-      ========================= -->
+      <!-- GIF -->
 
       <div class="gif-card">
-
 
         <img
           src="https://media1.tenor.com/m/8Yxax1WAq8oAAAAd/happy-birthday.gif"
           alt="Happy Birthday"
         >
 
-
       </div>
 
 
-      <!-- =========================
-           BUTTON
-      ========================= -->
+      <!-- NEXT -->
 
       <button
         class="next-button"
-        onclick="celebrateAndContinue()"
+        onclick="goToLetter()"
       >
 
         มีจดหมายถึงเธอด้วยนะ ♡
@@ -750,7 +801,6 @@
   </main>
 
 
-
   <!-- =========================
        JAVASCRIPT
   ========================= -->
@@ -758,85 +808,111 @@
   <script>
 
 
-    /*
-      สร้างพลุแมว
-    */
+    /* =========================
+       FIREWORK SYSTEM
+    ========================= */
 
-    function createCatFirework() {
-
-
-      const cats = [
-
-        "🐱",
-
-        "😺",
-
-        "😸",
-
-        "😽",
-
-        "😻",
-
-        "🙀",
-
-        "😹"
-
-      ];
+    const fireworks =
+      document.getElementById(
+        "fireworks"
+      );
 
 
-      const centerX =
-        window.innerWidth / 2;
+    const symbols = [
+
+      "🐱",
+      "♡",
+      "✦",
+      "˚₊‧",
+      "✧"
+
+    ];
 
 
-      const centerY =
-        window.innerHeight / 2;
+    function createFirework() {
 
 
-      /*
-        จำนวนแมวในพลุ
-      */
+      const firework =
+        document.createElement(
+          "div"
+        );
 
-      const amount = 24;
+
+      firework.className =
+        "firework";
+
+
+      const startX =
+        Math.random() * 90 + 5;
+
+
+      const endX =
+        (Math.random() - 0.5)
+        * 180;
+
+
+      const endY =
+        -(Math.random() * 55 + 25);
+
+
+      firework.style.left =
+        startX + "%";
+
+
+      firework.style.setProperty(
+        "--x",
+        "0px"
+      );
+
+
+      firework.style.setProperty(
+        "--y",
+        endY + "vh"
+      );
+
+
+      firework.style.animationDelay =
+        "0s";
+
+
+      const pieces =
+        Math.floor(
+          Math.random() * 3
+        ) + 4;
 
 
       for (
         let i = 0;
-        i < amount;
+        i < pieces;
         i++
       ) {
 
 
-        const cat =
+        const piece =
           document.createElement(
-            "div"
+            "span"
           );
 
 
-        cat.className =
-          "cat-firework";
-
-
-        cat.innerText =
-          cats[
+        piece.innerText =
+          symbols[
             Math.floor(
               Math.random()
-              * cats.length
+              * symbols.length
             )
           ];
 
 
-        /*
-          กระจายเป็นวงกลม
-        */
-
         const angle =
-          (Math.PI * 2 / amount)
-          * i;
+          (
+            Math.PI * 2
+            / pieces
+          ) * i;
 
 
         const distance =
-          120 +
-          Math.random() * 180;
+          35 +
+          Math.random() * 45;
 
 
         const x =
@@ -849,118 +925,111 @@
           * distance;
 
 
-        const rotate =
-          Math.random()
-          * 360
-          - 180;
+        piece.style.left =
+          x + "px";
 
 
-        cat.style.setProperty(
-          "--x",
-          `calc(-50% + ${x}px)`
-        );
+        piece.style.top =
+          y + "px";
 
 
-        cat.style.setProperty(
-          "--y",
-          `calc(-50% + ${y}px)`
-        );
+        piece.style.opacity =
+          0.75 +
+          Math.random() * 0.25;
 
 
-        cat.style.setProperty(
-          "--rotate",
-          `${rotate}deg`
-        );
-
-
-        /*
-          ขนาดแมวแบบสุ่ม
-        */
-
-        const size =
-          18 +
-          Math.random() * 18;
-
-
-        cat.style.fontSize =
-          `${size}px`;
-
-
-        /*
-          ดีเลย์นิด ๆ
-        */
-
-        cat.style.animationDelay =
-          `${Math.random() * 0.15}s`;
-
-
-        document.body.appendChild(
-          cat
-        );
-
-
-        /*
-          ลบออกหลังเล่นเสร็จ
-        */
-
-        setTimeout(
-          function() {
-
-            cat.remove();
-
-          },
-          2200
+        firework.appendChild(
+          piece
         );
 
       }
 
-    }
 
-
-
-    /*
-      กดปุ่ม
-      → พลุแมว
-      → รอ
-      → ไปจดหมาย
-    */
-
-    function celebrateAndContinue() {
-
-
-      createCatFirework();
-
-
-      /*
-        ทำพลุเพิ่มอีกชุด
-        ให้ดูเหมือนฉลอง
-      */
-
-      setTimeout(
-        createCatFirework,
-        250
+      fireworks.appendChild(
+        firework
       );
 
-
-      setTimeout(
-        createCatFirework,
-        500
-      );
-
-
-      /*
-        เปลี่ยนหน้า
-      */
 
       setTimeout(
         function() {
 
-          window.location.href =
-            "./letter.html";
+          firework.remove();
 
         },
-        1600
+        1300
       );
+
+    }
+
+
+    /* =========================
+       START FIREWORKS
+    ========================= */
+
+    function startFireworks() {
+
+
+      createFirework();
+
+
+      setTimeout(
+        createFirework,
+        450
+      );
+
+
+      setTimeout(
+        createFirework,
+        900
+      );
+
+
+      setTimeout(
+        createFirework,
+        1400
+      );
+
+
+      setTimeout(
+        createFirework,
+        1900
+      );
+
+
+      setInterval(
+        function() {
+
+          createFirework();
+
+        },
+        2200
+      );
+
+    }
+
+
+    /* =========================
+       START PAGE
+    ========================= */
+
+    window.addEventListener(
+      "load",
+      function() {
+
+        startFireworks();
+
+      }
+    );
+
+
+    /* =========================
+       GO TO LETTER
+    ========================= */
+
+    function goToLetter() {
+
+      window.location.href =
+        "./letter.html";
 
     }
 
