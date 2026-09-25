@@ -35,18 +35,23 @@
 
     :root {
 
-      --bg: #FFF7F5;
-      --dark: #252124;
-      --pink: #D99AA5;
-      --rose: #8F5F68;
-      --text: #594348;
-      --light: #FFFCFA;
+      --bg: #fff7f5;
+      --dark: #211d1f;
+      --pink: #d99aa5;
+      --rose: #8f5f68;
+      --cream: #fffdfb;
+      --light: #fff8ef;
 
     }
 
 
     * {
+
       box-sizing: border-box;
+
+      -webkit-tap-highlight-color:
+        transparent;
+
     }
 
 
@@ -54,9 +59,11 @@
     body {
 
       margin: 0;
+
       padding: 0;
 
       width: 100%;
+
       height: 100%;
 
       overflow: hidden;
@@ -68,17 +75,15 @@
 
       background: var(--bg);
 
-      color: var(--text);
+      color: var(--rose);
 
       font-family: "Mali", cursive;
-
-      overflow: hidden;
 
     }
 
 
     /* =========================
-       MAIN PAGE
+       PAGE
     ========================= */
 
     .page {
@@ -89,7 +94,7 @@
 
       height: 100dvh;
 
-      min-height: 520px;
+      min-height: 100vh;
 
       overflow: hidden;
 
@@ -97,7 +102,7 @@
 
 
     /* =========================
-       ERROR SCREEN
+       ERROR
     ========================= */
 
     .error-screen {
@@ -106,22 +111,19 @@
 
       inset: 0;
 
-      z-index: 10;
+      z-index: 50;
 
       display: flex;
 
-      justify-content: center;
-
       align-items: center;
 
-      padding:
-        30px
-        24px
-        calc(30px + env(safe-area-inset-bottom));
+      justify-content: center;
 
-      background: var(--bg);
+      padding: 25px;
 
       text-align: center;
+
+      background: var(--bg);
 
       transition:
         opacity 1s ease;
@@ -133,7 +135,7 @@
 
       width: min(
         100%,
-        380px
+        350px
       );
 
       animation:
@@ -148,11 +150,11 @@
         "Quicksand",
         sans-serif;
 
-      font-size: 18px;
+      font-size: 17px;
 
       letter-spacing: 2px;
 
-      color: #D66A76;
+      color: #d66a76;
 
       margin-bottom: 15px;
 
@@ -172,8 +174,6 @@
           29px
         );
 
-      color: var(--rose);
-
       line-height: 1.5;
 
     }
@@ -181,14 +181,9 @@
 
     .error-text {
 
-      margin-top: 17px;
+      margin-top: 16px;
 
-      font-size:
-        clamp(
-          13px,
-          4vw,
-          15px
-        );
+      font-size: 14px;
 
       line-height: 2;
 
@@ -203,180 +198,54 @@
 
       color: var(--pink);
 
+      line-height: 1.8;
+
       animation:
-        blink 1.3s infinite;
+        blink 1.2s infinite;
 
     }
 
 
     /* =========================
-       FLASHLIGHT
+       DARK ROOM
     ========================= */
 
-    .flashlight-text {
-
-      display: none;
-
-      position: absolute;
-
-      left: 50%;
-
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      width: 100%;
-
-      padding: 20px;
-
-      text-align: center;
-
-      font-size: 16px;
-
-      line-height: 2;
-
-      z-index: 20;
-
-    }
-
-
-    .flashlight {
-
-      position: absolute;
-
-      left: 50%;
-
-      top: 50%;
-
-      width: 40px;
-
-      height: 40px;
-
-      transform:
-        translate(-50%, -50%);
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          #FFFBEF 0%,
-          #FFF2C8 25%,
-          rgba(
-            255,
-            242,
-            200,
-            0.25
-          ) 55%,
-          transparent 72%
-        );
-
-      box-shadow:
-        0 0 60px
-        35px
-        rgba(
-          255,
-          242,
-          200,
-          0.3
-        );
-
-      opacity: 0;
-
-      z-index: 15;
-
-      transition:
-        width 1.5s ease,
-        height 1.5s ease,
-        opacity 1s ease;
-
-    }
-
-
-    .flashlight.show {
-
-      opacity: 1;
-
-      width: 280px;
-
-      height: 280px;
-
-    }
-
-
-    /* =========================
-       CAT SCENE
-    ========================= */
-
-    .cat-scene {
+    .dark-room {
 
       position: absolute;
 
       inset: 0;
 
-      display: none;
+      z-index: 10;
 
-      background: #242022;
+      display: flex;
 
-      z-index: 5;
+      align-items: center;
 
-    }
-
-
-    .cat-scene.show {
-
-      display: block;
-
-      animation:
-        sceneIn 1.2s ease;
-
-    }
-
-
-    /* =========================
-       GLOW
-    ========================= */
-
-    .glow {
-
-      position: absolute;
-
-      width: 280px;
-
-      height: 280px;
-
-      left: 50%;
-
-      top: 40%;
-
-      transform:
-        translate(-50%, -50%);
-
-      border-radius: 50%;
+      justify-content: center;
 
       background:
         radial-gradient(
-          circle,
-          rgba(
-            255,
-            248,
-            215,
-            0.9
-          ) 0%,
-          rgba(
-            255,
-            248,
-            215,
-            0.35
-          ) 35%,
-          transparent 70%
+          circle at 50% 50%,
+          #30292c,
+          #171416 72%
         );
 
       opacity: 0;
 
-      animation:
-        lightOn 1.8s ease forwards;
+      pointer-events: none;
+
+      transition:
+        opacity 1s ease;
+
+    }
+
+
+    .dark-room.show {
+
+      opacity: 1;
+
+      pointer-events: auto;
 
     }
 
@@ -393,45 +262,57 @@
 
       top: 38%;
 
-      transform:
-        translate(-50%, -50%)
-        scale(0.7);
+      width: min(
+        175px,
+        48vw
+      );
 
-      width:
-        clamp(
-          125px,
-          38vw,
-          170px
-        );
+      transform:
+        translate(
+          -50%,
+          20px
+        )
+        scale(.85);
 
       opacity: 0;
 
-      animation:
-        catAppear 1.5s
-        1.4s
-        ease forwards;
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
 
-      z-index: 4;
+    }
+
+
+    .cat.show {
+
+      opacity: 1;
+
+      transform:
+        translate(
+          -50%,
+          0
+        )
+        scale(1);
 
     }
 
 
     .cat img {
 
+      display: block;
+
       width: 100%;
 
       height: auto;
 
-      display: block;
-
       filter:
         drop-shadow(
-          0 15px 18px
+          0 15px 20px
           rgba(
             0,
             0,
             0,
-            0.18
+            .35
           )
         );
 
@@ -439,60 +320,281 @@
 
 
     /* =========================
-       CAT TEXT
+       FLASHLIGHT
     ========================= */
 
-    .cat-text {
+    .flashlight {
 
       position: absolute;
 
       left: 50%;
 
-      top: 59%;
+      top: 42%;
+
+      width: 110px;
+
+      height: 110px;
 
       transform:
-        translateX(-50%);
-
-      width:
-        min(
-          88%,
-          360px
+        translate(
+          -50%,
+          -50%
         );
 
-      text-align: center;
+      border-radius: 50%;
 
-      color: #FFF8F5;
-
-      font-size:
-        clamp(
-          13px,
-          4vw,
-          16px
+      background:
+        radial-gradient(
+          circle,
+          rgba(
+            255,
+            250,
+            220,
+            .95
+          ) 0%,
+          rgba(
+            255,
+            242,
+            190,
+            .55
+          ) 30%,
+          rgba(
+            255,
+            240,
+            190,
+            .12
+          ) 58%,
+          transparent 72%
         );
-
-      line-height: 1.8;
 
       opacity: 0;
 
-      animation:
-        textAppear 1s
-        3s
-        ease forwards;
+      pointer-events: none;
 
-      z-index: 10;
+      transition:
+        opacity 1s ease;
 
     }
 
 
-    .cat-text strong {
+    .flashlight.show {
+
+      opacity: 1;
+
+      animation:
+        flashlightFloat
+        2.5s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    @keyframes flashlightFloat {
+
+      0%,
+      100% {
+
+        transform:
+          translate(
+            -50%,
+            -50%
+          );
+
+      }
+
+      50% {
+
+        transform:
+          translate(
+            -50%,
+            -53%
+          );
+
+      }
+
+    }
+
+
+    /* =========================
+       CAT MESSAGE
+    ========================= */
+
+    .cat-message {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 13%;
+
+      width: min(
+        90%,
+        350px
+      );
+
+      transform:
+        translateX(-50%)
+        translateY(12px);
+
+      text-align: center;
+
+      color: #fff8f5;
+
+      font-size: 15px;
+
+      line-height: 2;
+
+      opacity: 0;
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+    }
+
+
+    .cat-message.show {
+
+      opacity: 1;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+
+    .cat-message .small {
+
+      font-size: 13px;
+
+      opacity: .7;
+
+    }
+
+
+    /* =========================
+       DOOR AREA
+    ========================= */
+
+    .door-scene {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 20;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        25px
+        20px
+        35px;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity 1s ease;
+
+    }
+
+
+    .door-scene.show {
+
+      opacity: 1;
+
+      pointer-events: auto;
+
+    }
+
+
+    /* =========================
+       DOOR MESSAGE
+    ========================= */
+
+    .door-message {
+
+      width: min(
+        100%,
+        340px
+      );
+
+      text-align: center;
+
+      color: #fff8f5;
+
+      margin-bottom: 22px;
+
+      line-height: 1.9;
+
+    }
+
+
+    .door-message .title {
 
       font-family:
         "Gowun Batang",
         serif;
 
-      font-size: 22px;
+      font-size: 21px;
 
-      font-weight: 400;
+      margin-bottom: 4px;
+
+    }
+
+
+    .door-message .sub {
+
+      font-size: 13px;
+
+      opacity: .75;
+
+    }
+
+
+    .arrow {
+
+      display: inline-block;
+
+      margin-top: 5px;
+
+      font-size: 23px;
+
+      animation:
+        arrowMove
+        1s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    @keyframes arrowMove {
+
+      0%,
+      100% {
+
+        transform:
+          translateX(-4px);
+
+      }
+
+      50% {
+
+        transform:
+          translateX(4px);
+
+      }
 
     }
 
@@ -501,105 +603,135 @@
        DOOR
     ========================= */
 
-    .door {
+    .door-wrap {
 
-      position: absolute;
+      position: relative;
 
-      right:
-        clamp(
-          20px,
-          8vw,
-          45px
-        );
+      width: 150px;
 
-      bottom:
-        clamp(
-          105px,
-          14vh,
-          130px
-        );
+      height: 205px;
 
-      width:
-        clamp(
-          62px,
-          20vw,
-          82px
-        );
+      perspective: 900px;
 
-      height:
-        clamp(
-          84px,
-          26vw,
-          110px
-        );
+      cursor: pointer;
 
-      border-radius:
-        8px
-        8px
-        3px
-        3px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #FFF0F4,
-          #D99AA5
-        );
-
-      border:
-        3px solid
-        rgba(
-          255,
-          235,
-          240,
-          0.9
-        );
-
-      box-shadow:
-        0 0 30px
-        rgba(
-          255,
-          192,
-          210,
-          0.5
-        );
-
-      opacity: 0;
-
-      transform:
-        translateX(50px);
-
-      animation:
-        doorAppear 1s
-        4.8s
-        ease forwards;
-
-      z-index: 3;
+      touch-action: pan-y;
 
     }
 
 
-    .door::before {
-
-      content: "";
+    .door-frame {
 
       position: absolute;
 
-      left: 50%;
+      inset: 0;
 
-      top: 0;
+      padding: 8px;
 
-      width: 3px;
-
-      height: 100%;
+      border-radius:
+        12px
+        12px
+        4px
+        4px;
 
       background:
+        linear-gradient(
+          145deg,
+          #eac1c8,
+          #9f6973
+        );
+
+      box-shadow:
+        0 0 35px
+        rgba(
+          235,
+          160,
+          184,
+          .38
+        );
+
+    }
+
+
+    .door-inside {
+
+      position: absolute;
+
+      inset: 8px;
+
+      overflow: hidden;
+
+      border-radius:
+        7px
+        7px
+        2px
+        2px;
+
+      background:
+        radial-gradient(
+          circle at 50% 40%,
+          #ffeaf1,
+          #e4a8b5 55%,
+          #8f5f68
+        );
+
+    }
+
+
+    .door {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 5;
+
+      transform-origin:
+        left center;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff0f3,
+          #d99aa5
+        );
+
+      border:
+        2px solid
+        rgba(
+          255,
+          240,
+          244,
+          .9
+        );
+
+      border-radius:
+        7px
+        7px
+        2px
+        2px;
+
+      transition:
+        transform .8s ease;
+
+      box-shadow:
+        inset
+        -7px 0
+        15px
         rgba(
           143,
           95,
           104,
-          0.15
+          .12
         );
+
+    }
+
+
+    .door.open {
+
+      transform:
+        rotateY(-72deg);
 
     }
 
@@ -608,109 +740,167 @@
 
       position: absolute;
 
-      right: 12px;
+      right: 17px;
 
-      top: 55%;
+      top: 52%;
 
-      width: 7px;
+      width: 10px;
 
-      height: 7px;
+      height: 10px;
 
       border-radius: 50%;
 
-      background: var(--rose);
+      background: #8f5f68;
+
+      box-shadow:
+        0 2px 4px
+        rgba(
+          0,
+          0,
+          0,
+          .15
+        );
 
     }
 
 
-    /* =========================
-       FINAL MESSAGE
-    ========================= */
-
-    .door-text {
+    .door-heart {
 
       position: absolute;
 
       left: 50%;
 
-      bottom:
-        calc(
-          20px
-          + env(safe-area-inset-bottom)
-        );
+      top: 38%;
 
       transform:
-        translateX(-50%);
+        translate(-50%, -50%);
 
-      width:
-        min(
-          92%,
-          390px
-        );
+      color: #fff;
 
-      padding:
-        0
-        10px;
+      font-size: 28px;
 
-      text-align: center;
-
-      color: #FFF8F5;
-
-      font-size:
-        clamp(
-          12px,
-          3.6vw,
-          15px
-        );
-
-      line-height: 1.7;
-
-      opacity: 0;
-
-      animation:
-        finalText 1s
-        6s
-        ease forwards;
-
-      z-index: 10;
+      opacity: .8;
 
     }
 
 
     /* =========================
-       BUTTON
+       DRAG HINT
     ========================= */
 
-    .next-button {
+    .drag-hint {
 
-      display: block;
+      margin-top: 19px;
 
-      margin:
-        9px
-        auto
-        0;
+      color: #fff8f5;
 
-      padding:
-        10px
-        23px;
+      font-size: 12px;
 
-      min-height: 42px;
+      opacity: .65;
 
-      border:
-        1px solid
-        var(--pink);
+      text-align: center;
 
-      border-radius: 999px;
+    }
+
+
+    .drag-icon {
+
+      display: inline-block;
+
+      margin-right: 5px;
+
+      animation:
+        dragMove
+        1.3s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    @keyframes dragMove {
+
+      0%,
+      100% {
+
+        transform:
+          translateX(-5px);
+
+      }
+
+      50% {
+
+        transform:
+          translateX(5px);
+
+      }
+
+    }
+
+
+    /* =========================
+       SUCCESS
+    ========================= */
+
+    .success {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 40;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       background:
-        rgba(
-          255,
-          252,
-          250,
-          0.96
+        radial-gradient(
+          circle,
+          #fffdfb,
+          #f9e8eb
         );
 
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity 1s ease;
+
+    }
+
+
+    .success.show {
+
+      opacity: 1;
+
+    }
+
+
+    .success-text {
+
+      text-align: center;
+
       color: var(--rose);
+
+      font-family:
+        "Gowun Batang",
+        serif;
+
+      font-size: 23px;
+
+      line-height: 1.8;
+
+      animation:
+        fadeIn .8s ease;
+
+    }
+
+
+    .success-text span {
 
       font-family:
         "Mali",
@@ -718,41 +908,11 @@
 
       font-size: 13px;
 
-      line-height: 1;
-
-      cursor: pointer;
-
-      white-space: nowrap;
-
-      opacity: 0;
-
-      animation:
-        buttonAppear 1s
-        6.5s
-        ease forwards;
-
-      box-shadow:
-        0 5px 20px
-        rgba(
-          0,
-          0,
-          0,
-          0.12
-        );
-
-    }
-
-
-    .next-button:active {
-
-      transform:
-        scale(0.96);
-
     }
 
 
     /* =========================
-       ANIMATIONS
+       ANIMATION
     ========================= */
 
     @keyframes fadeIn {
@@ -782,159 +942,14 @@
 
       0%,
       100% {
-        opacity: 0.4;
+
+        opacity: .35;
+
       }
 
       50% {
-        opacity: 1;
-      }
-
-    }
-
-
-    @keyframes sceneIn {
-
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-
-    }
-
-
-    @keyframes lightOn {
-
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-
-    }
-
-
-    @keyframes catAppear {
-
-      0% {
-
-        opacity: 0;
-
-        transform:
-          translate(-50%, -50%)
-          scale(0.65);
-
-      }
-
-      70% {
 
         opacity: 1;
-
-        transform:
-          translate(-50%, -50%)
-          scale(1.05);
-
-      }
-
-      100% {
-
-        opacity: 1;
-
-        transform:
-          translate(-50%, -50%)
-          scale(1);
-
-      }
-
-    }
-
-
-    @keyframes textAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translate(
-            -50%,
-            10px
-          );
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translate(
-            -50%,
-            0
-          );
-
-      }
-
-    }
-
-
-    @keyframes doorAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateX(50px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateX(0);
-
-      }
-
-    }
-
-
-    @keyframes finalText {
-
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-
-    }
-
-
-    @keyframes buttonAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(10px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
 
       }
 
@@ -942,106 +957,48 @@
 
 
     /* =========================
-       SHORT SCREEN
+       SMALL SCREEN
     ========================= */
 
-    @media (max-height: 650px) {
+    @media (
+      max-height: 680px
+    ) {
 
       .cat {
 
         top: 34%;
 
+        width: 145px;
+
+      }
+
+
+      .cat-message {
+
+        bottom: 9%;
+
+      }
+
+
+      .door-message {
+
+        margin-bottom: 13px;
+
+      }
+
+
+      .door-wrap {
+
         width: 125px;
 
-      }
-
-
-      .cat-text {
-
-        top: 54%;
-
-        line-height: 1.55;
+        height: 175px;
 
       }
 
 
-      .door {
+      .drag-hint {
 
-        bottom: 105px;
-
-        width: 60px;
-
-        height: 82px;
-
-      }
-
-
-      .door-text {
-
-        bottom:
-          calc(
-            12px
-            + env(safe-area-inset-bottom)
-          );
-
-        font-size: 11px;
-
-        line-height: 1.5;
-
-      }
-
-
-      .next-button {
-
-        margin-top: 6px;
-
-        min-height: 38px;
-
-        padding:
-          8px
-          20px;
-
-      }
-
-    }
-
-
-    /* =========================
-       VERY SHORT SCREEN
-    ========================= */
-
-    @media (max-height: 560px) {
-
-      .cat {
-
-        top: 29%;
-
-        width: 105px;
-
-      }
-
-
-      .cat-text {
-
-        top: 48%;
-
-        font-size: 11px;
-
-      }
-
-
-      .door {
-
-        bottom: 90px;
-
-      }
-
-
-      .door-text {
-
-        font-size: 10px;
-
-        line-height: 1.4;
+        margin-top: 12px;
 
       }
 
@@ -1095,6 +1052,7 @@
         <div class="loading">
 
           ……<br>
+
           ……
 
         </div>
@@ -1106,119 +1064,164 @@
 
 
     <!-- =========================
-         FLASHLIGHT
-    ========================= -->
-
-    <div
-      class="flashlight-text"
-      id="flashlightText"
-    >
-
-      🔦 เจอไฟแล้วค่ะ
-
-    </div>
-
-
-    <div
-      class="flashlight"
-      id="flashlight"
-    ></div>
-
-
-
-    <!-- =========================
-         CAT SCENE
+         DARK ROOM
     ========================= -->
 
     <section
-      class="cat-scene"
-      id="catScene"
+      class="dark-room"
+      id="darkRoom"
     >
 
 
-      <div class="glow"></div>
+      <div
+        class="flashlight"
+        id="flashlight"
+      ></div>
 
 
-      <!-- CAT -->
-
-      <div class="cat">
+      <div
+        class="cat"
+        id="cat"
+      >
 
         <img
           src="IMG_0410.jpeg"
-          alt="แมวอ้วน"
+          alt="แมวอ้วนถือไฟฉาย"
         >
 
       </div>
 
 
-      <!-- CAT TEXT -->
+      <div
+        class="cat-message"
+        id="catMessage"
+      >
 
-      <div class="cat-text">
-
-        🐱 เหมียว
-
-        <br><br>
-
-        ...
-
-        <br><br>
-
-        อ้าว
+        🐱 เหมียว… เจอไฟแล้วค่ะ
 
         <br>
 
-        แมวก็ไม่รู้เหมือนกันค่ะ
+        <span class="small">
+
+          แต่ทางไปต่ออยู่ไหนนะ...
+
+        </span>
 
       </div>
-
 
 
       <!-- =========================
            DOOR
       ========================= -->
 
-      <div class="door">
-
-        <div class="door-knob"></div>
-
-      </div>
-
+      <div
+        class="door-scene"
+        id="doorScene"
+      >
 
 
-      <!-- =========================
-           FINAL TEXT
-      ========================= -->
+        <div class="door-message">
 
-      <div class="door-text">
+          <div class="title">
 
-        🐱 แต่ถ้าเป็นทางนี้...<br>
+            อ๊ะ เจอประตูแล้ว ♡
 
-        น่าจะใช่นะ
-
-        <br>
-
-        <span>
-          ก๊อก ก๊อก
-        </span>
-
-        <br>
-
-        <span>
-          พบทางไปต่อแล้ว ♡
-        </span>
+          </div>
 
 
-        <button
-          class="next-button"
-          onclick="nextPage()"
+          <div class="sub">
+
+            รบกวนเลื่อนประตูให้ทีค่ะ
+
+            <br>
+
+            ตามลูกศร หรือคลิกที่ประตูก็ได้
+
+          </div>
+
+
+          <div class="arrow">
+
+            ↓
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="door-wrap"
+          id="doorWrap"
         >
 
-          ตามแมวไป → ♡
+          <div class="door-frame">
 
-        </button>
+            <div class="door-inside"></div>
+
+
+            <div
+              class="door"
+              id="door"
+            >
+
+              <div class="door-heart">
+
+                ♡
+
+              </div>
+
+
+              <div class="door-knob"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="drag-hint">
+
+          <span class="drag-icon">
+
+            ←
+
+          </span>
+
+          ลากประตูไปทางซ้าย
+
+        </div>
+
 
       </div>
 
+
+    </section>
+
+
+
+    <!-- =========================
+         SUCCESS
+    ========================= -->
+
+    <section
+      class="success"
+      id="success"
+    >
+
+      <div class="success-text">
+
+        พบทางไปต่อแล้ว ♡
+
+        <br>
+
+        <span>
+
+          กำลังเปิดประตู...
+
+        </span>
+
+      </div>
 
     </section>
 
@@ -1229,90 +1232,242 @@
 
   <script>
 
-
     /* =========================
-       STORY TIMELINE
+       ELEMENTS
     ========================= */
 
+    const errorScreen =
+      document.getElementById(
+        "errorScreen"
+      );
 
-    // 1. ERROR ค้างไว้ก่อน
+    const darkRoom =
+      document.getElementById(
+        "darkRoom"
+      );
+
+    const flashlight =
+      document.getElementById(
+        "flashlight"
+      );
+
+    const cat =
+      document.getElementById(
+        "cat"
+      );
+
+    const catMessage =
+      document.getElementById(
+        "catMessage"
+      );
+
+    const doorScene =
+      document.getElementById(
+        "doorScene"
+      );
+
+    const door =
+      document.getElementById(
+        "door"
+      );
+
+    const doorWrap =
+      document.getElementById(
+        "doorWrap"
+      );
+
+    const success =
+      document.getElementById(
+        "success"
+      );
+
+
+    /* =========================
+       STORY
+    ========================= */
 
     setTimeout(function() {
 
-      document
-        .getElementById(
-          "errorScreen"
-        )
-        .style.opacity = "0";
+      errorScreen.style.opacity = "0";
 
     }, 3500);
 
 
-
-    // 2. เปิดไฟฉาย
-
     setTimeout(function() {
 
-      const error =
-        document.getElementById(
-          "errorScreen"
-        );
+      errorScreen.style.display =
+        "none";
 
-      error.style.display = "none";
-
-
-      document
-        .getElementById(
-          "flashlight"
-        )
-        .classList.add(
-          "show"
-        );
-
-
-      document
-        .getElementById(
-          "flashlightText"
-        )
-        .style.display =
-          "block";
+      darkRoom.classList.add(
+        "show"
+      );
 
     }, 4500);
 
 
-
-    // 3. เจอแมว
+    /* แมวออกมา */
 
     setTimeout(function() {
 
-      document
-        .getElementById(
-          "flashlightText"
-        )
-        .style.display =
-          "none";
+      flashlight.classList.add(
+        "show"
+      );
+
+      cat.classList.add(
+        "show"
+      );
+
+    }, 5000);
 
 
-      document
-        .getElementById(
-          "catScene"
-        )
-        .classList.add(
+    /* แมวพูด */
+
+    setTimeout(function() {
+
+      catMessage.classList.add(
+        "show"
+      );
+
+    }, 6500);
+
+
+    /* ประตูมา */
+
+    setTimeout(function() {
+
+      doorScene.classList.add(
+        "show"
+      );
+
+    }, 8000);
+
+
+
+    /* =========================
+       OPEN DOOR
+    ========================= */
+
+    let opened = false;
+
+
+    function openDoor() {
+
+      if (opened) return;
+
+      opened = true;
+
+      door.classList.add(
+        "open"
+      );
+
+
+      setTimeout(function() {
+
+        success.classList.add(
           "show"
         );
 
-    }, 6000);
+      }, 650);
 
 
+      setTimeout(function() {
 
-    // 4. ไป birthday
+        window.location.href =
+          "./birthday.html";
 
-    function nextPage() {
-
-      window.location.href =
-        "./birthday.html";
+      }, 1800);
 
     }
+
+
+    /* คลิกประตู */
+
+    doorWrap.addEventListener(
+      "click",
+      function() {
+
+        openDoor();
+
+      }
+    );
+
+
+
+    /* =========================
+       DRAG DOOR
+    ========================= */
+
+    let dragging = false;
+
+    let startX = 0;
+
+
+    doorWrap.addEventListener(
+      "pointerdown",
+      function(event) {
+
+        if (opened) return;
+
+        dragging = true;
+
+        startX =
+          event.clientX;
+
+        doorWrap.setPointerCapture(
+          event.pointerId
+        );
+
+      }
+    );
+
+
+    doorWrap.addEventListener(
+      "pointermove",
+      function(event) {
+
+        if (
+          !dragging ||
+          opened
+        ) return;
+
+
+        const distance =
+          startX -
+          event.clientX;
+
+
+        if (
+          distance > 45
+        ) {
+
+          dragging = false;
+
+          openDoor();
+
+        }
+
+      }
+    );
+
+
+    doorWrap.addEventListener(
+      "pointerup",
+      function() {
+
+        dragging = false;
+
+      }
+    );
+
+
+    doorWrap.addEventListener(
+      "pointercancel",
+      function() {
+
+        dragging = false;
+
+      }
+    );
 
   </script>
 
