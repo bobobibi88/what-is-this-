@@ -13,7 +13,9 @@
   <title>404 ♡</title>
 
 
-  <!-- Fonts -->
+  <!-- =========================
+       FONTS
+  ========================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -55,16 +57,14 @@
       padding: 0;
 
       width: 100%;
-      min-height: 100%;
+      height: 100%;
+
+      overflow: hidden;
 
     }
 
 
     body {
-
-      min-height: 100vh;
-
-      overflow: hidden;
 
       background: var(--bg);
 
@@ -72,11 +72,13 @@
 
       font-family: "Mali", cursive;
 
+      overflow: hidden;
+
     }
 
 
     /* =========================
-       MAIN
+       MAIN PAGE
     ========================= */
 
     .page {
@@ -85,7 +87,9 @@
 
       width: 100%;
 
-      height: 100vh;
+      height: 100dvh;
+
+      min-height: 520px;
 
       overflow: hidden;
 
@@ -102,27 +106,35 @@
 
       inset: 0;
 
+      z-index: 10;
+
       display: flex;
 
       justify-content: center;
 
       align-items: center;
 
-      text-align: center;
-
-      padding: 25px;
+      padding:
+        30px
+        24px
+        calc(30px + env(safe-area-inset-bottom));
 
       background: var(--bg);
 
+      text-align: center;
+
       transition:
         opacity 1s ease;
-
-      z-index: 10;
 
     }
 
 
     .error-content {
+
+      width: min(
+        100%,
+        380px
+      );
 
       animation:
         fadeIn 1s ease;
@@ -142,7 +154,7 @@
 
       color: #D66A76;
 
-      margin-bottom: 18px;
+      margin-bottom: 15px;
 
     }
 
@@ -153,18 +165,30 @@
         "Gowun Batang",
         serif;
 
-      font-size: 28px;
+      font-size:
+        clamp(
+          23px,
+          7vw,
+          29px
+        );
 
       color: var(--rose);
+
+      line-height: 1.5;
 
     }
 
 
     .error-text {
 
-      margin-top: 18px;
+      margin-top: 17px;
 
-      font-size: 15px;
+      font-size:
+        clamp(
+          13px,
+          4vw,
+          15px
+        );
 
       line-height: 2;
 
@@ -173,7 +197,7 @@
 
     .loading {
 
-      margin-top: 22px;
+      margin-top: 20px;
 
       font-size: 14px;
 
@@ -203,6 +227,8 @@
         translate(-50%, -50%);
 
       width: 100%;
+
+      padding: 20px;
 
       text-align: center;
 
@@ -237,13 +263,19 @@
           circle,
           #FFFBEF 0%,
           #FFF2C8 25%,
-          rgba(255,242,200,0.25) 55%,
+          rgba(
+            255,
+            242,
+            200,
+            0.25
+          ) 55%,
           transparent 72%
         );
 
       box-shadow:
         0 0 60px
-        35px rgba(
+        35px
+        rgba(
           255,
           242,
           200,
@@ -285,8 +317,7 @@
 
       display: none;
 
-      background:
-        #242022;
+      background: #242022;
 
       z-index: 5;
 
@@ -303,7 +334,9 @@
     }
 
 
-    /* flashlight glow */
+    /* =========================
+       GLOW
+    ========================= */
 
     .glow {
 
@@ -315,7 +348,7 @@
 
       left: 50%;
 
-      top: 45%;
+      top: 40%;
 
       transform:
         translate(-50%, -50%);
@@ -358,13 +391,18 @@
 
       left: 50%;
 
-      top: 44%;
+      top: 38%;
 
       transform:
         translate(-50%, -50%)
         scale(0.7);
 
-      width: 170px;
+      width:
+        clamp(
+          125px,
+          38vw,
+          170px
+        );
 
       opacity: 0;
 
@@ -382,12 +420,19 @@
 
       width: 100%;
 
+      height: auto;
+
       display: block;
 
       filter:
         drop-shadow(
           0 15px 18px
-          rgba(0,0,0,0.18)
+          rgba(
+            0,
+            0,
+            0,
+            0.18
+          )
         );
 
     }
@@ -403,20 +448,29 @@
 
       left: 50%;
 
-      bottom: 17%;
+      top: 59%;
 
       transform:
         translateX(-50%);
 
-      width: 90%;
+      width:
+        min(
+          88%,
+          360px
+        );
 
       text-align: center;
 
       color: #FFF8F5;
 
-      font-size: 16px;
+      font-size:
+        clamp(
+          13px,
+          4vw,
+          16px
+        );
 
-      line-height: 2;
+      line-height: 1.8;
 
       opacity: 0;
 
@@ -451,16 +505,39 @@
 
       position: absolute;
 
-      right: 8%;
+      right:
+        clamp(
+          20px,
+          8vw,
+          45px
+        );
 
-      bottom: 9%;
+      bottom:
+        clamp(
+          105px,
+          14vh,
+          130px
+        );
 
-      width: 82px;
+      width:
+        clamp(
+          62px,
+          20vw,
+          82px
+        );
 
-      height: 110px;
+      height:
+        clamp(
+          84px,
+          26vw,
+          110px
+        );
 
       border-radius:
-        8px 8px 3px 3px;
+        8px
+        8px
+        3px
+        3px;
 
       background:
         linear-gradient(
@@ -541,14 +618,13 @@
 
       border-radius: 50%;
 
-      background:
-        var(--rose);
+      background: var(--rose);
 
     }
 
 
     /* =========================
-       FINAL TEXT
+       FINAL MESSAGE
     ========================= */
 
     .door-text {
@@ -557,20 +633,37 @@
 
       left: 50%;
 
-      bottom: 4%;
+      bottom:
+        calc(
+          20px
+          + env(safe-area-inset-bottom)
+        );
 
       transform:
         translateX(-50%);
 
-      width: 90%;
+      width:
+        min(
+          92%,
+          390px
+        );
+
+      padding:
+        0
+        10px;
 
       text-align: center;
 
       color: #FFF8F5;
 
-      font-size: 15px;
+      font-size:
+        clamp(
+          12px,
+          3.6vw,
+          15px
+        );
 
-      line-height: 2;
+      line-height: 1.7;
 
       opacity: 0;
 
@@ -584,13 +677,27 @@
     }
 
 
+    /* =========================
+       BUTTON
+    ========================= */
+
     .next-button {
 
-      margin-top: 12px;
+      display: block;
 
-      padding: 11px 25px;
+      margin:
+        9px
+        auto
+        0;
 
-      border: 1px solid
+      padding:
+        10px
+        23px;
+
+      min-height: 42px;
+
+      border:
+        1px solid
         var(--pink);
 
       border-radius: 999px;
@@ -600,7 +707,7 @@
           255,
           252,
           250,
-          0.95
+          0.96
         );
 
       color: var(--rose);
@@ -609,9 +716,13 @@
         "Mali",
         cursive;
 
-      font-size: 14px;
+      font-size: 13px;
+
+      line-height: 1;
 
       cursor: pointer;
+
+      white-space: nowrap;
 
       opacity: 0;
 
@@ -619,6 +730,15 @@
         buttonAppear 1s
         6.5s
         ease forwards;
+
+      box-shadow:
+        0 5px 20px
+        rgba(
+          0,
+          0,
+          0,
+          0.12
+        );
 
     }
 
@@ -632,7 +752,7 @@
 
 
     /* =========================
-       ANIMATION
+       ANIMATIONS
     ========================= */
 
     @keyframes fadeIn {
@@ -736,15 +856,27 @@
     @keyframes textAppear {
 
       from {
+
         opacity: 0;
+
         transform:
-          translate(-50%, 10px);
+          translate(
+            -50%,
+            10px
+          );
+
       }
 
       to {
+
         opacity: 1;
+
         transform:
-          translate(-50%, 0);
+          translate(
+            -50%,
+            0
+          );
+
       }
 
     }
@@ -789,15 +921,128 @@
     @keyframes buttonAppear {
 
       from {
+
         opacity: 0;
+
         transform:
           translateY(10px);
+
       }
 
       to {
+
         opacity: 1;
+
         transform:
           translateY(0);
+
+      }
+
+    }
+
+
+    /* =========================
+       SHORT SCREEN
+    ========================= */
+
+    @media (max-height: 650px) {
+
+      .cat {
+
+        top: 34%;
+
+        width: 125px;
+
+      }
+
+
+      .cat-text {
+
+        top: 54%;
+
+        line-height: 1.55;
+
+      }
+
+
+      .door {
+
+        bottom: 105px;
+
+        width: 60px;
+
+        height: 82px;
+
+      }
+
+
+      .door-text {
+
+        bottom:
+          calc(
+            12px
+            + env(safe-area-inset-bottom)
+          );
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+      }
+
+
+      .next-button {
+
+        margin-top: 6px;
+
+        min-height: 38px;
+
+        padding:
+          8px
+          20px;
+
+      }
+
+    }
+
+
+    /* =========================
+       VERY SHORT SCREEN
+    ========================= */
+
+    @media (max-height: 560px) {
+
+      .cat {
+
+        top: 29%;
+
+        width: 105px;
+
+      }
+
+
+      .cat-text {
+
+        top: 48%;
+
+        font-size: 11px;
+
+      }
+
+
+      .door {
+
+        bottom: 90px;
+
+      }
+
+
+      .door-text {
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
       }
 
     }
@@ -894,10 +1139,7 @@
       <div class="glow"></div>
 
 
-      <!--
-        เปลี่ยนชื่อรูปตรงนี้ได้เลย
-        รูปแมว = IMG_0410.jpeg
-      -->
+      <!-- CAT -->
 
       <div class="cat">
 
@@ -909,17 +1151,15 @@
       </div>
 
 
+      <!-- CAT TEXT -->
+
       <div class="cat-text">
 
         🐱 เหมียว
 
         <br><br>
 
-        <span>
-
-          ...
-
-        </span>
+        ...
 
         <br><br>
 
@@ -930,6 +1170,7 @@
         แมวก็ไม่รู้เหมือนกันค่ะ
 
       </div>
+
 
 
       <!-- =========================
@@ -943,6 +1184,11 @@
       </div>
 
 
+
+      <!-- =========================
+           FINAL TEXT
+      ========================= -->
+
       <div class="door-text">
 
         🐱 แต่ถ้าเป็นทางนี้...<br>
@@ -952,21 +1198,14 @@
         <br>
 
         <span>
-
           ก๊อก ก๊อก
-
         </span>
 
         <br>
 
         <span>
-
           พบทางไปต่อแล้ว ♡
-
         </span>
-
-
-        <br>
 
 
         <button
@@ -991,17 +1230,12 @@
   <script>
 
 
-    /*
-      ลำดับเรื่อง
+    /* =========================
+       STORY TIMELINE
+    ========================= */
 
-      1. ERROR
-      2. ไฟฉาย
-      3. เจอแมว
-      4. แมวพูด
-      5. เจอประตู
-      6. ไปต่อ
-    */
 
+    // 1. ERROR ค้างไว้ก่อน
 
     setTimeout(function() {
 
@@ -1011,18 +1245,20 @@
         )
         .style.opacity = "0";
 
-
     }, 3500);
 
 
 
+    // 2. เปิดไฟฉาย
+
     setTimeout(function() {
 
-      document
-        .getElementById(
+      const error =
+        document.getElementById(
           "errorScreen"
-        )
-        .style.display = "none";
+        );
+
+      error.style.display = "none";
 
 
       document
@@ -1038,12 +1274,14 @@
         .getElementById(
           "flashlightText"
         )
-        .style.display = "block";
-
+        .style.display =
+          "block";
 
     }, 4500);
 
 
+
+    // 3. เจอแมว
 
     setTimeout(function() {
 
@@ -1051,7 +1289,8 @@
         .getElementById(
           "flashlightText"
         )
-        .style.display = "none";
+        .style.display =
+          "none";
 
 
       document
@@ -1062,17 +1301,13 @@
           "show"
         );
 
-
     }, 6000);
 
 
 
-    function nextPage() {
+    // 4. ไป birthday
 
-      /*
-        เปลี่ยนตรงนี้ถ้าหน้าถัดไป
-        ใช้ชื่อไฟล์อื่น
-      */
+    function nextPage() {
 
       window.location.href =
         "./birthday.html";
