@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>♡</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================
+       COLOR THEME
+    ========================= */
+
+    :root {
+      --bg: #FFF7F5;
+      --card: #FFFCFA;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --blush: #F2D6D9;
+      --gold: #D8B98A;
+    }
+
+
+    /* =========================
+       BASIC
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background: var(--bg);
+      color: var(--text);
+
+      font-family: 'Mali', cursive;
+
+      overflow: hidden;
+    }
+
+
+    /* =========================
+       MAIN PAGE
+    ========================= */
+
+    .page {
+      position: relative;
+
+      width: 100%;
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+    }
+
+
+    .content {
+      width: 100%;
+      max-width: 520px;
+
+      text-align: center;
+
+      animation: fadeIn 1.4s ease;
+    }
+
+
+    /* =========================
+       SMALL TEXT
+    ========================= */
+
+    .small-text {
+      margin-bottom: 22px;
+
+      font-family: 'Quicksand', sans-serif;
+
+      font-size: 13px;
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+      opacity: 0.9;
+    }
+
+
+    /* =========================
+       MAIN TEXT
+    ========================= */
+
+    .main-text {
+      margin: 0;
+
+      font-family: 'Gowun Batang', serif;
+
+      font-size: clamp(25px, 7vw, 38px);
+
+      font-weight: 400;
+
+      line-height: 1.6;
+
+      color: var(--rose);
+    }
+
+
+    /* =========================
+       SECOND TEXT
+    ========================= */
+
+    .second-text {
+      margin-top: 22px;
+
+      font-size: 17px;
+
+      line-height: 2;
+
+      color: var(--text);
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .open-button {
+      margin-top: 35px;
+
+      padding: 13px 34px;
+
+      border: 1px solid var(--pink);
+
+      border-radius: 999px;
+
+      background: var(--card);
+
+      color: var(--rose);
+
+      font-family: 'Mali', cursive;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .open-button:hover {
+      transform: translateY(-3px);
+
+      background: var(--pink);
+
+      color: white;
+
+      box-shadow:
+        0 8px 25px rgba(143, 95, 104, 0.15);
+    }
+
+
+    .open-button:active {
+      transform: scale(0.96);
+    }
+
+
+    /* =========================
+       DECORATIONS
+    ========================= */
+
+    .deco {
+      position: absolute;
+
+      color: var(--pink);
+
+      opacity: 0.45;
+
+      pointer-events: none;
+
+      animation: float 4s ease-in-out infinite;
+    }
+
+
+    .deco.one {
+      top: 18%;
+      left: 13%;
+
+      font-size: 18px;
+    }
+
+
+    .deco.two {
+      top: 27%;
+      right: 14%;
+
+      font-size: 13px;
+
+      animation-delay: 1s;
+    }
+
+
+    .deco.three {
+      bottom: 20%;
+      left: 18%;
+
+      font-size: 14px;
+
+      animation-delay: 2s;
+    }
+
+
+    .deco.four {
+      bottom: 28%;
+      right: 17%;
+
+      font-size: 19px;
+
+      animation-delay: 0.5s;
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+    }
+
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <main class="page">
+
+
+    <!-- Decorations -->
+
+    <div class="deco one">♡</div>
+
+    <div class="deco two">✦</div>
+
+    <div class="deco three">˚₊‧</div>
+
+    <div class="deco four">♡</div>
+
+
+    <!-- Main Content -->
+
+    <section class="content">
+
+
+      <div class="small-text">
+        A LITTLE PLACE FOR YOU ♡
+      </div>
+
+
+      <h1 class="main-text">
+        สวัสดีค่ะ
+      </h1>
+
+
+      <div class="second-text">
+
+        หลงเข้ามาในนี้ได้ยังไง<br>
+
+        แล้วหาทางออกยังไงคะ?
+
+      </div>
+
+
+      <button
+        class="open-button"
+        onclick="goNext()"
+      >
+        อ่อ กดตรงนี้จิ ♡
+      </button>
+
+
+    </section>
+
+
+  </main>
+
+
+  <script>
+
+    function goNext() {
+
+      /*
+        ตอนนี้ปุ่มจะพาไปหน้า 2
+        แต่เรายังไม่ได้สร้างหน้า 2
+
+        เดี๋ยวเราจะสร้างต่อหลังจากหน้าแรกเสร็จค่ะ
+      */
+
+      alert("อ้าว... กดจริงด้วย ♡");
+
+    }
+
+  </script>
+
+
+</body>
+</html>
