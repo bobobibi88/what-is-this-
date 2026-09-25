@@ -26,7 +26,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -35,27 +35,19 @@
 
     :root {
 
-      --background: #FFF7F5;
-
-      --pink: #D99AA5;
-
-      --rose: #8F5F68;
-
-      --text: #594348;
-
-      --card: #FFFCFA;
-
-      --blush: #F2D6D9;
-
-      --gold: #D8B98A;
+      --bg: #fff7f5;
+      --pink: #d99aa5;
+      --rose: #8f5f68;
+      --dark: #443438;
+      --cream: #fffdfb;
+      --gold: #d9b875;
+      --blush: #f2d6d9;
 
     }
 
 
     * {
-
       box-sizing: border-box;
-
     }
 
 
@@ -63,11 +55,9 @@
     body {
 
       margin: 0;
-
       padding: 0;
 
       width: 100%;
-
       min-height: 100%;
 
     }
@@ -77,120 +67,13 @@
 
       min-height: 100vh;
 
-      background: var(--background);
-
-      color: var(--text);
-
-      font-family: "Mali", cursive;
-
-      overflow-x: hidden;
-
-    }
-
-
-    /* =========================
-       FIREWORKS
-    ========================= */
-
-    .fireworks {
-
-      position: fixed;
-
-      inset: 0;
-
-      pointer-events: none;
-
       overflow: hidden;
 
-      z-index: 0;
+      background: var(--bg);
 
-    }
+      color: var(--dark);
 
-
-    .firework {
-
-      position: absolute;
-
-      left: 50%;
-
-      bottom: -40px;
-
-      width: 6px;
-
-      height: 6px;
-
-      font-size: 18px;
-
-      opacity: 0;
-
-      animation:
-        fireworkLaunch 1.2s ease-out forwards;
-
-    }
-
-
-    .firework span {
-
-      position: absolute;
-
-      display: block;
-
-      white-space: nowrap;
-
-      transform: translate(-50%, -50%);
-
-    }
-
-
-    @keyframes fireworkLaunch {
-
-      0% {
-
-        opacity: 0;
-
-        transform:
-          translate(
-            var(--x),
-            0
-          )
-          scale(0.4);
-
-      }
-
-
-      15% {
-
-        opacity: 1;
-
-      }
-
-
-      65% {
-
-        opacity: 1;
-
-        transform:
-          translate(
-            var(--x),
-            var(--y)
-          )
-          scale(1);
-
-      }
-
-
-      100% {
-
-        opacity: 0;
-
-        transform:
-          translate(
-            var(--x),
-            var(--y)
-          )
-          scale(1.35);
-
-      }
+      font-family: "Mali", cursive;
 
     }
 
@@ -203,44 +86,780 @@
 
       position: relative;
 
-      z-index: 2;
-
       width: 100%;
+      height: 100vh;
 
-      min-height: 100vh;
+      overflow: hidden;
 
       display: flex;
 
-      justify-content: center;
-
       align-items: center;
 
-      padding: 55px 22px;
+      justify-content: center;
 
     }
 
 
-    .content {
+    .scene {
+
+      position: relative;
 
       width: 100%;
+      height: 100%;
 
-      max-width: 480px;
+      display: flex;
 
-      text-align: center;
+      align-items: center;
 
-      animation:
-        pageIn 1.2s ease;
+      justify-content: center;
 
     }
 
 
     /* =========================
-       TOP TEXT
+       DARK INTRO
     ========================= */
 
-    .top-text {
+    .dark-screen {
 
-      margin-bottom: 15px;
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 20;
+
+      background: #181416;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition:
+        opacity 1.5s ease,
+        visibility 1.5s ease;
+
+    }
+
+
+    .dark-screen.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+    }
+
+
+    /* =========================
+       PAW
+    ========================= */
+
+    .paw {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 43%;
+
+      transform:
+        translate(-50%, -50%)
+        rotate(-18deg)
+        scale(0);
+
+      font-size: 76px;
+
+      opacity: 0;
+
+      filter:
+        drop-shadow(
+          0 0 15px
+          rgba(255,255,255,0.15)
+        );
+
+    }
+
+
+    .paw.show {
+
+      animation:
+        pawAppear 1.8s ease forwards;
+
+    }
+
+
+    @keyframes pawAppear {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          rotate(-18deg)
+          scale(0.3);
+
+      }
+
+      35% {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -58%)
+          rotate(-8deg)
+          scale(1);
+
+      }
+
+      55% {
+
+        transform:
+          translate(-50%, -45%)
+          rotate(8deg)
+          scale(1.05);
+
+      }
+
+      72% {
+
+        transform:
+          translate(-50%, -53%)
+          rotate(-4deg)
+          scale(0.96);
+
+      }
+
+      100% {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -70%)
+          rotate(0deg)
+          scale(0.85);
+
+      }
+
+    }
+
+
+    /* =========================
+       DUST
+    ========================= */
+
+    .dust {
+
+      position: absolute;
+
+      left: 50%;
+      top: 43%;
+
+      width: 200px;
+      height: 100px;
+
+      transform:
+        translate(-50%, -50%);
+
+      pointer-events: none;
+
+    }
+
+
+    .dust span {
+
+      position: absolute;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: #e9d9d5;
+
+      opacity: 0;
+
+    }
+
+
+    .dust span:nth-child(1) {
+      left: 20%;
+      top: 45%;
+    }
+
+    .dust span:nth-child(2) {
+      left: 35%;
+      top: 30%;
+    }
+
+    .dust span:nth-child(3) {
+      left: 55%;
+      top: 55%;
+    }
+
+    .dust span:nth-child(4) {
+      left: 70%;
+      top: 35%;
+    }
+
+    .dust span:nth-child(5) {
+      left: 80%;
+      top: 60%;
+    }
+
+
+    .dust.show span {
+
+      animation:
+        dustFloat 1.4s ease forwards;
+
+    }
+
+
+    @keyframes dustFloat {
+
+      0% {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+      }
+
+      30% {
+
+        opacity: 0.8;
+
+      }
+
+      100% {
+
+        opacity: 0;
+
+        transform:
+          translate(
+            calc(
+              (var(--x, 1) * 20px)
+            ),
+            -35px
+          );
+
+      }
+
+    }
+
+
+    /* =========================
+       READY TEXT
+    ========================= */
+
+    .ready-text {
+
+      position: absolute;
+
+      bottom: 27%;
+
+      width: 100%;
+
+      text-align: center;
+
+      color: #f7e9e6;
+
+      font-family: "Gowun Batang", serif;
+
+      font-size: 18px;
+
+      opacity: 0;
+
+    }
+
+
+    .ready-text.show {
+
+      animation:
+        textAppear 1s ease forwards;
+
+    }
+
+
+    @keyframes textAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+
+    /* =========================
+       MAIN BIRTHDAY SCENE
+    ========================= */
+
+    .birthday-scene {
+
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background:
+
+        radial-gradient(
+          circle at 50% 38%,
+          #fffdfb 0%,
+          #fff7f5 48%,
+          #f8e8eb 100%
+        );
+
+      opacity: 0;
+
+      transition: opacity 1.5s ease;
+
+    }
+
+
+    .birthday-scene.show {
+
+      opacity: 1;
+
+    }
+
+
+    /* =========================
+       LITTLE LIGHT
+    ========================= */
+
+    .light-glow {
+
+      position: absolute;
+
+      width: 360px;
+      height: 360px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,245,206,0.85),
+          rgba(255,245,206,0) 70%
+        );
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity 1.5s ease;
+
+    }
+
+
+    .light-glow.on {
+
+      opacity: 1;
+
+    }
+
+
+    /* =========================
+       BUBBLE MESSAGE
+    ========================= */
+
+    .bubble {
+
+      position: absolute;
+
+      padding: 10px 20px;
+
+      border-radius: 999px;
+
+      background: rgba(
+        255,
+        252,
+        250,
+        0.92
+      );
+
+      border:
+        1px solid var(--blush);
+
+      color: var(--rose);
+
+      box-shadow:
+        0 10px 30px
+        rgba(
+          143,
+          95,
+          104,
+          0.12
+        );
+
+      font-family:
+        "Quicksand",
+        sans-serif;
+
+      font-size: 13px;
+
+      letter-spacing: 1px;
+
+      opacity: 0;
+
+      transform:
+        translateY(12px)
+        scale(0.9);
+
+    }
+
+
+    .bubble.one {
+
+      top: 15%;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(12px)
+        scale(0.9);
+
+    }
+
+
+    .bubble.two {
+
+      top: 23%;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        translateY(12px)
+        scale(0.9);
+
+    }
+
+
+    .bubble.show {
+
+      animation:
+        bubbleIn 0.8s ease forwards;
+
+    }
+
+
+    @keyframes bubbleIn {
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateX(-50%)
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    /* =========================
+       CAKE
+    ========================= */
+
+    .cake-area {
+
+      position: relative;
+
+      width: 270px;
+      height: 290px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-top: 30px;
+
+      opacity: 0;
+
+      transform:
+        translateY(25px)
+        scale(0.9);
+
+    }
+
+
+    .cake-area.show {
+
+      animation:
+        cakeAppear 1.3s ease forwards;
+
+    }
+
+
+    @keyframes cakeAppear {
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    /* plate */
+
+    .plate {
+
+      position: absolute;
+
+      bottom: 20px;
+
+      width: 230px;
+      height: 28px;
+
+      border-radius: 50%;
+
+      background: #f1dfe0;
+
+      box-shadow:
+        0 10px 20px
+        rgba(89,67,72,0.12);
+
+    }
+
+
+    /* cake */
+
+    .cake {
+
+      position: absolute;
+
+      bottom: 37px;
+
+      width: 165px;
+      height: 115px;
+
+      border-radius:
+        18px
+        18px
+        25px
+        25px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #fffdfb,
+          #f8dfe2
+        );
+
+      box-shadow:
+        inset 0 -10px 0
+        rgba(217,154,165,0.18),
+
+        0 15px 25px
+        rgba(143,95,104,0.15);
+
+    }
+
+
+    .cake::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: -19px;
+
+      left: -4px;
+
+      width: 173px;
+      height: 38px;
+
+      border-radius: 50%;
+
+      background: #fffaf8;
+
+      border:
+        1px solid #f0d6d8;
+
+    }
+
+
+    .cream {
+
+      position: absolute;
+
+      top: 5px;
+
+      left: 20px;
+
+      width: 125px;
+      height: 45px;
+
+      border-radius: 50%;
+
+      background: #fffdfb;
+
+    }
+
+
+    /* =========================
+       CANDLES
+    ========================= */
+
+    .candles {
+
+      position: absolute;
+
+      top: 57px;
+
+      display: flex;
+
+      gap: 18px;
+
+    }
+
+
+    .candle {
+
+      position: relative;
+
+      width: 9px;
+      height: 45px;
+
+      border-radius: 5px;
+
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          #e8b4bd 0px,
+          #e8b4bd 5px,
+          #fff4f3 5px,
+          #fff4f3 10px
+        );
+
+    }
+
+
+    .flame {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: -22px;
+
+      width: 12px;
+      height: 18px;
+
+      transform:
+        translateX(-50%);
+
+      border-radius:
+        50% 50% 50% 50%;
+
+      background:
+        radial-gradient(
+          circle at 50% 65%,
+          #fff8cf 0 30%,
+          #f4bf69 45%,
+          #e99474 70%
+        );
+
+      box-shadow:
+        0 0 15px
+        rgba(245,187,99,0.65);
+
+      animation:
+        flame 0.8s ease-in-out infinite alternate;
+
+    }
+
+
+    @keyframes flame {
+
+      from {
+
+        transform:
+          translateX(-50%)
+          scale(0.9);
+
+      }
+
+      to {
+
+        transform:
+          translateX(-50%)
+          scale(1.08)
+          translateY(-2px);
+
+      }
+
+    }
+
+
+    /* =========================
+       BIG TITLE
+    ========================= */
+
+    .main-title {
+
+      position: absolute;
+
+      bottom: 18%;
+
+      text-align: center;
+
+      opacity: 0;
+
+      transform:
+        translateY(20px)
+        scale(0.94);
+
+    }
+
+
+    .main-title.show {
+
+      animation:
+        titleIn 1.2s ease forwards;
+
+    }
+
+
+    .tiny {
 
       font-family:
         "Quicksand",
@@ -248,181 +867,178 @@
 
       font-size: 12px;
 
-      letter-spacing: 3px;
+      letter-spacing: 4px;
 
       color: var(--pink);
 
-    }
-
-
-    /* =========================
-       MAIN TITLE
-    ========================= */
-
-    .intro {
-
-      margin: 0;
-
-      font-family:
-        "Gowun Batang",
-        serif;
-
-      font-size:
-        clamp(
-          28px,
-          8vw,
-          42px
-        );
-
-      font-weight: 400;
-
-      color: var(--rose);
-
-      line-height: 1.4;
+      text-transform: uppercase;
 
     }
 
 
-    /* =========================
-       HAPPY BIRTHDAY
-    ========================= */
-
-    .birthday {
-
-      margin-top: 24px;
-
-      color: var(--rose);
-
-      font-family:
-        "Quicksand",
-        sans-serif;
-
-      font-weight: 600;
-
-      line-height: 1;
-
-    }
-
-
-    .birthday-line {
-
-      display: block;
-
-      font-size:
-        clamp(
-          43px,
-          13vw,
-          65px
-        );
-
-      letter-spacing: -1px;
-
-    }
-
-
-    .birthday-line:nth-child(2) {
-
-      margin-top: 4px;
-
-    }
-
-
-    .birthday-line:nth-child(3) {
+    .its {
 
       margin-top: 8px;
 
-      font-size:
-        clamp(
-          32px,
-          10vw,
-          48px
-        );
-
-    }
-
-
-    /* =========================
-       AGE
-    ========================= */
-
-    .age {
-
-      margin-top: 27px;
-
-      font-size: 16px;
-
-      color: var(--text);
-
-      line-height: 1.8;
-
-    }
-
-
-    .age-number {
-
-      display: inline-block;
-
-      margin: 0 5px;
-
       font-family:
         "Gowun Batang",
         serif;
 
-      font-size: 32px;
+      font-size:
+        clamp(
+          35px,
+          10vw,
+          58px
+        );
 
-      color: var(--pink);
+      line-height: 1.1;
+
+      color: var(--rose);
+
+      white-space: nowrap;
+
+    }
+
+
+    .happy {
+
+      margin-top: 8px;
+
+      font-family:
+        "Mali",
+        cursive;
+
+      font-size:
+        clamp(
+          20px,
+          6vw,
+          29px
+        );
+
+      color: var(--dark);
+
+    }
+
+
+    .age {
+
+      margin-top: 10px;
+
+      font-size: 15px;
+
+      color: var(--rose);
+
+    }
+
+
+    @keyframes titleIn {
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
 
     }
 
 
     /* =========================
-       GIF CARD
+       SPARKLES
     ========================= */
 
-    .gif-card {
+    .sparkles {
 
-      width:
-        min(
-          78vw,
-          300px
-        );
+      position: absolute;
 
-      margin: 30px auto 0;
+      inset: 0;
 
-      padding: 9px;
+      pointer-events: none;
 
-      background: var(--card);
-
-      border:
-        1px solid
-        var(--blush);
-
-      border-radius: 25px;
-
-      box-shadow:
-        0 12px 35px
-        rgba(
-          143,
-          95,
-          104,
-          0.10
-        );
-
-      animation:
-        gifIn 1.5s ease;
+      opacity: 0;
 
     }
 
 
-    .gif-card img {
+    .sparkles.show {
 
-      display: block;
+      opacity: 1;
 
-      width: 100%;
+    }
 
-      height: auto;
 
-      border-radius: 18px;
+    .sparkle {
+
+      position: absolute;
+
+      color: var(--gold);
+
+      animation:
+        sparkle 2s ease-in-out infinite;
+
+    }
+
+
+    .s1 {
+      top: 20%;
+      left: 17%;
+      font-size: 18px;
+    }
+
+    .s2 {
+      top: 31%;
+      right: 18%;
+      font-size: 13px;
+      animation-delay: .4s;
+    }
+
+    .s3 {
+      top: 52%;
+      left: 12%;
+      font-size: 12px;
+      animation-delay: .8s;
+    }
+
+    .s4 {
+      top: 57%;
+      right: 13%;
+      font-size: 20px;
+      animation-delay: 1.1s;
+    }
+
+    .s5 {
+      top: 13%;
+      right: 35%;
+      font-size: 11px;
+      animation-delay: .7s;
+    }
+
+
+    @keyframes sparkle {
+
+      0%,
+      100% {
+
+        opacity: 0.3;
+
+        transform:
+          scale(0.7)
+          rotate(0deg);
+
+      }
+
+      50% {
+
+        opacity: 1;
+
+        transform:
+          scale(1.25)
+          rotate(20deg);
+
+      }
 
     }
 
@@ -433,19 +1049,25 @@
 
     .next-button {
 
-      display: block;
+      position: absolute;
 
-      margin: 28px auto 0;
+      bottom: 6%;
 
-      padding: 13px 27px;
+      padding:
+        11px 25px;
 
       border:
-        1px solid
-        var(--pink);
+        1px solid var(--pink);
 
       border-radius: 999px;
 
-      background: transparent;
+      background:
+        rgba(
+          255,
+          252,
+          250,
+          0.9
+        );
 
       color: var(--rose);
 
@@ -453,201 +1075,105 @@
         "Mali",
         cursive;
 
-      font-size: 15px;
+      font-size: 13px;
 
       cursor: pointer;
 
+      opacity: 0;
+
       transition:
-        background 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        opacity 0.8s ease,
+        transform 0.3s ease;
+
+    }
+
+
+    .next-button.show {
+
+      opacity: 1;
 
     }
 
 
     .next-button:hover {
 
-      background: var(--blush);
-
       transform:
-        translateY(-2px);
+        translateY(-3px);
 
-      box-shadow:
-        0 7px 20px
-        rgba(
-          143,
-          95,
-          104,
-          0.10
-        );
-
-    }
-
-
-    .next-button:active {
-
-      transform:
-        scale(0.96);
+      background:
+        var(--blush);
 
     }
 
 
     /* =========================
-       BOTTOM TEXT
+       BLACKOUT
     ========================= */
 
-    .bottom-text {
+    .blackout {
 
-      margin-top: 17px;
+      position: absolute;
 
-      font-size: 12px;
+      inset: 0;
 
-      color: var(--pink);
+      z-index: 15;
 
-      opacity: 0.8;
+      background: #181416;
 
-    }
-
-
-    /* =========================
-       DECORATION
-    ========================= */
-
-    .decoration {
-
-      position: fixed;
+      opacity: 0;
 
       pointer-events: none;
 
-      color: var(--pink);
-
-      opacity: 0.45;
-
-      z-index: 1;
+      transition:
+        opacity 0.35s ease;
 
     }
 
 
-    .deco-1 {
+    .blackout.on {
 
-      top: 12%;
-
-      left: 9%;
-
-      font-size: 20px;
-
-      animation:
-        float 4s ease-in-out infinite;
-
-    }
-
-
-    .deco-2 {
-
-      top: 22%;
-
-      right: 10%;
-
-      font-size: 13px;
-
-      animation:
-        float 5s ease-in-out infinite 1s;
-
-    }
-
-
-    .deco-3 {
-
-      bottom: 15%;
-
-      left: 12%;
-
-      font-size: 16px;
-
-      animation:
-        float 4.5s ease-in-out infinite 0.5s;
-
-    }
-
-
-    .deco-4 {
-
-      bottom: 20%;
-
-      right: 12%;
-
-      font-size: 20px;
-
-      animation:
-        float 5s ease-in-out infinite 1.5s;
+      opacity: 1;
 
     }
 
 
     /* =========================
-       ANIMATIONS
+       RESPONSIVE
     ========================= */
 
-    @keyframes pageIn {
+    @media (max-height: 700px) {
 
-      from {
-
-        opacity: 0;
+      .cake-area {
 
         transform:
-          translateY(18px);
+          scale(0.8);
 
       }
 
-      to {
+      .cake-area.show {
 
-        opacity: 1;
-
-        transform:
-          translateY(0);
+        animation:
+          cakeSmall 1.3s ease forwards;
 
       }
 
-    }
+      @keyframes cakeSmall {
 
+        to {
 
-    @keyframes gifIn {
+          opacity: 1;
 
-      from {
+          transform:
+            translateY(0)
+            scale(0.8);
 
-        opacity: 0;
-
-        transform:
-          scale(0.93);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          scale(1);
+        }
 
       }
 
-    }
+      .main-title {
 
-
-    @keyframes float {
-
-      0%,
-      100% {
-
-        transform:
-          translateY(0);
-
-      }
-
-      50% {
-
-        transform:
-          translateY(-8px);
+        bottom: 13%;
 
       }
 
@@ -661,378 +1187,443 @@
 <body>
 
 
-  <!-- =========================
-       FIREWORKS
-  ========================= -->
-
-  <div
-    class="fireworks"
-    id="fireworks"
-  ></div>
-
-
-  <!-- =========================
-       DECORATIONS
-  ========================= -->
-
-  <div class="decoration deco-1">
-    ♡
-  </div>
-
-  <div class="decoration deco-2">
-    ✦
-  </div>
-
-  <div class="decoration deco-3">
-    ˚₊‧
-  </div>
-
-  <div class="decoration deco-4">
-    ♡
-  </div>
-
-
-  <!-- =========================
-       MAIN PAGE
-  ========================= -->
-
   <main class="page">
 
-    <section class="content">
+    <section class="scene">
 
 
-      <!-- TOP -->
+      <!-- =========================
+           DARK INTRO
+      ========================= -->
 
-      <div class="top-text">
-
-        TODAY IS YOUR SPECIAL DAY ♡
-
-      </div>
-
-
-      <!-- TITLE -->
-
-      <h1 class="intro">
-
-        เฮ้ย วันเกิดนิ่!
-
-      </h1>
-
-
-      <!-- HAPPY BIRTHDAY -->
-
-      <div class="birthday">
-
-
-        <span class="birthday-line">
-
-          Happy
-
-        </span>
-
-
-        <span class="birthday-line">
-
-          Birthday
-
-        </span>
-
-
-        <span class="birthday-line">
-
-          To you ♡
-
-        </span>
-
-
-      </div>
-
-
-      <!-- AGE -->
-
-      <div class="age">
-
-        Already
-
-        <span class="age-number">
-
-          21
-
-        </span>
-
-        ขวบแล้วนะ
-
-      </div>
-
-
-      <!-- GIF -->
-
-      <div class="gif-card">
-
-        <img
-          src="https://media1.tenor.com/m/8Yxax1WAq8oAAAAd/happy-birthday.gif"
-          alt="Happy Birthday"
-        >
-
-      </div>
-
-
-      <!-- NEXT -->
-
-      <button
-        class="next-button"
-        onclick="goToLetter()"
+      <div
+        class="dark-screen"
+        id="darkScreen"
       >
 
-        มีจดหมายถึงเธอด้วยนะ ♡
+        <div
+          class="paw"
+          id="paw"
+        >
 
-      </button>
+          🐾
+
+        </div>
 
 
-      <div class="bottom-text">
+        <div
+          class="dust"
+          id="dust"
+        >
 
-        กดดูสิคะ ˚₊‧
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+        <div
+          class="ready-text"
+          id="readyText"
+        >
+
+          พร้อมอ้ะยางคับ... ♡
+
+        </div>
 
       </div>
 
+
+
+      <!-- =========================
+           BIRTHDAY SCENE
+      ========================= -->
+
+      <div
+        class="birthday-scene"
+        id="birthdayScene"
+      >
+
+
+        <div
+          class="light-glow"
+          id="lightGlow"
+        ></div>
+
+
+        <!-- BUBBLES -->
+
+        <div
+          class="bubble one"
+          id="bubbleOne"
+        >
+
+          26.09.69
+
+        </div>
+
+
+        <div
+          class="bubble two"
+          id="bubbleTwo"
+        >
+
+          your special day ♡
+
+        </div>
+
+
+        <!-- CAKE -->
+
+        <div
+          class="cake-area"
+          id="cakeArea"
+        >
+
+
+          <div class="plate"></div>
+
+
+          <div class="cake">
+
+            <div class="cream"></div>
+
+
+            <div class="candles">
+
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+
+              <div class="candle">
+                <div class="flame"></div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SPARKLES -->
+
+        <div
+          class="sparkles"
+          id="sparkles"
+        >
+
+          <div class="sparkle s1">✦</div>
+          <div class="sparkle s2">♡</div>
+          <div class="sparkle s3">✧</div>
+          <div class="sparkle s4">✦</div>
+          <div class="sparkle s5">˚₊‧</div>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <div
+          class="main-title"
+          id="mainTitle"
+        >
+
+          <div class="tiny">
+            A LITTLE MOMENT FOR YOU
+          </div>
+
+
+          <div class="its">
+            it’s your birthday!
+          </div>
+
+
+          <div class="happy">
+            Happy birthday อ้วมคุง ♡
+          </div>
+
+
+          <div class="age">
+            21 ขวบแล้วน้า
+          </div>
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <button
+          class="next-button"
+          id="nextButton"
+          onclick="nextPage()"
+        >
+
+          มีอะไรจะให้ด้วยนะ → 
+
+        </button>
+
+
+        <!-- BLACKOUT -->
+
+        <div
+          class="blackout"
+          id="blackout"
+        ></div>
+
+
+      </div>
 
     </section>
 
   </main>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
 
   <script>
 
-
     /* =========================
-       FIREWORK SYSTEM
+       ELEMENTS
     ========================= */
 
-    const fireworks =
+    const darkScreen =
       document.getElementById(
-        "fireworks"
+        "darkScreen"
       );
 
-
-    const symbols = [
-
-      "🐱",
-      "♡",
-      "✦",
-      "˚₊‧",
-      "✧"
-
-    ];
-
-
-    function createFirework() {
-
-
-      const firework =
-        document.createElement(
-          "div"
-        );
-
-
-      firework.className =
-        "firework";
-
-
-      const startX =
-        Math.random() * 90 + 5;
-
-
-      const endX =
-        (Math.random() - 0.5)
-        * 180;
-
-
-      const endY =
-        -(Math.random() * 55 + 25);
-
-
-      firework.style.left =
-        startX + "%";
-
-
-      firework.style.setProperty(
-        "--x",
-        "0px"
+    const paw =
+      document.getElementById(
+        "paw"
       );
 
-
-      firework.style.setProperty(
-        "--y",
-        endY + "vh"
+    const dust =
+      document.getElementById(
+        "dust"
       );
 
-
-      firework.style.animationDelay =
-        "0s";
-
-
-      const pieces =
-        Math.floor(
-          Math.random() * 3
-        ) + 4;
-
-
-      for (
-        let i = 0;
-        i < pieces;
-        i++
-      ) {
-
-
-        const piece =
-          document.createElement(
-            "span"
-          );
-
-
-        piece.innerText =
-          symbols[
-            Math.floor(
-              Math.random()
-              * symbols.length
-            )
-          ];
-
-
-        const angle =
-          (
-            Math.PI * 2
-            / pieces
-          ) * i;
-
-
-        const distance =
-          35 +
-          Math.random() * 45;
-
-
-        const x =
-          Math.cos(angle)
-          * distance;
-
-
-        const y =
-          Math.sin(angle)
-          * distance;
-
-
-        piece.style.left =
-          x + "px";
-
-
-        piece.style.top =
-          y + "px";
-
-
-        piece.style.opacity =
-          0.75 +
-          Math.random() * 0.25;
-
-
-        firework.appendChild(
-          piece
-        );
-
-      }
-
-
-      fireworks.appendChild(
-        firework
+    const readyText =
+      document.getElementById(
+        "readyText"
       );
 
-
-      setTimeout(
-        function() {
-
-          firework.remove();
-
-        },
-        1300
+    const birthdayScene =
+      document.getElementById(
+        "birthdayScene"
       );
 
-    }
+    const lightGlow =
+      document.getElementById(
+        "lightGlow"
+      );
+
+    const bubbleOne =
+      document.getElementById(
+        "bubbleOne"
+      );
+
+    const bubbleTwo =
+      document.getElementById(
+        "bubbleTwo"
+      );
+
+    const cakeArea =
+      document.getElementById(
+        "cakeArea"
+      );
+
+    const mainTitle =
+      document.getElementById(
+        "mainTitle"
+      );
+
+    const sparkles =
+      document.getElementById(
+        "sparkles"
+      );
+
+    const blackout =
+      document.getElementById(
+        "blackout"
+      );
+
+    const nextButton =
+      document.getElementById(
+        "nextButton"
+      );
 
 
     /* =========================
-       START FIREWORKS
-    ========================= */
-
-    function startFireworks() {
-
-
-      createFirework();
-
-
-      setTimeout(
-        createFirework,
-        450
-      );
-
-
-      setTimeout(
-        createFirework,
-        900
-      );
-
-
-      setTimeout(
-        createFirework,
-        1400
-      );
-
-
-      setTimeout(
-        createFirework,
-        1900
-      );
-
-
-      setInterval(
-        function() {
-
-          createFirework();
-
-        },
-        2200
-      );
-
-    }
-
-
-    /* =========================
-       START PAGE
+       OPENING
     ========================= */
 
     window.addEventListener(
       "load",
       function() {
 
-        startFireworks();
+        setTimeout(function() {
+
+          paw.classList.add("show");
+
+          dust.classList.add("show");
+
+        }, 700);
+
+
+        setTimeout(function() {
+
+          readyText.classList.add(
+            "show"
+          );
+
+        }, 1800);
+
+
+        setTimeout(function() {
+
+          darkScreen.classList.add(
+            "hide"
+          );
+
+          birthdayScene.classList.add(
+            "show"
+          );
+
+        }, 3500);
+
+
+        setTimeout(function() {
+
+          lightGlow.classList.add(
+            "on"
+          );
+
+          cakeArea.classList.add(
+            "show"
+          );
+
+        }, 4100);
+
+
+        /* -------------------------
+           FIRST BUBBLE
+        ------------------------- */
+
+        setTimeout(function() {
+
+          bubbleOne.classList.add(
+            "show"
+          );
+
+        }, 4700);
+
+
+        /* -------------------------
+           SECOND BUBBLE
+        ------------------------- */
+
+        setTimeout(function() {
+
+          bubbleTwo.classList.add(
+            "show"
+          );
+
+        }, 5400);
+
+
+        /* -------------------------
+           LITTLE PAUSE
+           THEN BLACKOUT
+        ------------------------- */
+
+        setTimeout(function() {
+
+          blackout.classList.add(
+            "on"
+          );
+
+        }, 7000);
+
+
+        /* -------------------------
+           LIGHT RETURNS
+        ------------------------- */
+
+        setTimeout(function() {
+
+          blackout.classList.remove(
+            "on"
+          );
+
+          bubbleOne.classList.remove(
+            "show"
+          );
+
+          bubbleTwo.classList.remove(
+            "show"
+          );
+
+          lightGlow.classList.add(
+            "on"
+          );
+
+        }, 8500);
+
+
+        /* -------------------------
+           BIG REVEAL
+        ------------------------- */
+
+        setTimeout(function() {
+
+          mainTitle.classList.add(
+            "show"
+          );
+
+          sparkles.classList.add(
+            "show"
+          );
+
+        }, 9000);
+
+
+        /* -------------------------
+           NEXT BUTTON
+        ------------------------- */
+
+        setTimeout(function() {
+
+          nextButton.classList.add(
+            "show"
+          );
+
+        }, 10300);
 
       }
     );
 
 
     /* =========================
-       GO TO LETTER
+       NEXT PAGE
     ========================= */
 
-    function goToLetter() {
+    function nextPage() {
+
+      /*
+        เปลี่ยนตรงนี้เป็นชื่อ
+        หน้าถัดไปของเว็บได้เลย
+      */
 
       window.location.href =
         "./letter.html";
 
     }
-
 
   </script>
 
