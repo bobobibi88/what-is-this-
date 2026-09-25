@@ -6,7 +6,7 @@
 
   <title>♡</title>
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -50,7 +50,6 @@
 
     body {
       min-height: 100vh;
-
       background: var(--bg);
       color: var(--text);
 
@@ -61,7 +60,7 @@
 
 
     /* =========================
-       MAIN PAGE
+       PAGE
     ========================= */
 
     .page {
@@ -84,7 +83,7 @@
 
       text-align: center;
 
-      animation: fadeIn 1.4s ease;
+      animation: fadeIn 1.3s ease;
     }
 
 
@@ -115,22 +114,22 @@
 
       font-family: 'Gowun Batang', serif;
 
-      font-size: clamp(25px, 7vw, 38px);
+      font-size: clamp(28px, 8vw, 42px);
 
       font-weight: 400;
 
-      line-height: 1.6;
+      line-height: 1.5;
 
       color: var(--rose);
     }
 
 
     /* =========================
-       SECOND TEXT
+       MESSAGE
     ========================= */
 
-    .second-text {
-      margin-top: 22px;
+    .message {
+      margin-top: 25px;
 
       font-size: 17px;
 
@@ -163,11 +162,7 @@
 
       cursor: pointer;
 
-      transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
 
@@ -208,7 +203,6 @@
     .deco.one {
       top: 18%;
       left: 13%;
-
       font-size: 18px;
     }
 
@@ -216,7 +210,6 @@
     .deco.two {
       top: 27%;
       right: 14%;
-
       font-size: 13px;
 
       animation-delay: 1s;
@@ -226,7 +219,6 @@
     .deco.three {
       bottom: 20%;
       left: 18%;
-
       font-size: 14px;
 
       animation-delay: 2s;
@@ -236,7 +228,6 @@
     .deco.four {
       bottom: 28%;
       right: 17%;
-
       font-size: 19px;
 
       animation-delay: 0.5s;
@@ -275,32 +266,25 @@
 
     }
 
-
   </style>
 </head>
 
 
 <body>
 
-
   <main class="page">
-
 
     <!-- Decorations -->
 
     <div class="deco one">♡</div>
-
     <div class="deco two">✦</div>
-
     <div class="deco three">˚₊‧</div>
-
     <div class="deco four">♡</div>
 
 
     <!-- Main Content -->
 
     <section class="content">
-
 
       <div class="small-text">
         A LITTLE PLACE FOR YOU ♡
@@ -312,7 +296,7 @@
       </h1>
 
 
-      <div class="second-text">
+      <div class="message">
 
         หลงเข้ามาในนี้ได้ยังไง<br>
 
@@ -328,9 +312,7 @@
         อ่อ กดตรงนี้จิ ♡
       </button>
 
-
     </section>
-
 
   </main>
 
@@ -339,14 +321,8 @@
 
     function goNext() {
 
-      /*
-        ตอนนี้ปุ่มจะพาไปหน้า 2
-        แต่เรายังไม่ได้สร้างหน้า 2
-
-        เดี๋ยวเราจะสร้างต่อหลังจากหน้าแรกเสร็จค่ะ
-      */
-
-      alert("อ้าว... กดจริงด้วย ♡");
+      // ไปหน้าที่ 2
+      window.location.href = "page2.html";
 
     }
 
