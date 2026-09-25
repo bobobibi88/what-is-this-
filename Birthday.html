@@ -1,76 +1,183 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Happy Birthday ♡</title>
 
-  <!-- Google Fonts -->
+
+  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
 
+
   <style>
 
     :root {
-      --bg: #FFF7F5;
-      --card: #FFFCFA;
+
+      --background: #FFF7F5;
+
       --pink: #D99AA5;
+
       --rose: #8F5F68;
+
       --text: #594348;
+
+      --card: #FFFCFA;
+
       --blush: #F2D6D9;
+
       --gold: #D8B98A;
+
     }
 
 
     * {
+
       box-sizing: border-box;
+
     }
 
 
     html,
     body {
+
       margin: 0;
+
       padding: 0;
+
       width: 100%;
+
       min-height: 100%;
+
     }
 
 
     body {
+
       min-height: 100vh;
 
-      background: var(--bg);
+      background: var(--background);
+
       color: var(--text);
 
-      font-family: 'Mali', cursive;
+      font-family: "Mali", cursive;
 
       overflow-x: hidden;
+
     }
 
 
     /* =========================
-       PAGE
+       BACKGROUND DECORATION
+    ========================= */
+
+    .decoration {
+
+      position: fixed;
+
+      pointer-events: none;
+
+      color: var(--pink);
+
+      opacity: 0.45;
+
+      z-index: 0;
+
+    }
+
+
+    .deco-1 {
+
+      top: 12%;
+
+      left: 9%;
+
+      font-size: 20px;
+
+      animation: float 4s ease-in-out infinite;
+
+    }
+
+
+    .deco-2 {
+
+      top: 22%;
+
+      right: 10%;
+
+      font-size: 13px;
+
+      animation: float 5s ease-in-out infinite 1s;
+
+    }
+
+
+    .deco-3 {
+
+      bottom: 15%;
+
+      left: 12%;
+
+      font-size: 16px;
+
+      animation: float 4.5s ease-in-out infinite 0.5s;
+
+    }
+
+
+    .deco-4 {
+
+      bottom: 20%;
+
+      right: 12%;
+
+      font-size: 20px;
+
+      animation: float 5s ease-in-out infinite 1.5s;
+
+    }
+
+
+    /* =========================
+       MAIN
     ========================= */
 
     .page {
 
       position: relative;
 
+      z-index: 1;
+
       width: 100%;
+
       min-height: 100vh;
 
       display: flex;
 
       justify-content: center;
+
       align-items: center;
 
-      padding: 45px 25px;
+      padding: 55px 22px;
 
     }
 
@@ -78,11 +185,12 @@
     .content {
 
       width: 100%;
-      max-width: 520px;
+
+      max-width: 480px;
 
       text-align: center;
 
-      animation: birthdayIn 1.5s ease;
+      animation: pageIn 1.2s ease;
 
     }
 
@@ -91,13 +199,13 @@
        TOP TEXT
     ========================= */
 
-    .small-text {
+    .top-text {
 
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
-      font-family: 'Quicksand', sans-serif;
+      font-family: "Quicksand", sans-serif;
 
-      font-size: 13px;
+      font-size: 12px;
 
       letter-spacing: 3px;
 
@@ -107,20 +215,22 @@
 
 
     /* =========================
-       INTRO
+       MAIN TITLE
     ========================= */
 
     .intro {
 
-      font-family: 'Gowun Batang', serif;
+      margin: 0;
 
-      font-size: clamp(27px, 8vw, 42px);
+      font-family: "Gowun Batang", serif;
 
-      line-height: 1.5;
+      font-size: clamp(28px, 8vw, 42px);
+
+      font-weight: 400;
 
       color: var(--rose);
 
-      margin: 0;
+      line-height: 1.4;
 
     }
 
@@ -131,26 +241,42 @@
 
     .birthday {
 
-      margin-top: 20px;
+      margin-top: 24px;
 
-      font-family: 'Quicksand', sans-serif;
+      color: var(--rose);
 
-      font-size: clamp(38px, 12vw, 65px);
+      font-family: "Quicksand", sans-serif;
 
       font-weight: 600;
 
-      line-height: 1.05;
-
-      letter-spacing: 1px;
-
-      color: var(--rose);
+      line-height: 1;
 
     }
 
 
-    .birthday span {
+    .birthday-line {
 
       display: block;
+
+      font-size: clamp(43px, 13vw, 65px);
+
+      letter-spacing: -1px;
+
+    }
+
+
+    .birthday-line:nth-child(2) {
+
+      margin-top: 4px;
+
+    }
+
+
+    .birthday-line:nth-child(3) {
+
+      margin-top: 8px;
+
+      font-size: clamp(32px, 10vw, 48px);
 
     }
 
@@ -161,13 +287,13 @@
 
     .age {
 
-      margin-top: 28px;
+      margin-top: 27px;
 
-      font-size: 17px;
-
-      line-height: 2;
+      font-size: 16px;
 
       color: var(--text);
+
+      line-height: 1.8;
 
     }
 
@@ -176,44 +302,44 @@
 
       display: inline-block;
 
-      font-family: 'Gowun Batang', serif;
+      margin: 0 5px;
 
-      font-size: 30px;
+      font-family: "Gowun Batang", serif;
+
+      font-size: 32px;
 
       color: var(--pink);
-
-      margin: 0 5px;
 
     }
 
 
     /* =========================
-       GIF
+       GIF CARD
     ========================= */
 
-    .gif-box {
-
-      margin: 30px auto 0;
+    .gif-card {
 
       width: min(78vw, 300px);
 
-      padding: 8px;
+      margin: 30px auto 0;
+
+      padding: 9px;
 
       background: var(--card);
 
       border: 1px solid var(--blush);
 
-      border-radius: 24px;
+      border-radius: 25px;
 
       box-shadow:
-        0 10px 35px rgba(143, 95, 104, 0.08);
+        0 12px 35px rgba(143, 95, 104, 0.10);
 
-      animation: gifIn 1.8s ease;
+      animation: gifIn 1.5s ease;
 
     }
 
 
-    .gif-box img {
+    .gif-card img {
 
       display: block;
 
@@ -227,85 +353,86 @@
 
 
     /* =========================
-       DECORATIONS
+       NEXT BUTTON
     ========================= */
 
-    .deco {
+    .next-button {
 
-      position: absolute;
+      display: block;
 
-      color: var(--pink);
+      margin: 28px auto 0;
 
-      opacity: 0.5;
+      padding: 13px 27px;
 
-      pointer-events: none;
+      border: 1px solid var(--pink);
 
-      animation: float 4s ease-in-out infinite;
+      border-radius: 999px;
 
-    }
+      background: transparent;
 
+      color: var(--rose);
 
-    .one {
-
-      top: 12%;
-
-      left: 13%;
-
-      font-size: 20px;
-
-    }
-
-
-    .two {
-
-      top: 19%;
-
-      right: 13%;
-
-      font-size: 14px;
-
-      animation-delay: 1s;
-
-    }
-
-
-    .three {
-
-      bottom: 15%;
-
-      left: 15%;
+      font-family: "Mali", cursive;
 
       font-size: 15px;
 
-      animation-delay: 2s;
+      cursor: pointer;
+
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
     }
 
 
-    .four {
+    .next-button:hover {
 
-      bottom: 20%;
+      background: var(--blush);
 
-      right: 15%;
+      transform: translateY(-2px);
 
-      font-size: 20px;
+      box-shadow:
+        0 7px 20px rgba(143, 95, 104, 0.10);
 
-      animation-delay: 0.5s;
+    }
+
+
+    .next-button:active {
+
+      transform: scale(0.96);
 
     }
 
 
     /* =========================
-       ANIMATION
+       BOTTOM TEXT
     ========================= */
 
-    @keyframes birthdayIn {
+    .bottom-text {
+
+      margin-top: 17px;
+
+      font-size: 12px;
+
+      color: var(--pink);
+
+      opacity: 0.8;
+
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes pageIn {
 
       from {
 
         opacity: 0;
 
-        transform: translateY(20px);
+        transform: translateY(18px);
 
       }
 
@@ -326,7 +453,7 @@
 
         opacity: 0;
 
-        transform: scale(0.92);
+        transform: scale(0.93);
 
       }
 
@@ -352,58 +479,81 @@
 
       50% {
 
-        transform: translateY(-9px);
+        transform: translateY(-8px);
 
       }
 
     }
 
+
   </style>
+
 </head>
 
 
 <body>
 
 
+  <!-- Decorations -->
+
+  <div class="decoration deco-1">
+    ♡
+  </div>
+
+  <div class="decoration deco-2">
+    ✦
+  </div>
+
+  <div class="decoration deco-3">
+    ˚₊‧
+  </div>
+
+  <div class="decoration deco-4">
+    ♡
+  </div>
+
+
+  <!-- Main Page -->
+
   <main class="page">
-
-
-    <!-- Decorations -->
-
-    <div class="deco one">♡</div>
-
-    <div class="deco two">✦</div>
-
-    <div class="deco three">˚₊‧</div>
-
-    <div class="deco four">♡</div>
-
-
-    <!-- Birthday Content -->
 
     <section class="content">
 
 
-      <div class="small-text">
+      <!-- Small heading -->
+
+      <div class="top-text">
         TODAY IS YOUR SPECIAL DAY ♡
       </div>
 
+
+      <!-- Main title -->
 
       <h1 class="intro">
         เฮ้ย วันเกิดนิ่!
       </h1>
 
 
+      <!-- Birthday -->
+
       <div class="birthday">
 
-        <span>Happy</span>
+        <span class="birthday-line">
+          Happy
+        </span>
 
-        <span>Birthday</span>
+        <span class="birthday-line">
+          Birthday
+        </span>
 
-        <span>To you ♡</span>
+        <span class="birthday-line">
+          To you ♡
+        </span>
 
       </div>
 
+
+      <!-- Age -->
 
       <div class="age">
 
@@ -413,28 +563,56 @@
           21
         </span>
 
-        ขวบแล้วนะ ♡
+        ขวบแล้วนะ
 
       </div>
 
 
-      <!-- GIF จาก Tenor -->
+      <!-- GIF -->
 
-      <div class="gif-box">
+      <div class="gif-card">
 
         <img
           src="https://media1.tenor.com/m/8Yxax1WAq8oAAAAd/happy-birthday.gif"
-          alt="Happy Birthday GIF"
+          alt="Happy Birthday"
         >
 
       </div>
 
 
-    </section>
+      <!-- Next -->
 
+      <button
+        class="next-button"
+        onclick="goToLetter()"
+      >
+        มีจดหมายถึงเธอด้วยนะ ♡
+      </button>
+
+
+      <div class="bottom-text">
+        กดดูสิคะ ˚₊‧
+      </div>
+
+
+    </section>
 
   </main>
 
 
+  <!-- JavaScript -->
+
+  <script>
+
+    function goToLetter() {
+
+      window.location.href = "letter.html";
+
+    }
+
+  </script>
+
+
 </body>
+
 </html>
