@@ -38,8 +38,7 @@
       --rose: #8F5F68;
       --text: #594348;
       --blush: #F2D6D9;
-      --phone: #2E292B;
-      --screen: #FFF9F7;
+      --card: #FFFCFA;
 
     }
 
@@ -178,11 +177,9 @@
       box-shadow:
         0 25px 50px rgba(89, 67, 72, 0.25);
 
-      transform:
-        rotate(-2deg);
+      transform: rotate(-2deg);
 
-      transition:
-        transform 0.5s ease;
+      transition: transform 0.5s ease;
 
     }
 
@@ -195,8 +192,6 @@
 
     }
 
-
-    /* phone frame */
 
     .phone::before {
 
@@ -240,7 +235,9 @@
     }
 
 
-    /* screen */
+    /* =========================
+       SCREEN
+    ========================= */
 
     .screen {
 
@@ -264,8 +261,6 @@
     }
 
 
-    /* camera / dynamic island */
-
     .island {
 
       position: absolute;
@@ -274,8 +269,7 @@
 
       left: 50%;
 
-      transform:
-        translateX(-50%);
+      transform: translateX(-50%);
 
       width: 70px;
 
@@ -308,8 +302,6 @@
 
     }
 
-
-    /* phone content */
 
     .screen-content {
 
@@ -378,13 +370,10 @@
 
       opacity: 0.45;
 
-      filter:
-        grayscale(1);
+      filter: grayscale(1);
 
     }
 
-
-    /* scanning line */
 
     .scan-line {
 
@@ -410,27 +399,23 @@
     @keyframes scan {
 
       0% {
-
         top: 0;
-
       }
 
       50% {
-
         top: calc(100% - 2px);
-
       }
 
       100% {
-
         top: 0;
-
       }
 
     }
 
 
-    /* corner marks */
+    /* =========================
+       CORNERS
+    ========================= */
 
     .corner {
 
@@ -499,7 +484,7 @@
 
 
     /* =========================
-       BUTTON
+       SCAN BUTTON
     ========================= */
 
     .scan-button {
@@ -512,7 +497,7 @@
 
       border-radius: 999px;
 
-      background: #FFFCFA;
+      background: var(--card);
 
       color: var(--rose);
 
@@ -534,8 +519,7 @@
 
       background: var(--blush);
 
-      transform:
-        translateY(-3px);
+      transform: translateY(-3px);
 
     }
 
@@ -548,61 +532,99 @@
 
 
     /* =========================
-       RESULT
+       POPUP BACKGROUND
     ========================= */
 
-    .result {
+    .popup {
+
+      position: fixed;
+
+      inset: 0;
 
       display: none;
 
-      margin-top: 25px;
+      justify-content: center;
+
+      align-items: center;
 
       padding: 20px;
 
-      border: 1px solid var(--blush);
+      background:
+        rgba(89, 67, 72, 0.28);
 
-      border-radius: 22px;
+      backdrop-filter: blur(5px);
 
-      background: rgba(255,252,250,0.8);
+      z-index: 100;
 
-      animation:
-        resultIn 0.8s ease;
+      animation: popupFade 0.35s ease;
 
     }
 
 
-    .result.show {
+    .popup.show {
+
+      display: flex;
+
+    }
+
+
+    /* =========================
+       POPUP CARD
+    ========================= */
+
+    .popup-card {
+
+      width: min(90vw, 360px);
+
+      padding: 16px;
+
+      background: var(--card);
+
+      border: 1px solid var(--blush);
+
+      border-radius: 26px;
+
+      box-shadow:
+        0 25px 70px rgba(89, 67, 72, 0.22);
+
+      text-align: center;
+
+      animation: popupIn 0.45s ease;
+
+    }
+
+
+    .popup-image {
+
+      width: 100%;
+
+      max-height: 390px;
+
+      object-fit: cover;
+
+      border-radius: 20px;
 
       display: block;
 
     }
 
 
-    .check {
+    .popup-title {
 
-      font-size: 30px;
-
-      color: var(--pink);
-
-    }
-
-
-    .result-title {
-
-      margin-top: 8px;
+      margin-top: 17px;
 
       font-family: "Gowun Batang", serif;
 
-      font-size: 21px;
+      font-size: 22px;
 
       color: var(--rose);
 
     }
 
 
-    .result-text {
+    .popup-text {
 
-      margin-top: 8px;
+      margin-top: 7px;
 
       font-size: 13px;
 
@@ -613,11 +635,11 @@
 
     .continue-button {
 
-      margin-top: 15px;
+      margin-top: 16px;
 
-      padding: 11px 24px;
+      padding: 11px 25px;
 
-      border: 0;
+      border: none;
 
       border-radius: 999px;
 
@@ -631,12 +653,16 @@
 
       cursor: pointer;
 
+      transition: 0.3s ease;
+
     }
 
 
     .continue-button:hover {
 
       opacity: 0.85;
+
+      transform: translateY(-2px);
 
     }
 
@@ -651,8 +677,7 @@
 
         opacity: 0;
 
-        transform:
-          translateY(15px);
+        transform: translateY(15px);
 
       }
 
@@ -660,23 +685,35 @@
 
         opacity: 1;
 
-        transform:
-          translateY(0);
+        transform: translateY(0);
 
       }
 
     }
 
 
-    @keyframes resultIn {
+    @keyframes popupFade {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes popupIn {
 
       from {
 
         opacity: 0;
 
         transform:
-          translateY(15px)
-          scale(0.97);
+          translateY(20px)
+          scale(0.92);
 
       }
 
@@ -701,6 +738,7 @@
 
 
   <main class="page">
+
 
     <section class="content">
 
@@ -728,10 +766,7 @@
       </div>
 
 
-
-      <!-- =========================
-           PHONE
-      ========================= -->
+      <!-- PHONE -->
 
       <div class="phone">
 
@@ -799,10 +834,7 @@
       </div>
 
 
-
-      <!-- =========================
-           SCAN BUTTON
-      ========================= -->
+      <!-- SCAN BUTTON -->
 
       <button
         class="scan-button"
@@ -815,65 +847,74 @@
       </button>
 
 
-
-      <!-- =========================
-           RESULT
-      ========================= -->
-
-      <div
-        class="result"
-        id="result"
-      >
-
-
-        <div class="check">
-
-          ♡
-
-        </div>
-
-
-        <div class="result-title">
-
-          Face ID ความอ้วมถูกต้อง!
-
-        </div>
-
-
-        <div class="result-text">
-
-          ตรวจพบเจ้าของเครื่องแล้วค่ะ<br>
-
-          <b>เด็กอ้วนปากจุ๋!</b> ♡<br><br>
-
-          คุณผ่านการยืนยันตัวตนแล้ว<br>
-
-          สามารถเข้าสู่หน้า Secert ได้เลยจ้า
-
-        </div>
-
-
-        <button
-          class="continue-button"
-          onclick="goTo haven ~ ()"
-        >
-
-          เข้าสู่ Birthday ♡
-
-        </button>
-
-
-      </div>
-
-
     </section>
 
   </main>
 
 
 
+  <!-- =========================
+       POPUP
+  ========================= -->
+
+  <div
+    class="popup"
+    id="popup"
+  >
+
+
+    <div class="popup-card">
+
+
+      <img
+        src="IMG_8351.jpeg"
+        alt="เด็กอ้วนปากจุ๋"
+        class="popup-image"
+      >
+
+
+      <div class="popup-title">
+
+        Face ID ความอ้วมถูกต้อง! ♡
+
+      </div>
+
+
+      <div class="popup-text">
+
+        ตรวจพบเจ้าของเครื่องแล้วค่ะ<br>
+
+        <b>เด็กอ้วนปากจุ๋!</b> ♡<br><br>
+
+        คุณผ่านการยืนยันตัวตนแล้ว<br>
+
+        พร้อมไปดูสิ่งที่รออยู่หรือยัง?
+
+      </div>
+
+
+      <button
+        class="continue-button"
+        onclick="goToNext()"
+      >
+
+        ไปต่อกัน ♡
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
   <script>
 
+
+    /* =========================
+       FACE SCAN
+    ========================= */
 
     function scanFace() {
 
@@ -890,12 +931,6 @@
         );
 
 
-      const result =
-        document.getElementById(
-          "result"
-        );
-
-
       button.disabled = true;
 
 
@@ -907,18 +942,19 @@
         "SCANNING FACE...";
 
 
-      setTimeout(function() {
+      /* ขั้นแรก */
 
+      setTimeout(function() {
 
         status.innerText =
           "FACE DETECTED ♡";
 
-
       }, 1200);
 
 
-      setTimeout(function() {
+      /* สแกนเสร็จ */
 
+      setTimeout(function() {
 
         status.innerText =
           "IDENTITY VERIFIED";
@@ -928,23 +964,37 @@
           "none";
 
 
-        result.classList.add(
-          "show"
-        );
+        /*
+          เปิด Popup
+        */
+
+        document
+          .getElementById("popup")
+          .classList.add("show");
 
 
       }, 2500);
-
 
     }
 
 
 
-    function goToBirthday() {
+    /* =========================
+       NEXT PAGE
+    ========================= */
 
+    function goToNext() {
+
+
+      /*
+        เปลี่ยนตรงนี้ได้ว่า
+        อยากให้ปุ่มไปหน้าไหน
+
+        ตอนนี้ให้ไป birthday.html
+      */
 
       window.location.href =
-        "birthday.html";
+        "./birthday.html";
 
 
     }
