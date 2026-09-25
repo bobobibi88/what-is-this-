@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>A Letter For You ♡</title>
+
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --bg: #FFF7F5;
+
+      --paper: #FFFCF7;
+
+      --pink: #D99AA5;
+
+      --rose: #8F5F68;
+
+      --text: #594348;
+
+      --blush: #F2D6D9;
+
+      --gold: #D8B98A;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      width: 100%;
+
+      min-height: 100%;
+
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+      font-family: 'Mali', cursive;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page {
+
+      width: 100%;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 35px 20px;
+
+    }
+
+
+    .content {
+
+      width: 100%;
+
+      max-width: 520px;
+
+      text-align: center;
+
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+
+      margin-bottom: 25px;
+
+      animation: fadeIn 1s ease;
+
+    }
+
+
+    .small {
+
+      font-family: 'Quicksand', sans-serif;
+
+      font-size: 12px;
+
+      letter-spacing: 3px;
+
+      color: var(--pink);
+
+      margin-bottom: 12px;
+
+    }
+
+
+    h1 {
+
+      margin: 0;
+
+      font-family: 'Gowun Batang', serif;
+
+      font-size: 30px;
+
+      font-weight: 400;
+
+      color: var(--rose);
+
+    }
+
+
+    .instruction {
+
+      margin-top: 12px;
+
+      font-size: 15px;
+
+      color: var(--text);
+
+    }
+
+
+    /* =========================
+       ENVELOPE
+    ========================= */
+
+    .envelope-area {
+
+      position: relative;
+
+      width: 300px;
+
+      height: 210px;
+
+      margin: 35px auto 0;
+
+      cursor: pointer;
+
+      perspective: 1000px;
+
+    }
+
+
+    .envelope {
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 300px;
+
+      height: 180px;
+
+      background: #E8B9BF;
+
+      border-radius: 8px;
+
+      box-shadow:
+        0 12px 30px rgba(143, 95, 104, 0.12);
+
+    }
+
+
+    /* ด้านหน้าซอง */
+
+    .envelope-front {
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      background: #E8B9BF;
+
+      border-radius: 8px;
+
+      z-index: 4;
+
+    }
+
+
+    /* สามเหลี่ยมหน้าซอง */
+
+    .envelope-front::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 0;
+
+      height: 0;
+
+      border-left: 150px solid transparent;
+
+      border-right: 150px solid transparent;
+
+      border-bottom: 95px solid #D99AA5;
+
+    }
+
+
+    /* ฝากระดาษซอง */
+
+    .flap {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 0;
+
+      height: 0;
+
+      border-left: 150px solid transparent;
+
+      border-right: 150px solid transparent;
+
+      border-top: 95px solid #D99AA5;
+
+      transform-origin: top center;
+
+      z-index: 5;
+
+      transition:
+        transform 0.9s ease;
+
+    }
+
+
+    /* หัวใจ */
+
+    .seal {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 48%;
+
+      transform: translate(-50%, -50%);
+
+      z-index: 6;
+
+      font-size: 30px;
+
+      color: #FFF7F5;
+
+      transition: opacity 0.4s ease;
+
+    }
+
+
+    /* =========================
+       LETTER
+    ========================= */
+
+    .letter-paper {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 35px;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
+
+      width: 275px;
+
+      max-height: 430px;
+
+      padding: 28px 23px;
+
+      background: var(--paper);
+
+      border: 1px solid #EEDBDD;
+
+      box-shadow:
+        0 10px 30px rgba(143, 95, 104, 0.10);
+
+      overflow-y: auto;
+
+      text-align: left;
+
+      opacity: 0;
+
+      z-index: 2;
+
+      transition:
+        transform 1s ease,
+        opacity 0.5s ease;
+
+      scrollbar-width: thin;
+
+    }
+
+
+    .letter-paper::-webkit-scrollbar {
+      width: 4px;
+    }
+
+
+    .letter-paper::-webkit-scrollbar-thumb {
+
+      background: var(--blush);
+
+      border-radius: 10px;
+
+    }
+
+
+    .letter-paper h2 {
+
+      margin: 0 0 18px;
+
+      text-align: center;
+
+      font-family: 'Gowun Batang', serif;
+
+      font-size: 22px;
+
+      font-weight: 400;
+
+      color: var(--rose);
+
+    }
+
+
+    .letter-paper p {
+
+      margin: 0 0 15px;
+
+      font-size: 14px;
+
+      line-height: 2;
+
+      color: var(--text);
+
+    }
+
+
+    .signature {
+
+      margin-top: 25px;
+
+      text-align: right;
+
+      font-family: 'Gowun Batang', serif;
+
+      color: var(--rose);
+
+    }
+
+
+    /* =========================
+       OPEN STATE
+    ========================= */
+
+    .envelope-area.open .flap {
+
+      transform: rotateX(180deg);
+
+      z-index: 1;
+
+    }
+
+
+    .envelope-area.open .letter-paper {
+
+      opacity: 1;
+
+      transform:
+        translateX(-50%)
+        translateY(-160px);
+
+      z-index: 7;
+
+    }
+
+
+    .envelope-area.open .seal {
+
+      opacity: 0;
+
+    }
+
+
+    .envelope-area.open .envelope {
+
+      animation: littleBounce 0.7s ease;
+
+    }
+
+
+    .envelope-area.open {
+
+      margin-bottom: 160px;
+
+    }
+
+
+    /* =========================
+       HIDDEN INSTRUCTION
+    ========================= */
+
+    .instruction.hide {
+
+      opacity: 0;
+
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(12px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes littleBounce {
+
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.02);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <main class="page">
+
+
+    <section class="content">
+
+
+      <!-- หัวข้อ -->
+
+      <div class="intro">
+
+        <div class="small">
+          A LITTLE LETTER FOR YOU ♡
+        </div>
+
+        <h1>
+          มีจดหมายถึงเธอค่ะ
+        </h1>
+
+        <div
+          class="instruction"
+          id="instruction"
+        >
+          กดที่ซองดูสิ ♡
+        </div>
+
+      </div>
+
+
+      <!-- Envelope -->
+
+      <div
+        class="envelope-area"
+        id="envelopeArea"
+        onclick="openLetter()"
+      >
+
+
+        <!-- กระดาษ -->
+
+        <article class="letter-paper">
+
+          <h2>
+            ถึงเด็ก 21 ของเค้า ♡
+          </h2>
+
+
+          <p>
+
+            สวัสดีค่ะ ♡
+
+            <br><br>
+
+            21 แล้วนะคะ คนเก่งของเค้า
+
+            เป็นยังไงบ้างคะ
+            กับ 20 ปีที่ผ่านมา
+
+          </p>
+
+
+          <p>
+
+            มีความสุขดีมั้ยคะ<br>
+
+            ยิ้มเยอะ ๆ บ้างหรือเปล่า<br>
+
+            มีวันที่ร้องไห้บ้างมั้ย<br>
+
+            เหนื่อยมาก ๆ จนอยากทิ้งทุกอย่าง
+            ไปเลยหรือเปล่าน้า
+
+          </p>
+
+
+          <p>
+
+            เค้าไม่รู้หรอกว่าใน 20 ปีที่ผ่านมา
+            เธอต้องเจอกับเรื่องอะไรมาบ้าง
+
+            มีทั้งวันที่ดี วันที่แย่
+
+            วันที่หัวเราะจนแก้มปวด
+
+            แล้วก็คงมีบางวันที่ไม่อยากทำอะไรเลย
+
+          </p>
+
+
+          <p>
+
+            แต่ไม่ว่าจะเป็นวันไหน
+
+            เธอก็เก่งมาก ๆ แล้วนะคะ
+            ที่เดินทางมาถึงวันนี้ได้ ♡
+
+          </p>
+
+
+          <p>
+
+            ต่อจากนี้ก็ 21 แล้วนะ
+
+            ขอให้มีเรื่องให้ยิ้มเยอะกว่า
+            เรื่องให้ร้องไห้นะ
+
+            เหนื่อยก็พักได้
+            ไม่ต้องเก่งตลอดเวลาก็ได้
+
+            อยากกอดก็มากอดกัน
+            อยากงอแงก็งอแงได้เลย
+            เค้าอนุญาตค่ะ 555
+
+          </p>
+
+
+          <p>
+
+            ขอให้ปีนี้ใจดีกับเธอเยอะ ๆ
+
+            ได้กินของอร่อย ๆ
+
+            ได้นอนเต็มอิ่ม
+
+            ได้ทำสิ่งที่ชอบ
+
+            แล้วก็ได้เจอแต่คนที่รัก
+            และเอ็นดูเธอนะ
+
+          </p>
+
+
+          <p>
+
+            สุขสันต์วันเกิดนะคะ ♡
+
+            <br>
+
+            อยู่เป็นเด็ก 21
+            ที่น่ารักไปนาน ๆ เลยน้า
+
+          </p>
+
+
+          <p class="signature">
+
+            จากคนที่อยากเห็นเธอยิ้มเยอะ ๆ
+
+            <br>
+
+            รักนะคะ ♡
+
+          </p>
+
+
+        </article>
+
+
+        <!-- ซอง -->
+
+        <div class="envelope">
+
+
+          <div class="flap"></div>
+
+
+          <div class="envelope-front"></div>
+
+
+          <div class="seal">
+            ♡
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <script>
+
+    function openLetter() {
+
+      const envelope =
+        document.getElementById("envelopeArea");
+
+      const instruction =
+        document.getElementById("instruction");
+
+
+      if (
+        !envelope.classList.contains("open")
+      ) {
+
+        envelope.classList.add("open");
+
+        instruction.classList.add("hide");
+
+      }
+
+    }
+
+  </script>
+
+
+</body>
+</html>
