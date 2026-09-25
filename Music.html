@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>One Last Song ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Mali:wght@300;400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --background: #FFF7F5;
+      --pink: #D99AA5;
+      --rose: #8F5F68;
+      --text: #594348;
+      --blush: #F2D6D9;
+      --card: #FFFCFA;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Mali", cursive;
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 55px 22px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+      animation: pageIn 1.2s ease;
+    }
+
+    .small-title {
+      font-family: "Quicksand", sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--pink);
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Gowun Batang", serif;
+      font-size: clamp(30px, 8vw, 42px);
+      font-weight: 400;
+      color: var(--rose);
+    }
+
+    .subtitle {
+      margin-top: 13px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .album {
+      width: min(78vw, 310px);
+      margin: 30px auto 0;
+      padding: 9px;
+      background: var(--card);
+      border: 1px solid var(--blush);
+      border-radius: 25px;
+      box-shadow:
+        0 15px 40px rgba(143, 95, 104, 0.12);
+    }
+
+    .album img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .song-title {
+      margin-top: 23px;
+      font-family: "Gowun Batang", serif;
+      font-size: 22px;
+      color: var(--rose);
+    }
+
+    .song-note {
+      margin-top: 7px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 13px;
+      color: var(--pink);
+    }
+
+    .spotify-box {
+      margin: 23px auto 0;
+      width: 100%;
+    }
+
+    .spotify-box iframe {
+      display: block;
+      width: 100%;
+      height: 152px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    .end-message {
+      margin-top: 35px;
+      padding-top: 26px;
+      border-top: 1px solid var(--blush);
+    }
+
+    .end-message p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .end-title {
+      margin-top: 25px;
+      font-family: "Gowun Batang", serif;
+      font-size: 23px;
+      color: var(--rose);
+    }
+
+    .end {
+      margin-top: 22px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: var(--pink);
+    }
+
+    .heart {
+      margin-top: 10px;
+      font-size: 18px;
+      color: var(--pink);
+    }
+
+    .deco {
+      position: fixed;
+      color: var(--pink);
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .deco-1 {
+      top: 15%;
+      left: 10%;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .deco-2 {
+      top: 27%;
+      right: 11%;
+      animation: float 5s ease-in-out infinite 1s;
+    }
+
+    .deco-3 {
+      bottom: 18%;
+      left: 13%;
+      animation: float 4.5s ease-in-out infinite 0.5s;
+    }
+
+    .deco-4 {
+      bottom: 25%;
+      right: 12%;
+      animation: float 5s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="deco deco-1">♡</div>
+  <div class="deco deco-2">✦</div>
+  <div class="deco deco-3">˚₊‧</div>
+  <div class="deco deco-4">♡</div>
+
+
+  <main class="page">
+
+    <section class="content">
+
+      <div class="small-title">
+        ONE LAST THING FOR YOU ♡
+      </div>
+
+
+      <h1>
+        เพลงนี้ให้เธอ
+      </h1>
+
+
+      <div class="subtitle">
+
+        ก่อนจะจบเว็บนี้ไป...<br>
+        อยากให้เธอลองฟังเพลงนี้นะคะ ♡
+
+      </div>
+
+
+      <!-- ปกเพลง -->
+
+      <div class="album">
+
+        <img
+          src="song-cover.png"
+          alt="Song Cover"
+        >
+
+      </div>
+
+
+      <div class="song-title">
+        เพลงนี้ให้เธอ ♡
+      </div>
+
+
+      <div class="song-note">
+        press play & listen with your heart
+      </div>
+
+
+      <!-- Spotify -->
+
+      <div class="spotify-box">
+
+        <iframe
+          src="https://open.spotify.com/embed/track/7z1LPdQx3DV2DgX42qmKmR?utm_source=generator"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+
+      </div>
+
+
+      <!-- END -->
+
+      <div class="end-message">
+
+        <p>
+
+          แอบซึ้งป่ะเตง ♡
+          <br>
+
+          หวังว่าวันเกิดปีนี้
+          จะมีรอยยิ้มเยอะ ๆ
+          <br>
+
+          แล้วก็หวังว่า
+          เธอจะชอบของขวัญที่ให้
+
+        </p>
+
+
+        <div class="end-title">
+          Happy 21st Birthday ♡
+        </div>
+
+
+        <div class="end">
+          — END —
+        </div>
+
+
+        <div class="heart">
+          ♡
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
